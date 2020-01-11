@@ -14,7 +14,7 @@
     <img src="http://interfiltre.serveur-client.fr/img/cms/logo-interfiltre-OK.jpg" alt="Logo" width="160" height="auto">
   </a>
 
-  <h3 align="center">Interfiltre Production Monitoring</h3>
+  <h3 align="center">Mysql Production Monitoring</h3>
 
   <p align="center">
     The repo of the project of 2nd year of Higher Technical Certificate (BTS SN IR )
