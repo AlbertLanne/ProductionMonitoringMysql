@@ -48,6 +48,7 @@
 
 
 <!-- ABOUT THE PROJECT -->
+> Attention the crossed out text are unfinish parts because for the moment we don't have enought informations 
 ## ~~About The Project~~
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
@@ -65,9 +66,9 @@ A list of commonly used resources that I find helpful are listed in the acknowle
 
 ### ~~Built With~~
 This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
-* [Laravel](https://laravel.com)
+
+* [chart.js](https://www.chartjs.org/)
+* [MySQL](https://www.mysql.com/)
 
 
 
