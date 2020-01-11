@@ -48,7 +48,7 @@
 
 
 <!-- ABOUT THE PROJECT -->
-> Attention the crossed out text are unfinish parts because for the moment we don't have enought informations 
+> !!!! Attention the crossed out text are unfinish parts because for the moment we don't have enought informations !!!!
 ## ~~About The Project~~
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
