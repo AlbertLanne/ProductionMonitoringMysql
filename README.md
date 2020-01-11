@@ -21,7 +21,7 @@
     <br />
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="https://github.com/othneildrew/Best-README-Template">View Dem</a>
     ·
     <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
     ·
@@ -122,9 +122,12 @@ See the [open issues](https://github.com/AlbertLanne/InterfiltreProductionMonito
 <!-- CONTRIBUTING -->
 ## Contributing
 
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+1. [Create a fork](https://help.github.com/en/articles/fork-a-repo) of this project
+2. Clone the project:
+```bash
+git clone https://github.com/<YOUR_GITHUB_USERNAME>/InterfiltreProductionMonitoring
+```
+2. Create your Feature Branch (`git checkout -b AmazingFeature`)
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
