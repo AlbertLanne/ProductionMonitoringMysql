@@ -48,7 +48,7 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## ~~About The Project
+## ~~About The Project~~
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
@@ -63,7 +63,7 @@ Of course, no one template will serve all projects since your needs may be diffe
 
 A list of commonly used resources that I find helpful are listed in the acknowledgements.
 
-### ~~Built With
+### ~~Built With~~
 This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 * [Bootstrap](https://getbootstrap.com)
 * [JQuery](https://jquery.com)
@@ -72,12 +72,12 @@ This section should list any major frameworks that you built your project using.
 
 
 <!-- GETTING STARTED -->
-## ~~Getting Started
+## ~~Getting Started~~
 
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
-### ~~Prerequisites
+### ~~Prerequisites~~
 
 This is an example of how to list things you need to use the software and how to install them.
 * npm
@@ -85,7 +85,7 @@ This is an example of how to list things you need to use the software and how to
 npm install npm@latest -g
 ```
 
-### ~~Installation
+### ~~Installation~~
 
 1. Get a free API Key at [https://example.com](https://example.com)
 2. Clone the repo
@@ -104,7 +104,7 @@ const API_KEY = 'ENTER YOUR API';
 
 
 <!-- USAGE EXAMPLES -->
-## ~~Usage
+## ~~Usage~~
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
@@ -135,8 +135,9 @@ git clone https://github.com/<YOUR_GITHUB_USERNAME>/InterfiltreProductionMonitor
 
 
 
+
 <!-- CONTACT -->
-## ~~Contact
+## ~~Contact~~
 
 Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
 
@@ -150,7 +151,7 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 * [CleverCloud for free DB mysql for unit test + web server](www.clever-cloud.com)
 
 
-## Others ressources (ask Albert for access)
+## Others ressources (see on discord)
 * [Github cheat sheet command line procedure]()
 * [Online server for testing with apache server (92.222.224.108)]()
 * [Udemy Chart.js course](https://www.udemy.com/course/chart-js-with-mysql-database-data/)
