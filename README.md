@@ -1,6 +1,7 @@
 
-[![Contributors][contributors-shield]][contributors-url]
+
 [![Issues][issues-shield]][issues-url]
+[![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)](https://travis-ci.org/badges/badgerbadgerbadger) [![Coverage Status](http://img.shields.io/coveralls/badges/badgerbadgerbadger.svg?style=flat-square)](https://coveralls.io/r/badges/badgerbadgerbadger)
 
 
 
@@ -10,7 +11,7 @@
 <br />
 <p align="center">
   <a href="http://www.interfiltre.fr/fr/">
-    <img src="http://interfiltre.serveur-client.fr/img/cms/logo-interfiltre-OK.jpg" alt="Logo" width="80" height="80">
+    <img src="http://interfiltre.serveur-client.fr/img/cms/logo-interfiltre-OK.jpg" alt="Logo" width="160" height="auto">
   </a>
 
   <h3 align="center">Interfiltre Production Monitoring</h3>
@@ -18,7 +19,6 @@
   <p align="center">
     The repo of the project of 2nd year of Higher Technical Certificate (BTS SN IR )
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
@@ -42,7 +42,6 @@
 * [Usage](#usage)
 * [Roadmap](#roadmap)
 * [Contributing](#contributing)
-* [License](#license)
 * [Contact](#contact)
 * [Acknowledgements](#acknowledgements)
 
@@ -116,7 +115,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/AlbertLanne/InterfiltreProductionMonitoring/projects/1) for a list of proposed features (and known issues).
 
 
 
@@ -131,12 +130,6 @@ Contributions are what make the open source community such an amazing place to b
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
 
 
 
