@@ -43,12 +43,12 @@
 * [Roadmap](#roadmap)
 * [Contributing](#contributing)
 * [Contact](#contact)
-* [Acknowledgements](#acknowledgements)
+* [useful link](#useful-link)
 
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## ~~About The Project
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
@@ -63,7 +63,7 @@ Of course, no one template will serve all projects since your needs may be diffe
 
 A list of commonly used resources that I find helpful are listed in the acknowledgements.
 
-### Built With
+### ~~Built With
 This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 * [Bootstrap](https://getbootstrap.com)
 * [JQuery](https://jquery.com)
@@ -72,12 +72,12 @@ This section should list any major frameworks that you built your project using.
 
 
 <!-- GETTING STARTED -->
-## Getting Started
+## ~~Getting Started
 
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
+### ~~Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
 * npm
@@ -85,7 +85,7 @@ This is an example of how to list things you need to use the software and how to
 npm install npm@latest -g
 ```
 
-### Installation
+### ~~Installation
 
 1. Get a free API Key at [https://example.com](https://example.com)
 2. Clone the repo
@@ -104,7 +104,7 @@ const API_KEY = 'ENTER YOUR API';
 
 
 <!-- USAGE EXAMPLES -->
-## Usage
+## ~~Usage
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
@@ -122,7 +122,6 @@ See the [open issues](https://github.com/AlbertLanne/InterfiltreProductionMonito
 <!-- CONTRIBUTING -->
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
@@ -134,7 +133,7 @@ Contributions are what make the open source community such an amazing place to b
 
 
 <!-- CONTACT -->
-## Contact
+## ~~Contact
 
 Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
 
@@ -143,22 +142,15 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 
 
 <!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Img Shields](https://shields.io)
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Pages](https://pages.github.com)
-* [Animate.css](https://daneden.github.io/animate.css)
-* [Loaders.css](https://connoratherton.com/loaders)
-* [Slick Carousel](https://kenwheeler.github.io/slick)
-* [Smooth Scroll](https://github.com/cferdinandi/smooth-scroll)
-* [Sticky Kit](http://leafo.net/sticky-kit)
-* [JVectorMap](http://jvectormap.com)
-* [Font Awesome](https://fontawesome.com)
+## Useful link and ressources 
+* [Markdown mastering](https://guides.github.com/features/mastering-markdown/)
+* [CleverCloud for free DB mysql for unit test + web server](www.clever-cloud.com)
 
 
-
-
+## Others ressources (ask Albert for access)
+* [Github cheat sheet command line procedure]
+* [VPS server for testing with apache server]
+* [Udemy Chart.js course](https://www.udemy.com/course/chart-js-with-mysql-database-data/)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
