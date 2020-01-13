@@ -1,0 +1,23 @@
+{
+  "name": "simplehtmlnodejsexpress",
+  "version": "1.0.0",
+  "description": "Prototype of simple nodejs html website",
+  "main": "index.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlbertLanne/SimpleHTMLnodejsExpress.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlbertLanne/SimpleHTMLnodejsExpress/issues"
+  },
+  "homepage": "https://github.com/AlbertLanne/SimpleHTMLnodejsExpress#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1"
+  }
+}
