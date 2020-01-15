@@ -18,4 +18,4 @@ app.use('/api/informations', informations);
 
 const port = process.env.PORT || 4000;
 
-app.listen(port, () => console.log(`Server listening on ${port}`));
+app.listen(port, () => console.log(`L'api fonctionne sur le port ${port}`));
