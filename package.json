@@ -4,7 +4,10 @@
   "description": "Prototype of simple nodejs html website",
   "author": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon server.js --watch server",
+    "start": "cross-env NODE_ENV=production node server/start.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AlbertLanne/SimpleHTMLnodejsExpress.git"
@@ -16,9 +19,13 @@
   "homepage": "https://github.com/AlbertLanne/SimpleHTMLnodejsExpress#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
-    "cors": "^2.8.5",
     "chart.js": "^2.9.3",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "mysql": "^2.17.1"
+  },
+  "devDependencies": {
+    "cross-env": "^6.0.3",
+    "nodemon": "^2.0.2"
   }
 }
