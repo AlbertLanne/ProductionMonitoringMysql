@@ -1,16 +1,14 @@
 {
-  "name": "simplehtmlnodejsexpress",
+  "name": "ProductionMonitoringMysql",
   "version": "1.0.0",
   "description": "Prototype of simple nodejs html website",
+  "author": "",
   "main": "index.js",
-  "scripts": {
-
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AlbertLanne/SimpleHTMLnodejsExpress.git"
   },
-  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/AlbertLanne/SimpleHTMLnodejsExpress/issues"
@@ -19,7 +17,7 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
-    "ejs": "^3.0.1",
+    "chart.js": "^2.9.3",
     "express": "^4.17.1",
     "mysql": "^2.17.1"
   }
