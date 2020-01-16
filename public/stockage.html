@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+<html lang="en">
+<link href="https://unpkg.com/tailwindcss@%5E1.0/dist/tailwind.min.css" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <title>Interfiltre Gestion des Grillages</title>
+</head>
+<body class ="bg-blue-100">
+
+
+
+
+
+<nav class="relative select-none bg-black lg:flex lg:items-stretch w-full">
+    <div class="flex flex-no-shrink items-stretch h-12">
+        <a href="#" class="flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center hover:bg-grey-dark text-3xl">Interfiltre</a>
+        <a href="#" class="flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-pink no-underline flex items-center hover:bg-grey-dark">A propos</a>
+    </div>
+    <div class="lg:flex lg:items-stretch lg:flex-no-shrink lg:flex-grow">
+        <div class="lg:flex lg:items-stretch lg:justify-end ml-auto">
+            <a href="http://www.google.fr" class="flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center hover:bg-grey-dark">Centre de contrôle</a>
+            <a href="#" class="flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center hover:bg-grey-dark">Base de données</a>
+            <a href="../statistique.html" class="flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center hover:bg-grey-dark">Statistique</a>
+            <a href="/stockage.html" class="flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center hover:bg-grey-dark">Statistique</a>
+
+        </div>
+    </div>
+</nav>
+
+
+
+<div class="w-full h-full bg-white-100">
+    <div class="flex">
+        <div class="mx-64">
+            <div class ="justify-center px-40 py-3 "><img src="https://i.imgur.com/Oh1nxQu.png"></div>
+            <p class="italic text-3xl p-20 justify-left-auto hover:text-pink-600 flex">Gestion des stockages de grillage</p>
+
+            <div class = "justify-center flex-wrap">
+                <button class="bg-blue-200 text-black text-xl rounded-full p-2 px-20 shadow-2x">
+                    Ceci est un autre test
+                </button>
+                <button class="bg-blue-200 text-black text-xl rounded-full p-2 px-20 shadow-2x">
+                    Ceci est un test
+                </button>
+            </div>
+        </div>
+
+        <div class=" flex-auto justify-end">
+            <div class="w-5/12  justify-end mx-64">
+                <div class=" rounded-lg hover:shadow-xl "><canvas id="myChart" ></canvas></div>
+                <p class="text-center text-3xl">Estimation de la production au : 18/01/2020</p>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+</body>
+</html>
+
+<script type="text/javascript">var ctx = document.getElementById('myChart').getContext('2d');
+var chart = new Chart(ctx, {
+// The type of chart we want to create
+    type: 'bar',
+
+// The data for our dataset
+    data: {
+        labels: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet'],
+        datasets: [{
+            label: 'Stock des grillages',
+            backgroundColor: 'rgba(12,1,4,0.96)',
+            borderColor: 'rgb(242,255,250)',
+            data: [this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt()]
+        }]
+    },
+
+// Configuration options go here
+    options: {
+        labels : {
+            defaultFontFamily:'Helvetica',
+            defaultFontSize:'12'
+
+        }
+    }
+});
+
+function getRandomInt() {
+    return Math.floor(Math.random() * (50 - 5 + 1)) + 5
+
+}
+
+function getDateTime(){
+    var date = new Date().toLocaleString(); // dd:mm:y
+    document.getElementById("dateheure").innerHTML = date;
+    setTimeout(getDateTime, 1000); // mise à jour du contenu "getDateTime" toutes les secondes
+
+
+}
+getDateTime();
+
+</script>
+
+
