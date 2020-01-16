@@ -5,38 +5,50 @@ document.addEventListener('DOMContentLoaded',function() {
     }
 
     function getChartStockage() {
-        document.addEventListener('DOMContentLoaded', function () {
-            var ctx = document.getElementById("myChart").getContext('2d');
-            var chart = new Chart(ctx, {
-// The type of chart we want to create
-                type: 'bar',
+        var elChart = document.getElementById("myChart");
+        if (elChart != undefined) {
 
-// The data for our dataset
+            new Chart(elChart.getContext('2d'),{
+                type: 'bar',
                 data: {
                     labels: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet'],
                     datasets: [{
                         label: 'Stock des grillages',
-                        backgroundColor: 'rgba(12,1,4,0.96)',
+                        backgroundColor: '#0c0104',
                         borderColor: 'rgb(242,255,250)',
                         data: [getRandomInt(), getRandomInt(), getRandomInt(), getRandomInt(), getRandomInt(), getRandomInt(), getRandomInt()]
                     }]
                 },
+            })
 
-// Configuration options go here
-                options: {
-                    labels: {
-                        defaultFontFamily: 'Helvetica',
-                        defaultFontSize: '12'
-
-                    }
-                }
-            });
-        })
-
+        }
     }
-    getChartStockage();
 
-})
+    function getChartStatistique() {
+        var elChart = document.getElementById("myChart1");
+        if (elChart != undefined) {
+
+            new Chart(elChart.getContext('2d'),{
+                type: 'bar',
+                    data: {
+                    labels: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet'],
+                        datasets: [{
+                        label: 'Stock des grillages',
+                        backgroundColor: '#f87979',
+                        borderColor: 'rgb(242,255,250)',
+                        data: [getRandomInt(), getRandomInt(), getRandomInt(), getRandomInt(), getRandomInt(), getRandomInt(), getRandomInt()]
+                    }]
+                },
+            })
+
+        }
+    }
+
+getChartStatistique();
+getChartStockage();
+});
+
+
 
 
 
