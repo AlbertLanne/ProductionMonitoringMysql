@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded',function() {
+document.addEventListener('DOMContentLoaded', function() {
     function getRandomInt() {
         return Math.floor(Math.random() * (50 - 5 + 1)) + 5
 
@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded',function() {
         var elChart = document.getElementById("myChart");
         if (elChart != undefined) {
 
-            new Chart(elChart.getContext('2d'),{
+            new Chart(elChart.getContext('2d'), {
                 type: 'bar',
                 data: {
                     labels: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet'],
@@ -28,11 +28,11 @@ document.addEventListener('DOMContentLoaded',function() {
         var elChart = document.getElementById("myChart1");
         if (elChart != undefined) {
 
-            new Chart(elChart.getContext('2d'),{
+            new Chart(elChart.getContext('2d'), {
                 type: 'bar',
-                    data: {
+                data: {
                     labels: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet'],
-                        datasets: [{
+                    datasets: [{
                         label: 'Stock des grillages',
                         backgroundColor: '#f87979',
                         borderColor: 'rgb(242,255,250)',
@@ -44,19 +44,6 @@ document.addEventListener('DOMContentLoaded',function() {
         }
     }
 
-getChartStatistique();
-getChartStockage();
+    getChartStatistique();
+    getChartStockage();
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
