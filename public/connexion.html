@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page Statistique</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="navbar"></div>
+    <script src="js/navbar.js"></script>
+
+<!--    <img src="../assets/login_background.jpg" alt="Photo" class="bg-cover w-full h-full">-->
+
+<div class="justify-center min-h-screen bg-white text-copy-primary flex flex-wrap items-center">
+
+        <div class="hover:shadow-2xl border-b text-center text-white text-2xl font-thin justify-center border border-purple-800 bg-gray-800   w-1/4 ">
+
+
+        <p> identifiant </p>
+        <input type="text" class="  text-center border border-white text-black" id="myText" >
+        <p> Mot de passe </p>
+
+        <input type="password" class="text-center border border-white text-black" id="myPassword" >
+
+        <p id="demo"></p>
+        <!--        <p class="m-2 text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, molestiae reiciendis? Ab excepturi ipsam,-->
+        <!--            molestiae perspiciatis provident totam. Aliquam earum eos fuga ipsa laborum modi nam numquam, officiis-->
+        <!--            repellendus <rer></rer>um.</p>-->
+
+        <button onclick="myFunction()" class=" m-2 mx-auto bg-white   border-2 rounded-lg border-gray-700  text-black px-4 p-2 flex hover:bg-blue-200">
+            Connexion
+        </button>
+
+    </div>
+
+
+    </div>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myText").value;
+            var y = document.getElementById("myPassword").value;
+            document.getElementById("demo").innerHTML = x+ " | " +y;
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="js/chart.js"></script>
+</body>
+</html>

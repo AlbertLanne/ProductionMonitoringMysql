@@ -10,6 +10,7 @@
 
         '            <a href="../statistique.html" class="text-center no-underline  border-b-4 border-white mx-3 py-2 m-2 sm:inline-block hover:bg-gray-800  hover:border-blue-600" href="../statistique.html">Statistique</a>\n' +
         '            <a href="/stockage.html" class="text-center no-underline  border-b-4 border-white mx-3 py-2 m-2 sm:inline-block hover:bg-gray-800  hover:border-blue-600" >stockage</a>\n' +
+        '            <a href="/connexion.html" class="text-center no-underline  border-b-4 border-white mx-3 py-2 m-2 sm:inline-block hover:bg-gray-800  hover:border-blue-600" >Connexion</a>\n' +
         '\n' +
         '        </div>\n' +
         '    </div>\n' +

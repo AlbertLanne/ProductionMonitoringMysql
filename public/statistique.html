@@ -17,13 +17,14 @@
                 <div class="bg-black mt-20 border h border-black bg-white p-2 rounded-lg ">
                     <div class="bg-white border-gray-600 border-b">
                         <p>
-                            {{ val.text }}
+                            <input type="text" class=""  >
                         </p>
                     </div>
 
                     <div class="bg-white border-gray-600 border-b">
                         <p>
-                            {{ val.text }}
+                           <input type="text" class=""  >
+
                         </p>
                     </div>
                 </div>
@@ -76,9 +77,14 @@
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 <script src="js/chart.js"></script>
-</body>
 
-</html>
+
+<script>
+    function myFunction() {
+        var x = document.getElementById("myText").value;
+        document.getElementById("demo").innerHTML = x;
+    }
+</script>
 
 
 
@@ -94,3 +100,11 @@
     }
 
 </script>
+
+
+</body>
+
+</html>
+
+
+
