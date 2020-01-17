@@ -1,11 +1,11 @@
 import axios from "axios";
 
-const url = "http://localhost:4000/api/products";
+const url = "http://localhost:4000/api/informations";
 
-class Productsinformations {
+class informationsinformations {
     // initialise the data at the url string
 
-    static getProducts() {
+    static getinformations() {
         return new Promise(async (resolve, reject) => {
             try {
                 const res = await axios.get(url);
@@ -25,17 +25,38 @@ class Productsinformations {
 
     // static methode create
 
-    static insertProducts(text) {
-        return axios.post(url, {
-            text
-        });
-    }
-
-    // static methode delete
-
-    static deleteProducts(id) {
-        return axios.delete('${url}/${id}');
-    }
+    // static insertinformations(text) {
+    //     return axios.post(url, {
+    //         text
+    //     });
+    // }
+    //
+    // // static methode delete
+    //
+    // static deleteinformations(id) {
+    //     return axios.delete('${url}/${id}');
+    // }
 }
 
-export default Productsinformations;
+export default informationsinformations;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

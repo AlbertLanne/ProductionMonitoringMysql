@@ -5,9 +5,10 @@ const router = express.Router();
 
 router.get('/', async (req, res) => {
   const informations = await loadProductsCollection();
-  // res.send(await informations);
+  res.send(informations);
   // res.send(await informations.find([]).toArray());
-  // console.log(informations);
+  console.log(informations);
+  console.log("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
   // console.log(await informations.find({}).toArray());
 });
 
@@ -20,8 +21,8 @@ async function loadProductsCollection() {
     con.query("SELECT * FROM `producttable`", function (err, result, fields) {
       if (err) throw err;
       // Retourne toute la table producttable et sont contenu dans la var result
-      console.log(result);
-      // console.log(result.find({}).toArray());
+      // console.log(result);
+      console.log(result.find({}).toArray());
 
     });
   });

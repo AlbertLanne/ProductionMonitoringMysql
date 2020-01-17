@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Page Statistique</title>
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
 <div id="navbar"></div>
 <script src="js/navbar.js"></script>
-
-</div>
-
 
 <div class=" min-h-screen bg-orange-400 flex-wrap text-copy-primary flex flex-wrap ">
     <div class="chart w-full flex justify-center">
@@ -18,15 +16,15 @@
             <div class="align-middle">
                 <div class="bg-black mt-20 border h border-black bg-white p-2 rounded-lg ">
                     <div class="bg-white border-gray-600 border-b">
-                        <option>
+                        <p>
                             {{ val.text }}
-                        </option>
+                        </p>
                     </div>
 
                     <div class="bg-white border-gray-600 border-b">
-                        <option>
+                        <p>
                             {{ val.text }}
-                        </option>
+                        </p>
                     </div>
                 </div>
                 <div class="justify-end flex my-4">
@@ -54,14 +52,18 @@
             <!--                   consol debug ici-->
             <div class="m-16  h-auto w-8/12  text-green-500 font-hairline text-xl p-2  mx-auto ">
                 <div class="w-full p-2 bg-blue-800">
-                    <p class="text-xl font-medium text-white">Debugging consol</p>
+                    <p class="text-xl font-medium text-gray-300">Debugging consol</p>
                 </div>
-                <div class=" w-full p-2 bg-black ">
+                <div class=" w-full p-2 bg-red-200 ">
                     <div class="m-2 ">
                         <span>Selected: {{ selected }}</span>
                     </div>
                     <div class="m-2">
                         <span>Selected: {{ val }}</span>
+<!--                    <script src="./statistique.html"></script>-->
+<!--                        <script src="../informations.js"></script>-->
+                        <script src="../public/statistique.html"></script>
+
                     </div>
                 </div>
             </div>
@@ -70,23 +72,22 @@
 </div>
 
 
-<script>created();</script>
+<!--<script>created();</script>-->
 
-
-</body>
-</html>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 <script src="js/chart.js"></script>
+</body>
+
+</html>
+
 
 
 <script>
 
-    import ProductsService from '../informations';
-
-    async function created() {
-        console.log("testestest");  // affiche 60 après 4 secondes.
+    import informationsinformations from '../informations';
+    async function created(products) {
         try {
-            this.products = await ProductsService.getinformations();
+            this.products = await informationsinformations.getinformations();
         } catch (err) {
             this.error = err.message;
         }
