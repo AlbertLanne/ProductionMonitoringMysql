@@ -7,9 +7,9 @@ router.get('/', async (req, res) => {
 
 // c'est informations qui prend l'array vous pouvez faire un test avec un array statique
 
- cars = [{"salesid":1,"quantity":11,"date":"2020-01-31T23:00:00.000Z"},{"salesid":2,"quantity":3,"date":"2018-12-31T23:00:00.000Z"},{"salesid":7,"quantity":9,"date":"2018-08-31T22:00:00.000Z"}]
-    informations = cars;
-    // const informations = await loadProductsCollection();
+ // cars = [{"salesid":1,"quantity":11,"date":"2020-01-31T23:00:00.000Z"},{"salesid":2,"quantity":3,"date":"2018-12-31T23:00:00.000Z"},{"salesid":7,"quantity":9,"date":"2018-08-31T22:00:00.000Z"}]
+ //    informations = cars;
+    const informations = await loadProductsCollection();
     res.send(await informations);
 });
 

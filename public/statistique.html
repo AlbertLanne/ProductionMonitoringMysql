@@ -17,29 +17,32 @@
                 <div class="bg-black mt-20 border h border-black bg-white p-2 rounded-lg mx-2">
                     <div class="bg-white border-gray-600 border-b ">
                         <p>
-<!--                            <option id="myOption" value="A">PSM - PFPE - PRP3 - FG2P - PRP4 - FG4P - PKP1</option>-->
+                            <!--                            <option id="myOption" value="A">PSM - PFPE - PRP3 - FG2P - PRP4 - FG4P - PKP1</option>-->
                             <select class="flex w-full">
-                                <option selected="selected">Choix du type de filtres </option>
+                                <option selected="selected">Choix du type de filtres</option>
                                 <option class="bg-yellow-500">FP-SL</option>
-                                <option class="bg-yellow-500"  id="myOption" value="A">PSM - PFPE - PRP3 - FG2P - PRP4 - FG4P - PKP1</option>
-                                <option class="bg-yellow-500"  value="B">Recharge 3B</option>
-                                <option class="bg-yellow-500"  value="B">Manche avec fond et ou velcro</option>
-                                <option class="bg-yellow-500"  value="B">MSP - manche</option>
-                                <option class="bg-yellow-500"  value="B">Jonc</option>
-                                <option class="bg-red-300"  value="B">Ecopack - GPM</option>
-                                <option class="bg-green-600"  value="B">FM - RP6 - RP4 - KP1 - RP2 - Cadre Pincés</option>
-                                <option class="bg-green-600"  value="B">Cylindrique RP6 </option>
-                                <option class="bg-yellow-700"  value="B">SG - Type 1 - SM</option>
-                                <option class="bg-yellow-700"  value="B">Type 4B</option>
-                                <option class="bg-gray-500"  value="B">Charbon</option>
-                                <option class="bg-gray-500"  value="B">Soudure - CS NM </option>
+                                <option class="bg-yellow-500" id="myOption" value="A">PSM - PFPE - PRP3 - FG2P - PRP4 -
+                                    FG4P - PKP1
+                                </option>
+                                <option class="bg-yellow-500" value="B">Recharge 3B</option>
+                                <option class="bg-yellow-500" value="B">Manche avec fond et ou velcro</option>
+                                <option class="bg-yellow-500" value="B">MSP - manche</option>
+                                <option class="bg-yellow-500" value="B">Jonc</option>
+                                <option class="bg-red-300" value="B">Ecopack - GPM</option>
+                                <option class="bg-green-600" value="B">FM - RP6 - RP4 - KP1 - RP2 - Cadre Pincés
+                                </option>
+                                <option class="bg-green-600" value="B">Cylindrique RP6</option>
+                                <option class="bg-yellow-700" value="B">SG - Type 1 - SM</option>
+                                <option class="bg-yellow-700" value="B">Type 4B</option>
+                                <option class="bg-gray-500" value="B">Charbon</option>
+                                <option class="bg-gray-500" value="B">Soudure - CS NM</option>
                             </select>
                         </p>
                     </div>
 
                     <div class="bg-white border-gray-600 border-b ">
                         <p>
-<!--                           <input type="text" class=""  >-->
+                            <!--                           <input type="text" class=""  >-->
                             <select class="flex w-full">
                                 <option selected="selected">Choix de la période</option>
                                 <option value="A">Mois</option>
@@ -83,9 +86,11 @@
                         <span>Selected: {{ selected }}</span>
                     </div>
                     <div class="m-2">
-                        <p class="text-2xl text-red-700" id="demo"></p>
-<!--                        <script src="../informations.js"></script>-->
-                        <script src="../public/statistique.html"></script>
+                        <!--                        <script>created();</script>-->
+                        <p id="demo">A Paragraph</p>
+
+
+                        <!--                        <script src="../informations.js"></script>-->
 
                     </div>
                 </div>
@@ -95,32 +100,43 @@
 </div>
 
 
-<!--<script>created();</script>-->
-
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 <script src="js/chart.js"></script>
 
-
+<!--<script>-->
+<!--    document.getElementById("demo").innerHTML = 6665 + 6;-->
+<!--</script>-->
 
 <!--<script type="module">-->
-<script type="text/javascript">
-    import axios from "axios";
-    import informationsinformations from '../informations';
-    // async function created() {
-    //     try {
-    //         this.informations = await informationsinformations.getinformations();
-    //     } catch (err) {
-    //         this.informations = err.message;
-    //     }
-    // }
-    async function created() {
-        test = informationsinformations;
-        truc = test.getinformations();
 
-        var x = document.getElementById("truc").value;
-        document.getElementById("demo").innerHTML = x+ " | " +y;
+<script type="text/javascript">
+    import informationsinformations from '../informations';
+
+    async function created() {
+        // document.getElementById("demo").innerHTML = "Paragraph changed.";
+
+        try {
+
+            this.informations = await informationsinformations.getinformations();
+            document.getElementById("demo").innerHTML = 6665 + 6;
+        } catch (err) {
+            this.informations = err.message;
+
+        }
     }
+
 </script>
+
+<!--<script type="text/javascript">-->
+<!--     import informationsinformations from '../informations';-->
+<!--     async function created() {-->
+<!--         try {-->
+<!--             this.informations = await informationsinformations.getinformations();-->
+<!--         } catch (err) {-->
+<!--             this.informations = err.message;-->
+<!--         }-->
+<!--     }-->
+<!--</script>-->
 
 
 </body>
