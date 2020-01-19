@@ -58,10 +58,10 @@
                 </div>
                 <div class="w-full justify-center content-center bg-gray-100 px-4 p-2 rounded-lg my-6 ">
                     <div class="text-center ">
-                    <input type="radio" name="filtre" value="A">Mois</input>
-                    <input type="radio" class="ml-4"  name="filtre" value="B">Année</input>
-                    <input type="radio" class="ml-4"  name="filtre" value="B">Total année</input>
-                    <input type="radio" class="ml-4"  name="filtre" value="C">Total mois</input>
+                        <input type="radio" name="filtre" value="A">Mois</input>
+                        <input type="radio" class="ml-4" name="filtre" value="B">Année</input>
+                        <input type="radio" class="ml-4" name="filtre" value="B">Total année</input>
+                        <input type="radio" class="ml-4" name="filtre" value="C">Total mois</input>
                     </div>
                 </div>
                 <div class="justify-end flex my-4 mx-2">
@@ -71,11 +71,7 @@
                 </div>
 
 
-
-
             </div>
-
-
 
 
         </div>
@@ -103,7 +99,9 @@
                         <span>Selected: {{ selected }}</span>
                     </div>
                     <div class="m-2">
-                      <script>vieux();</script>
+                        <p>
+                            <script> makeRequest();</script>
+                        </p>
                         <p id="demo"></p>
 
 
@@ -117,27 +115,28 @@
 </div>
 
 
-<script src="js/chart.js">
-    function myFunction() {
-        document.getElementById("demo").innerHTML = "test";
-    }
-</script>
-
-<!--<script>-->
-<!--    document.getElementById("demo").innerHTML = 6665 + 6;-->
+<!--<script src="js/chart.js">-->
+<!--    function myFunction() {-->
+<!--        document.getElementById("demo").innerHTML = "test";-->
+<!--    }-->
 <!--</script>-->
 
+<script>
 
-<script type="text/javascript">
-    import informationsinformations from '../informations';
-
-    async function vieux() {
-        // document.getElementById("demo").innerHTML = "Paragraph changed.";
-           truc = await informationsinformations.getUser();
-          document.getElementById("demo").innerHTML = truc;
-    }
 
 </script>
+<script src="../server/api/getbdd.js"></script>
+
+<!--<script type="text/javascript">-->
+<!--    import informationsinformations from '../informations';-->
+
+<!--    async function vieux() {-->
+<!--        // document.getElementById("demo").innerHTML = "Paragraph changed.";-->
+<!--        truc = await informationsinformations.getUser();-->
+<!--        document.getElementById("demo").innerHTML = truc;-->
+<!--    }-->
+
+<!--</script>-->
 
 <!--<script type="text/javascript">-->
 <!--     import informationsinformations from '../informations';-->
