@@ -11,68 +11,77 @@
 <script src="js/navbar.js"></script>
 
 <div class=" min-h-screen flex-wrap text-copy-primary flex flex-wrap ">
-    <div class="chart w-full flex justify-center">
-        <div class="bg-gray-900 rounded-b-lg  w-5/12 flex  justify-center align-middle">
-            <div class="">
-                <div class="border-2 border-red-700 my-2 w-full bg-gray-100 px-4 p-2 rounded-b-lg ">
-                    <p class="text-center text-xl my-2 "> Choix du type de filtres </p>
+    <div class=" w-full flex justify-center">
+        <div class="bg-gray-900 justify-center align-middle flex-grow">
+            <div>
+                <div class=" flex justify-center align-middle">
+                    <div>
+                        <div class="border-2 border-red-700 w-full bg-gray-100 px-4 p-2 rounded-b-lg ">
+                            <p class="text-center text-xl my-2 "> Choix du type de filtres </p>
 
-                    <input type="radio" name="filtre" value="z"> FP-SL<br>
-                    <input type="radio" name="filtre" value="a"> PSM - PFPE - PRP3 - FG2P - PRP4 - FG4P -
-                    PKP1<br>
-                    <input type="radio" name="filtre" value="e"> Recharge 3B<br>
-                    <input type="radio" name="filtre" value="male"> Manche avec fond et ou velcro<br>
-                    <input type="radio" name="filtre" value="z"> MSP - manche<br>
-                    <input type="radio" name="filtre" value="e"> Jonc <br>
-                    <input type="radio" name="filtre" value="male"> Ecopack - GPM
-                    <input type="radio" name="filtre" value="female"> FM - RP6 - RP4 - KP1 - RP2 - Cadre Pincés<br>
-                    <input type="radio" name="filtre" value="other"> Cylindrique RP6<br>
-                    <input type="radio" name="filtre" value="male"> SG - Type 1 - SM<br>
-                    <input type="radio" name="filtre" value="female"> Type 4B<br>
-                    <input type="radio" name="filtre" value="other"> Charbon <br>
-                    <input type="radio" name="filtre" value="other"> Soudure - CS NM
-                </div>
-                <div class="border-2 border-red-700 w-full justify-center content-center bg-gray-100 px-4 p-2 rounded-lg my-6 ">
-                    <div class="text-center ">
-                        <input type="radio" name="filtre" value="A">Mois</input>
-                        <input type="radio" class="ml-4" name="filtre" value="B">Année</input>
-                        <input type="radio" class="ml-4" name="filtre" value="B">Total année</input>
-                        <input type="radio" class="ml-4" name="filtre" value="C">Total mois</input>
+                            <input type="radio" name="filtre" value="z"> FP-SL<br>
+                            <input type="radio" name="filtre" value="a"> PSM - PFPE - PRP3 - FG2P - PRP4 - FG4P -
+                            PKP1<br>
+                            <input type="radio" name="filtre" value="e"> Recharge 3B<br>
+                            <input type="radio" name="filtre" value="male"> Manche avec fond et ou velcro<br>
+                            <input type="radio" name="filtre" value="z"> MSP - manche<br>
+                            <input type="radio" name="filtre" value="e"> Jonc <br>
+                            <input type="radio" name="filtre" value="male"> Ecopack - GPM
+                            <input type="radio" name="filtre" value="female"> FM - RP6 - RP4 - KP1 - RP2 - Cadre
+                            Pincés<br>
+                            <input type="radio" name="filtre" value="other"> Cylindrique RP6<br>
+                            <input type="radio" name="filtre" value="male"> SG - Type 1 - SM<br>
+                            <input type="radio" name="filtre" value="female"> Type 4B<br>
+                            <input type="radio" name="filtre" value="other"> Charbon <br>
+                            <input type="radio" name="filtre" value="other"> Soudure - CS NM
+                        </div>
+                        <div class="border-2 border-red-700 w-full justify-center content-center bg-gray-100 px-4 p-2 rounded-lg my-6 ">
+                            <div class="text-center ">
+                                <input type="radio" name="filtre" value="A">Mois</input>
+                                <input type="radio" class="ml-4" name="filtre" value="B">Année</input>
+                                <input type="radio" class="ml-4" name="filtre" value="B">Total année</input>
+                                <input type="radio" class="ml-4" name="filtre" value="C">Total mois</input>
+                            </div>
+                        </div>
+                        <div class="justify-end flex my-4 mx-2">
+                            <button class="border-2 border-green-400 rounded-lg text-green-400  px-4 p-2 h-12 flex hover:bg-gray-800">
+                                Valider
+                            </button>
+                        </div>
                     </div>
                 </div>
-                <div class="justify-end flex my-4 mx-2">
-                    <button class="border-2 border-green-400 rounded-lg text-green-400  px-4 p-2 h-12 flex hover:bg-gray-800">
-                        Valider
-                    </button>
-                </div>
 
-                <div class="w-full bg-gray-100 px-2 p-2 rounded-lg ">
+                <div class="bg-red-200 w-full h">
+                    <div class=" bg-gray-300  rounded-lg ">
+                        <div class="bg-red-100 border-2 border-red-400 text-red-700 px-4 py-3 rounded relative"
+                             role="alert">
+                            <strong class="text-center text-xl my-2 font-bold"> Gestion mot de passe </strong>
+                        </div>
+                        <div class="mx-2 my-2">
+                            <p> Mot de passe actuel</p>
+                            <input class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"
+                                   placeholder="******">
+                            <p> Nouveau </p>
+                            <input class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"
+                                   placeholder="******">
+                            <p> Répétez </p>
+                            <input class="mb-8 bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"
+                                   placeholder="******">
+                            <button class="mb-12 mx-auto border-2 border-green-400 rounded-lg  px-4 p-2 h-12 flex hover:bg-gray-600">
+                                <span>Valider</span>
+                            </button>
+<!--                            <button class=" border-2 border-green-400 rounded-lg text-green-400  px-4 p-2 h-12 flex hover:bg-gray-900 bg-black">-->
+<!--                                <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg"-->
+<!--                                     viewBox="0 0 20 20">-->
+<!--                                    <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/>-->
+<!--                                </svg>-->
+<!--                                <span>Téléchargez en fichier texte</span>-->
+<!--                            </button>-->
 
-
-                    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-                        <strong class="text-center text-xl my-2 font-bold"> Gestion mot de passe </strong>
+                        </div>
                     </div>
-
-                    <p> Mot de passe actuel</p>
-                    <input class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"
-                           placeholder="******">
-                    <p> Nouveau </p>
-                    <input class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"
-                           placeholder="******">
-                    <p> Répétez </p>
-                    <input class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"
-                           placeholder="******">
-
-
-                    <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
-                        <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                            <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/>
-                        </svg>
-                        <span>Download</span>
-                    </button>
                 </div>
             </div>
-
 
         </div>
 
@@ -82,26 +91,73 @@
                 <p>Vous êtes connectez en temps qu'administrateur.</p>
             </div>
 
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta dolore ducimus ipsum magnam perspiciatis. Accusantium totam, ullam. Architecto at consequuntur exercitationem illum nulla qui quidem quod ratione repellat soluta. Maiores</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta dolore ducimus ipsum magnam perspiciatis. Accusantium totam, ullam. Architecto at consequuntur exercitationem illum nulla qui quidem quod ratione repellat soluta. Maiores</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta dolore ducimus ipsum magnam perspiciatis. Accusantium totam, ullam. Architecto at consequuntur exercitationem illum nulla qui quidem quod ratione repellat soluta. Maiores</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta dolore ducimus ipsum magnam perspiciatis. Accusantium totam, ullam. Architecto at consequuntur exercitationem illum nulla qui quidem quod ratione repellat soluta. Maiores</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta dolore ducimus ipsum magnam perspiciatis. Accusantium totam, ullam. Architecto at consequuntur exercitationem illum nulla qui quidem quod ratione repellat soluta. Maiores</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta dolore ducimus ipsum magnam perspiciatis. Accusantium totam, ullam. Architecto at consequuntur exercitationem illum nulla qui quidem quod ratione repellat soluta. Maiores</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta dolore ducimus ipsum magnam perspiciatis. Accusantium totam, ullam. Architecto at consequuntur exercitationem illum nulla qui quidem quod ratione repellat soluta. Maiores</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta dolore ducimus ipsum magnam perspiciatis. Accusantium totam, ullam. Architecto at consequuntur exercitationem illum nulla qui quidem quod ratione repellat soluta. Maiores</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta dolore ducimus ipsum magnam perspiciatis. Accusantium totam, ullam. Architecto at consequuntur exercitationem illum nulla qui quidem quod ratione repellat soluta. Maiores</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta dolore ducimus ipsum magnam perspiciatis. Accusantium totam, ullam. Architecto at consequuntur exercitationem illum nulla qui quidem quod ratione repellat soluta. Maiores</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta dolore ducimus ipsum magnam perspiciatis. Accusantium totam, ullam. Architecto at consequuntur exercitationem illum nulla qui quidem quod ratione repellat soluta. Maiores</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta dolore ducimus ipsum magnam perspiciatis. Accusantium totam, ullam. Architecto at consequuntur exercitationem illum nulla qui quidem quod ratione repellat soluta. Maiores</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta dolore ducimus ipsum magnam perspiciatis. Accusantium totam, ullam. Architecto at consequuntur exercitationem illum nulla qui quidem quod ratione repellat soluta. Maiores</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta dolore ducimus ipsum magnam perspiciatis. Accusantium totam, ullam. Architecto at consequuntur exercitationem illum nulla qui quidem quod ratione repellat soluta. Maiores</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta dolore ducimus ipsum magnam perspiciatis. Accusantium totam, ullam. Architecto at consequuntur exercitationem illum nulla qui quidem quod ratione repellat soluta. Maiores</p>
-
+            <div class="m-2 mx-4 font-light">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta dolore ducimus ipsum magnam
+                    perspiciatis. Accusantium totam, ullam. Architecto at consequuntur exercitationem illum nulla qui
+                    quidem quod ratione repellat soluta. Maiores</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta dolore ducimus ipsum magnam
+                    perspiciatis. Accusantium totam, ullam. Architecto at consequuntur exercitationem illum nulla qui
+                    quidem quod ratione repellat soluta. Maiores</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta dolore ducimus ipsum magnam
+                    perspiciatis. Accusantium totam, ullam. Architecto at consequuntur exercitationem illum nulla qui
+                    quidem quod ratione repellat soluta. Maiores</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta dolore ducimus ipsum magnam
+                    perspiciatis. Accusantium totam, ullam. Architecto at consequuntur exercitationem illum nulla qui
+                    quidem quod ratione repellat soluta. Maiores</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta dolore ducimus ipsum magnam
+                    perspiciatis. Accusantium totam, ullam. Architecto at consequuntur exercitationem illum nulla qui
+                    quidem quod ratione repellat soluta. Maiores</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta dolore ducimus ipsum magnam
+                    perspiciatis. Accusantium totam, ullam. Architecto at consequuntur exercitationem illum nulla qui
+                    quidem quod ratione repellat soluta. Maiores</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta dolore ducimus ipsum magnam
+                    perspiciatis. Accusantium totam, ullam. Architecto at consequuntur exercitationem illum nulla qui
+                    quidem quod ratione repellat soluta. Maiores</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta dolore ducimus ipsum magnam
+                    perspiciatis. Accusantium totam, ullam. Architecto at consequuntur exercitationem illum nulla qui
+                    quidem quod ratione repellat soluta. Maiores</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta dolore ducimus ipsum magnam
+                    perspiciatis. Accusantium totam, ullam. Architecto at consequuntur exercitationem illum nulla qui
+                    quidem quod ratione repellat soluta. Maiores</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta dolore ducimus ipsum magnam
+                    perspiciatis. Accusantium totam, ullam. Architecto at consequuntur exercitationem illum nulla qui
+                    quidem quod ratione repellat soluta. Maiores</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta dolore ducimus ipsum magnam
+                    perspiciatis. Accusantium totam, ullam. Architecto at consequuntur exercitationem illum nulla qui
+                    quidem quod ratione repellat soluta. Maiores</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta dolore ducimus ipsum magnam
+                    perspiciatis. Accusantium totam, ullam. Architecto at consequuntur exercitationem illum nulla qui
+                    quidem quod ratione repellat soluta. Maiores</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta dolore ducimus ipsum magnam
+                    perspiciatis. Accusantium totam, ullam. Architecto at consequuntur exercitationem illum nulla qui
+                    quidem quod ratione repellat soluta. Maiores</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta dolore ducimus ipsum magnam
+                    perspiciatis. Accusantium totam, ullam. Architecto at consequuntur exercitationem illum nulla qui
+                    quidem quod ratione repellat soluta. Maiores</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta dolore ducimus ipsum magnam
+                    perspiciatis. Accusantium totam, ullam. Architecto at consequuntur exercitationem illum nulla qui
+                    quidem quod ratione repellat soluta. Maiores</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta dolore ducimus ipsum magnam
+                    perspiciatis. Accusantium totam, ullam. Architecto at consequuntur exercitationem illum nulla qui
+                    quidem quod ratione repellat soluta. Maiores</p>
+            </div>
 
         </div>
     </div>
+
+    <div class="bg-gray-900 w-full text-white text-lg py-2 align-baseline flex text-justify ">
+        <div class="w-3/5 m-2 border border-white px-2 rounded-lg">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aperiam cupiditate error esse est, et iure laudantium molestiae odio, quam, quidem repellat sapiente soluta? Aspernatur deserunt distinctio praesentium temporibus voluptatem.</p>
+        </div>
+        <div class="w-3/5 m-2 border border-white px-2 rounded-lg">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aperiam cupiditate error esse est, et iure laudantium molestiae odio, quam, quidem repellat sapiente soluta? Aspernatur deserunt distinctio praesentium temporibus voluptatem.</p>
+        </div>
+        <div class="w-3/5 m-2 border border-white px-2 rounded-lg">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aperiam cupiditate error esse est, et iure laudantium molestiae odio, quam, quidem repellat sapiente soluta? Aspernatur deserunt distinctio praesentium temporibus voluptatem.</p>
+        </div>
+    </div>
+
+
 </div>
 
 
