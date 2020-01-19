@@ -1,0 +1,74 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.gauche, .centre, .droite{
+    padding:1px 0;
+
+}
+
+.gauche {
+    width: auto;
+    height: auto;
+    float: left;
+    background-color: pink;
+    margin: 0;
+}
+
+.centre {
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+}
+
+.droite {
+    width: auto;
+    height: auto;
+    float: right;
+    background-color: white;
+
+
+}
+
+.textebleu {
+    color: #ffa445;
+}
+
+
+section{
+    width:1280px;
+    float:right;
+}
+
+.textedroite{
+padding-right:10px;
+}
+
+footer {
+    width: 100%
+
+}
+
+#myChart{
+    position:absolute;
+
+}
+#mychart2{
+    position:absolute;
+
+}
