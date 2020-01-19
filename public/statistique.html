@@ -14,21 +14,44 @@
     <div class="chart w-full flex justify-center">
         <div class="bg-red-500 rounded-lg  w-3/12 flex  justify-center ">
             <div class="align-middle">
-                <div class="bg-black mt-20 border h border-black bg-white p-2 rounded-lg ">
-                    <div class="bg-white border-gray-600 border-b">
+                <div class="bg-black mt-20 border h border-black bg-white p-2 rounded-lg mx-2">
+                    <div class="bg-white border-gray-600 border-b ">
                         <p>
-                            <input type="text" class=""  >
+<!--                            <option id="myOption" value="A">PSM - PFPE - PRP3 - FG2P - PRP4 - FG4P - PKP1</option>-->
+                            <select class="flex w-full">
+                                <option selected="selected">Choix du type de filtres </option>
+                                <option class="bg-yellow-500">FP-SL</option>
+                                <option class="bg-yellow-500"  id="myOption" value="A">PSM - PFPE - PRP3 - FG2P - PRP4 - FG4P - PKP1</option>
+                                <option class="bg-yellow-500"  value="B">Recharge 3B</option>
+                                <option class="bg-yellow-500"  value="B">Manche avec fond et ou velcro</option>
+                                <option class="bg-yellow-500"  value="B">MSP - manche</option>
+                                <option class="bg-yellow-500"  value="B">Jonc</option>
+                                <option class="bg-red-300"  value="B">Ecopack - GPM</option>
+                                <option class="bg-green-600"  value="B">FM - RP6 - RP4 - KP1 - RP2 - Cadre Pincés</option>
+                                <option class="bg-green-600"  value="B">Cylindrique RP6 </option>
+                                <option class="bg-yellow-700"  value="B">SG - Type 1 - SM</option>
+                                <option class="bg-yellow-700"  value="B">Type 4B</option>
+                                <option class="bg-gray-500"  value="B">Charbon</option>
+                                <option class="bg-gray-500"  value="B">Soudure - CS NM </option>
+                            </select>
                         </p>
                     </div>
 
-                    <div class="bg-white border-gray-600 border-b">
+                    <div class="bg-white border-gray-600 border-b ">
                         <p>
-                           <input type="text" class=""  >
+<!--                           <input type="text" class=""  >-->
+                            <select class="flex w-full">
+                                <option selected="selected">Choix de la période</option>
+                                <option value="A">Mois</option>
+                                <option value="B">Année</option>
+                                <option value="B">Total année</option>
+                                <option value="C">Total mois</option>
+                            </select>
 
                         </p>
                     </div>
                 </div>
-                <div class="justify-end flex my-4">
+                <div class="justify-end flex my-4 mx-2">
                     <button class="border-2 rounded-lg border-gray-700  px-4 p-2 h-12 flex hover:bg-blue-200">
                         Valider
                     </button>
@@ -60,8 +83,7 @@
                         <span>Selected: {{ selected }}</span>
                     </div>
                     <div class="m-2">
-                        <span>Selected: {{ val }}</span>
-<!--                    <script src="./statistique.html"></script>-->
+                        <p class="text-2xl text-red-700" id="demo"></p>
 <!--                        <script src="../informations.js"></script>-->
                         <script src="../public/statistique.html"></script>
 
@@ -79,26 +101,25 @@
 <script src="js/chart.js"></script>
 
 
-<script>
-    function myFunction() {
-        var x = document.getElementById("myText").value;
-        document.getElementById("demo").innerHTML = x;
-    }
-</script>
 
-
-
-<script>
-
+<!--<script type="module">-->
+<script type="text/javascript">
+    import axios from "axios";
     import informationsinformations from '../informations';
-    async function created(products) {
-        try {
-            this.products = await informationsinformations.getinformations();
-        } catch (err) {
-            this.error = err.message;
-        }
-    }
+    // async function created() {
+    //     try {
+    //         this.informations = await informationsinformations.getinformations();
+    //     } catch (err) {
+    //         this.informations = err.message;
+    //     }
+    // }
+    async function created() {
+        test = informationsinformations;
+        truc = test.getinformations();
 
+        var x = document.getElementById("truc").value;
+        document.getElementById("demo").innerHTML = x+ " | " +y;
+    }
 </script>
 
 
