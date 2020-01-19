@@ -103,11 +103,11 @@
                         <span>Selected: {{ selected }}</span>
                     </div>
                     <div class="m-2">
-                        <!--                        <script>created();</script>-->
+                      <script>vieux();</script>
                         <p id="demo"></p>
 
 
-                        <!--                        <script src="../informations.js"></script>-->
+                        <!--                        <script src="../api.js"></script>-->
 
                     </div>
                 </div>
@@ -129,19 +129,12 @@
 
 
 <script type="text/javascript">
-
     import informationsinformations from '../informations';
 
-    async function created() {
+    async function vieux() {
         // document.getElementById("demo").innerHTML = "Paragraph changed.";
-
-        try {
-
-            this.informations = await informationsinformations.getinformations();
-        } catch (err) {
-            this.informations = err.message;
-
-        }
+           truc = await informationsinformations.getUser();
+          document.getElementById("demo").innerHTML = truc;
     }
 
 </script>
@@ -244,7 +237,7 @@
 <!--                        <p id="demo"></p>-->
 
 
-<!--                        &lt;!&ndash;                        <script src="../informations.js"></script>&ndash;&gt;-->
+<!--                        &lt;!&ndash;                        <script src="../api.js"></script>&ndash;&gt;-->
 
 <!--                    </div>-->
 <!--                </div>-->

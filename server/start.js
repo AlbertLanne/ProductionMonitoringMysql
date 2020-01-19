@@ -10,7 +10,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-const informations = require('./informations');
+const informations = require('./api');
 
 
 // Le lien avec le serveur d'api   ==>  http://localhost:4000/api/informations
