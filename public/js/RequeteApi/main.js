@@ -1,4 +1,3 @@
-
 var axios = require('axios');
 
 function performGetRequest1() {
@@ -11,7 +10,7 @@ function performGetRequest1() {
         })
         .catch(function (error) {
 
-            resultElement.innerHTML = console.log("prout schnek");
+            resultElement.innerHTML = generateErrorHTMLOutput(error);
         });
 }
 function generateSuccessHTMLoutput(response) {
