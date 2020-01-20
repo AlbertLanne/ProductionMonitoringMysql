@@ -6,13 +6,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     document.getElementById("SelectBox").addEventListener("change",hideCanvas);
-
     function hideCanvas(){
         var myChart=document.getElementById('myChart');
         var myChart2=document.getElementById('myChart2');
         var choixSelect = document.getElementById('SelectBox').value;
-
-
 
         if (choixSelect == "metal"){
             myChart.style.visibility='visible';
@@ -22,13 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
             myChart.style.visibility='hidden';
             myChart2.style.visibility='visible';
         }
-
-
     }
-
-
-
-
 
     function getChartStockage() {
         var elChart = document.getElementById("myChart");
