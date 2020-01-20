@@ -40,7 +40,6 @@
 //
 //     static deleteinformations(id) {
 //         return axios.delete('${url}/${id}');
-//     }
 // }
 //
 // export default informationsinformations;
