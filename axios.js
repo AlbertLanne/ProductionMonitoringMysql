@@ -1,4 +1,4 @@
-const axios = require('public/js/statistique/api/axios');
+const axios = require('axios');
 
 async function getNumberOfFollowers() {
 
