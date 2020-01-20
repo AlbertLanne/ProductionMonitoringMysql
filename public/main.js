@@ -2,7 +2,7 @@ function performGetRequest1() {
     var resultElement = document.getElementById('getResult1');
     resultElement.innerHTML = '';
 
-    axios.get('http://jsonplaceholder.typicode.com/todos')
+    axios.get('http://localhost:4000/api/informations')
         .then(function (response) {
             resultElement.innerHTML = generateSuccessHTMLoutput(response);
         })
