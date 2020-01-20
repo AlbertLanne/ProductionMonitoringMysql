@@ -5,7 +5,7 @@
   "author": "",
   "main": "index.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development nodemon server.js --watch server",
+    "dev": "cross-env NODE_ENV=production nodemon server.js --watch server",
     "start": "cross-env NODE_ENV=production node server/start.js"
   },
   "repository": {
