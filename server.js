@@ -1,5 +1,5 @@
 var express = require('express');
-const nodemailer = require('nodemailer');
+// const nodemailer = require('nodemailer');
 
 var app = express();
 var path = require('path');

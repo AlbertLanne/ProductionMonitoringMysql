@@ -1,4 +1,4 @@
-var axios = require('axios');
+var axios = require('public/js/RequeteApi/axios');
 
 function performGetRequest1() {
     var resultElement = document.getElementById('getResult1');
