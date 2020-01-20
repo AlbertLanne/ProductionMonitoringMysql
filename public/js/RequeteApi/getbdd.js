@@ -1,4 +1,3 @@
-var axios = require('axios');
 
 async function makeRequest() {
 

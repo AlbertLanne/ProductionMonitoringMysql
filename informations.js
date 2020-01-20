@@ -6,8 +6,6 @@
 //
 // class informationsinformations {
 //
-//
-//
 //     // static getinformations() {
 //     //                 const res = axios.get(url);
 //     //                 const data = res.data;
@@ -43,24 +41,4 @@
 // }
 //
 // export default informationsinformations;
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
