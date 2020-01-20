@@ -1,5 +1,4 @@
-
-const axios = require('public/js/RequeteApi/axios');
+var axios = require('axios');
 
 async function makeRequest() {
 

@@ -1,8 +1,8 @@
 {
   "name": "ProductionMonitoringMysql",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Prototype of simple nodejs html website",
-  "author": "",
+  "author": "Alexis, Albert",
   "main": "index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon server.js --watch server",
@@ -24,14 +24,11 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mysql": "^2.17.1"
-
-
   },
   "devDependencies": {
     "cross-env": "^6.0.3",
     "jquery": "^3.4.1",
     "nodemon": "^2.0.2"
-    
   },
   "keywords": []
 }

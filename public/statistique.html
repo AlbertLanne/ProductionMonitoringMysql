@@ -10,7 +10,7 @@
 <div id="navbar"></div>
 <script src="js/navbar.js"></script>
 
-<div class="  bg-orange-400 flex-wrap text-copy-primary flex flex-wrap ">
+<div class="bg-gray-500  flex-wrap text-copy-primary flex flex-wrap ">
     <div class="chart w-full flex justify-center">
         <div class="bg-red-500 rounded-lg  w-5/12 flex  justify-center align-middle">
             <div class="">
@@ -68,8 +68,39 @@
                     <button class="border-2 rounded-lg border-gray-700  px-4 p-2 h-12 flex hover:bg-blue-200">
                         Valider
                     </button>
+
+
                 </div>
 
+                <div class="flex-wrap flex">
+                    <button onclick="performGetRequest1()"
+                            class="mx-2 border-2 rounded-lg border-gray-700  px-4 p-2 h-12 flex hover:bg-blue-200">
+                        Get Requete
+                    </button>
+
+                    <button onclick="performGetRequest2()"
+                            class="mx-2 border-2 rounded-lg border-gray-700  px-4 p-2 h-12 flex hover:bg-blue-200">
+                        Get Requete avec parametre
+                    </button>
+                </div>
+                <input type="text" id="todoId" class="m-2 m-4 w-full bg-yellow-100 text-black" placeholder="ID...">
+
+                <form class="wfull flex" id="todoInputForm">
+                    <div class="bg-gray-200 "></div>
+                    <input type="text" id="todoTitle" class="m-2 m-4 w-full bg-yellow-100 text-black"
+                           placeholder="Title ">
+                    <button type="submit"
+                            class="mx-2 border-2 rounded-lg border-gray-700  px-4 p-2 h-12 flex hover:bg-blue-200">
+                        send
+                    </button>
+                </form>
+                <button type="submit" onclick="clearOutput()"
+                        class="border border-red-300 mx-2 border-2 rounded-lg px-4 p-2 h-12 flex hover:bg-blue-200">
+                    Clear
+                </button>
+                <div class="w-full bg-gray-200" id="postResult">
+
+                </div>
 
             </div>
 
@@ -84,16 +115,18 @@
                     <!--                <div v-else-if="this.selected === 'C'">-->
                     <!--                    <reactive-example/>-->
                     <!--                </div>-->
-                </div>
-                <div class="text-black border border-black">
-                    <button onclick="performGetRequest1()" class="border-2 rounded-lg border-gray-700  px-4 p-2 h-12 flex hover:bg-blue-200">Get Request
-                    </button>
 
-                    <div id="getResult1">
-                        <p>Filtrer par :</p>
+                    <div class="text-black border border-black">
+                        <div id="getResult1">
+                            <p>Filtrer par :</p>
+                        </div>
+                        <div id="getResult2" class="bg-red-300">
+                            <p>Filtrer par :</p>
+                        </div>
                     </div>
-                    <p id="demo"></p>
+
                 </div>
+
             </div>
 
         </div>
@@ -105,14 +138,14 @@
 
 </div>
 
-<div class="w-full  bg-indigo-400 flex-wrap text-copy-primary flex flex-wrap ">
+<div class="w-full bg-gray-800 text-white flex-wrap text-copy-primary flex flex-wrap ">
     <p class="font-thin text-2xl m-4 w-full">Recherche</p>
-    <div class="flex align-baseline w-full bg-indigo-500">
+    <div class="flex align-baseline w-full bg-gray-500 ">
         <div class="mx-2 my-auto">
             <div class="my-2 flex">
                 <div class="relative">
                     <select
-                            class="itemrounded-l border block appearance-none w-full bg-white border-gray-400 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                            class=" rounded-l border block appearance-none w-full bg-white border-gray-400 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                     >
                         <option>5</option>
                         <option>10</option>
@@ -197,101 +230,10 @@
         </table>
 
     </div>
-    <div class="flex align-baseline w-full bg-indigo-400">
-        <div class="mx-2 my-auto">
-            <div class="my-2 flex">
-                <div class="relative">
-                    <select
-                            class="itemrounded-l border block appearance-none w-full bg-white border-gray-400 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    >
-                        <option>5</option>
-                        <option>10</option>
-                        <option>20</option>
-                    </select>
-                    <div
-                            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
-                    >
-                        <svg
-                                class="fill-current h-4 w-4"
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 20 20"
-                        >
-                            <path
-                                    d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
-                            />
-                        </svg>
-                    </div>
-                </div>
-                <div class="relative">
-                    <select
-                            class="border-t border-r border-b block appearance-none w-full bg-white border-gray-400 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    >
-                        <option>All</option>
-                        <option>Active</option>
-                        <option>Inactive</option>
-                    </select>
-                    <div
-                            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
-                    >
-                        <svg
-                                class="fill-current h-4 w-4"
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 20 20"
-                        >
-                            <path
-                                    d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
-                            />
-                        </svg>
-                    </div>
-                </div>
-                <div class="relative">
-               <span class="absolute inset-y-0 left-0 flex items-center pl-2">
-                 <svg viewBox="0 0 24 24" class="h-4 w-4 fill-current text-gray-500"><path
-                         d="M10 4a6 6 0 100 12 6 6 0 000-12zm-8 6a8 8 0 1114.32 4.906l5.387 5.387a1 1 0 01-1.414 1.414l-5.387-5.387A8 8 0 012 10z"></path></svg>
-               </span>
 
-
-                    <input placeholder="Filtre..."
-                           class="h-full rounded-r leading-normal border-t border-r border-gray-400 border-b block pl-8 pr-4 py-2 w-full bg-white text-sm placeholder-gray-400 text-gray-700 focus:bg-white focus:placeholder-gray-600 focus:text-gray-700 focus:outline-none"/>
-
-                </div>
-            </div>
-        </div>
-        <table class="table-fixed">
-            <thead>
-            <tr>
-                <th class="w-1/2 px-4 py-2">Title</th>
-                <th class="w-1/4 px-4 py-2">Author</th>
-                <th class="w-1/4 px-4 py-2">Views</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td class="border px-4 py-2">Intro to CSS</td>
-                <td class="border px-4 py-2">Adam</td>
-                <td class="border px-4 py-2">858</td>
-            </tr>
-            <tr class="bg-gray-100">
-                <td class="border px-4 py-2">A Long and Winding Tour of the History of UI Frameworks and Tools and the
-                    Impact on Design
-                </td>
-                <td class="border px-4 py-2">Adam</td>
-                <td class="border px-4 py-2">112</td>
-            </tr>
-            <tr>
-                <td class="border px-4 py-2">Into to JavaScript</td>
-                <td class="border px-4 py-2">Chris</td>
-                <td class="border px-4 py-2">1,280</td>
-            </tr>
-            </tbody>
-        </table>
-
-    </div>
 </div>
-
-<!--<script src="js/getbdd.js"> makeRequest();</script>-->
-<script src="statistique/main.js"></script>
 <script src="js/bundle.js"></script>
+<script src="js/statistique/main.js"></script>
 
 <!--<script src="js/chart.js">-->
 <!--    function myFunction() {-->

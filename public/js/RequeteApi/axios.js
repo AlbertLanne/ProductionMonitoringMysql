@@ -1,5 +1,5 @@
 
-var axios = require('public/js/RequeteApi/axios');
+var axios = require('axios');
 
 function performGetRequest1() {
     var resultElement = document.getElementById('getResult1');
@@ -11,7 +11,7 @@ function performGetRequest1() {
         })
         .catch(function (error) {
 
-            resultElement.innerHTML = console.log("prout schnek");
+            resultElement.innerHTML = generateErrorHTMLOutput(error);
         });
 }
 function generateSuccessHTMLoutput(response) {
