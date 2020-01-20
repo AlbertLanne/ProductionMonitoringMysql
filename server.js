@@ -6,44 +6,41 @@ var path = require('path');
 var public = path.join(__dirname, 'public');
 // viewed at http://localhost:8080
 app.get('/', function(req, res) {
-  res.sendFile(path.join(public, 'index.html'));
+    res.sendFile(path.join(public, 'index.html'));
+
 });
 app.use('/', express.static(public));
 const port = process.env.PORT || 8080;
 
 app.listen(port, () => console.log(`Le serveur web fonctionne sur le port ${port}`));
 
+app.post('/',function(req,res){
+  res.send('');
+});
+
+app.post('/followers',function(req,res){
+    console.log('Test d API');
 
 
-// app.post('/api/mail', (req, res) => {
-//   let transporter = nodemailer.createTransport({
-//     service: 'Gmail',
-//     auth: {
-//       user: 'AlertMonitoringInterfiltre@gmail.com',
-//       password: 'W8qVQFa6jz3XVxM'
-//     }
-//   })
+});
+
+
+
+
+// async function makeRequest() {
 //
-//   let mailOptions = {
-//     from: 'AlertMonitoringInterfiltre@gmail.com',
-//     to: 'arediyt@gmail.com',
-//     subject: 'Test d alerte',
-//     text: 'ceci est une alerte'
-//   }
+//   let res = await axios.head('http://webcode.me');
 //
-//   transporter.sendMail(mailOptions, function (err, res) {
-//     if (error) {
-//       console.log(error);
-//     }
-//     else {
-//       console.log('Email sent:' + info.response);
-//     }
-//   })
-// });
+//   console.log(`Status: ${res.status}`)
+//   console.log(`Server: ${res.headers.server}`)
+//   console.log(`Date: ${res.headers.date}`)
+//   return "test";
+// }
+//
+// makeRequest();
 
 
 
 
 
-// const port = app.listen(8080);
-// app.listen(port, () => console.log(`Le serveur fonctionne est tourne sur le port ${port}`));
+

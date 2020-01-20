@@ -7,14 +7,14 @@
 
     <!-- CSS -->
     <link href="https://unpkg.com/tailwindcss@%5E1.0/dist/tailwind.min.css" rel="stylesheet">
-    <link href="stockage.css" rel="stylesheet">
+    <link href="css/stockage.css" rel="stylesheet">
 </head>
 
 <body>
 <div id="navbar"></div>
 
 <div class="gauche">
-    <p>ceci est un test</p>
+    <p id="demo">ceci est un test</p>
 </div>
 <div class="centre">
     <img src="https://i.imgur.com/Oh1nxQu.png" class="">
@@ -27,7 +27,7 @@
         <option value="metal">Grillage en metal</option>
         <option value="blindax">Grillage blindax</option>
     </select>
-    <div id="textedroite">
+    <div id="getResult1">
         <p>Filtrer par :</p>
 
     </div>
@@ -37,36 +37,15 @@
 
 
     </section>
-    <footer>
-</footer>
 
 
-<!--<div class="w-full h-full bg-white-100 items-baseline flex">-->
-<!--    <div class="w-1/2">-->
-<!--        <div class="mx-64 w-2/4">-->
-<!--            <div class="justify-center px-40 py-3 "><img src="https://i.imgur.com/Oh1nxQu.png"></div>-->
-<!--            <p class="italic text-3xl p-20 justify-left-auto hover:text-pink-600 flex">Gestion des stockages de grillage</p>-->
-<!--            <div class="justify-between flex ">-->
-<!--                <button class="bg-blue-200 text-black text-xl rounded-full p-2 px-20 shadow-2x flex">Ceci est un autre test</button>-->
-<!--                <button class="bg-blue-200 text-black text-xl rounded-full p-2 px-20 shadow-2x flex">Ceci est un test</button>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="w-1/2">-->
-<!--            <div class="w-5/6  justify-end mx-64 flex-auto mx-64">-->
-<!--                <div class=" rounded-lg hover:shadow-xl ">-->
-<!--                    <canvas id="myChart"></canvas>-->
-<!--                </div>-->
-<!--                <p class="text-center text-3xl">Estimation de la production au : 18/01/2020</p>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
 
 
-<!-- JS -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 <script src="js/chart.js"></script>
 <script src="js/navbar.js"></script>
+    <script src="js/bundle.js"></script>
+
 </body>
 
 </html>
