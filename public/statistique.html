@@ -71,25 +71,22 @@
                 </div>
             </div>
         </div>
-
         <div class="bg-gray-500  h-full w-full justify-center mx-auto items-center">
+            <!--                </div>-->
+            <div class="text-black border border-black">
+                <p> GET</p>
+                <button onclick="performGetRequest1()" class="border-2 rounded-lg border-gray-700  px-4 p-2 h-12 flex hover:bg-blue-200">Get Request
+                </button>
+                <button onclick="ClearOutput()" class="border-2 rounded-lg border-gray-700  px-4 p-2 h-12 flex hover:bg-blue-200">Clear
+                </button>
 
+                <div class="text-black border border-red" id="getResult1"></div>
+                <p id="demo"></p>
+            </div>
 
             <canvas id="myChart1"></canvas>
             <!--                <div v-else-if="this.selected === 'C'">-->
             <!--                    <reactive-example/>-->
-            <!--                </div>-->
-            <div class="text-black border border-black">
-                <p> GET</p>
-                <button onclick="performGetRequest1()" class="border-2 rounded-lg border-gray-700  px-4 p-2 h-12 flex hover:bg-blue-200">Get Request </button>
-                <button onclick="ClearOutput()" class="border-2 rounded-lg border-gray-700  px-4 p-2 h-12 flex hover:bg-blue-200">Clear </button>
-                <div class="text-black border border-red" id="getResult1"></div>
-                <p>
-<!--                    <script> makeRequest();</script>-->
-                </p>
-                <p id="demo"></p>
-            </div>
-
         </div>
     </div>
 </div>
@@ -283,36 +280,8 @@
     </div>
 </div>
 
-<!--<script src="js/statistique/api/getbdd.js"> makeRequest();</script>-->
 <script src="main.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<!--<script src="js/chart.js">-->
-<!--    function myFunction() {-->
-<!--        document.getElementById("demo").innerHTML = "test";-->
-<!--    }-->
-<!--</script>-->
-
-<!--<script type="text/javascript">-->
-<!--    import informationsinformations from '../informations';-->
-
-<!--    async function vieux() {-->
-<!--        // document.getElementById("demo").innerHTML = "Paragraph changed.";-->
-<!--        truc = await informationsinformations.getUser();-->
-<!--        document.getElementById("demo").innerHTML = truc;-->
-<!--    }-->
-
-<!--</script>-->
-
-<!--<script type="text/javascript">-->
-<!--     import informationsinformations from '../informations';-->
-<!--     async function created() {-->
-<!--         try {-->
-<!--             this.informations = await informationsinformations.getinformations();-->
-<!--         } catch (err) {-->
-<!--             this.informations = err.message;-->
-<!--         }-->
-<!--     }-->
-<!--</script>-->
 
 
 </body>
