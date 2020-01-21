@@ -1,7 +1,7 @@
 
 async function performGetRequest()
 {
-    var resultElement = await document.getElementById('getResult1');
+    var resultElement = await document.getElementById('bob');
     resultElement.innerHTML =  '';
 
     let response = await fetch(`http://localhost:4000/api/informations`);
