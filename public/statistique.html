@@ -51,10 +51,10 @@
                         Get Requete
                     </button>
 
-                                        <button onclick="performGetRequest2()"
-                                                class="mx-2 border-2 rounded-lg  border-red-700 px-4 p-2 h-12 flex hover:bg-blue-200">
-                                            Get Requete avec parametre
-                                        </button>
+                    <button onclick="performGetRequest2()"
+                            class="mx-2 border-2 rounded-lg  border-red-700 px-4 p-2 h-12 flex hover:bg-blue-200">
+                        Get Requete avec parametre
+                    </button>
                 </div>
                 <input type="text" id="todoId" class="m-2 m-4 w-full bg-yellow-100 text-black" placeholder="ID...">
 
@@ -74,17 +74,14 @@
                 <div class="w-full bg-gray-200" id="postResult">
 
                 </div>
-
             </div>
-
-
         </div>
 
-        <div class="bg-gray-500  h-full w-full justify-center mx-auto items-center">
+        <div class="bg-gray-500  h-full w-full justify-center  items-center">
 
-            <div class="w-9/12 justify-center bg-red-100 rounded-lg mx-auto mt-4">
+            <div class=" justify-center bg-red-100 rounded-lg w-auto px-4  mx-4 my-4 ">
                 <div>
-                    <canvas id="myChart" class="w-full h-full"></canvas>
+                    <canvas id="myChart" class="w-auto h-full"></canvas>
 
                     <!--                <div v-else-if="this.selected === 'C'">-->
                     <!--                    <reactive-example/>-->
@@ -95,14 +92,16 @@
 
             </div>
 
-            <div class=" text-black  w-full flex bg-fixed">
+            <div class=" text-black  w-full flex bg-fixed h-40 overflow-auto">
                 <div class="flex m-2 p-2 border-2 border-green-700 ">
                     <div id="getResult1">
                     </div>
                 </div>
-                <div class="flex m-2 p-2 bg-red-300 border-2 border-red-700">
+                <div class="flex m-2 p-2 bg-red-300 border-2 border-red-700 ">
                     <div id="getResult2">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis natus obcaecati sed ut voluptates! Aperiam deserunt perferendis rem! At blanditiis corporis deleniti doloremque doloribus molestiae, necessitatibus nesciunt quidem quisquam repellendus?
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis natus obcaecati sed ut
+                        voluptates! Aperiam deserunt perferendis rem! At blanditiis corporis deleniti doloremque
+                        doloribus molestiae, necessitatibus nesciunt quidem quisquam repellendus?
                     </div>
                 </div>
             </div>
@@ -112,9 +111,10 @@
 </div>
 
 
-<div class="w-full py-5 bg-gray-900">
+<div class="w-full py-5 bg-gray-900 ">
 
 </div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
 <div class="w-full bg-gray-800 text-white flex-wrap text-copy-primary flex flex-wrap ">
     <p class="font-thin text-2xl m-4 w-full">Recherche</p>
@@ -133,8 +133,8 @@
                             class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
                     >
                         <svg class="fill-current h-4 w-4"
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 20 20">
+                             xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 20 20">
                             <path
                                     d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
                             />
@@ -208,30 +208,10 @@
     </div>
 
 </div>
-<script src="js/statistique/main.js"></script>
-<script src="js/statistique/mychart.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-<script>
-    var ctx = document.getElementById('myChart').getContext('2d');
-    var chart = new Chart(ctx, {
-        // The type of chart we want to create
-        type: 'line',
+<script src="js/statistique/FetchApi.js"></script>
+<script src="js/statistique/StatistiqueChart.js"></script>
+<script src="js/statistique/RadioButton.js"></script>
 
-        // The data for our dataset
-        data: {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-            datasets: [{
-                label: 'My First dataset',
-                backgroundColor: 'rgb(255, 99, 132)',
-                borderColor: 'rgb(255, 99, 132)',
-                data: [0, 10, 5, 2, 20, 30, 45]
-            }]
-        },
-
-        // Configuration options go here
-        options: {}
-    });
-</script>
 </body>
 
 </html>
