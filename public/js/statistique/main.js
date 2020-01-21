@@ -1,26 +1,63 @@
-function performGetRequest() {
-    var resultElement = document.getElementById('getResult1');
-    resultElement.innerHTML = '';
-
-     fetch('http://localhost:4000/api/informations')
-        .then((response) => {
-            // return response.json();
-         return '<p class="text-2xl">Résultat:</p>' +
-                '<p class="text-xl">Status:</p>'+
-                '<pre class="bg-red-300">' + response.status + ' ' + response.statusText + '</pre>' +
-                '<p class="text-xl">Headers:</h5>' +
-                '<pre>'+ JSON.stringify(response.headers, null, '\t') + '</pre>' +
-                '<h5>Data:</h5>' + response.text() + response.json() + response.data +
-                JSON.stringify(response.json(), null, '\t')  +
-                '<pre class="bg-green-300">'+ JSON.stringify(response.data, null, '\t') + '</pre>';
-        })
-        .then((myJson) => {
-            resultElement.innerHTML = myJson;
+async function performGeetRequest() {
+    var resultElement = await document.getElementById('getResult1');
+    resultElement.innerHTML = await '';
+    return await fetch('http://localhost:4000/api/informations')
+        .then(res => {
+            resultElement.innerHTML = '<pre class="bg-red-300">' +  res.status + ' ' + res.statusText + '</pre>' +
+                '<p class="text-xl">Headers:</h5>' + res.json();
         });
+}
+async function performGetRequest()
+{
+    var resultElement = await document.getElementById('getResult1');
+    resultElement.innerHTML =  '';
+    let response = await fetch(`http://localhost:4000/api/informations`);
+    let data = await response.json()
+    resultElement.innerHTML = '<pre class="bg-red-300">' +  response.status + ' ' + response.statusText + '</pre>' +
+        '<p class="text-xl">Headers:</h5>' + data.json();
+}
+
+performGetRequest('yourUsernameHere')
+    .then(data => console.log(data));
 
 
+// async function avecAsync() {
+//     const res = await fetch('http://localhost:4000/api/informations');
+//     const json = await res.json();
+//     resultElement.innerHTML = '<pre class="bg-red-300">' + awres.status + ' ' + res.statusText + '</pre>' +
+//         '<p class="text-xl">Headers:</h5>' + res.json() + json.field;
+// }
+
+// avecAsync et sansAsync sont EXACTEMENT pareil, c'est juste la syntaxe qui change
+// const a = sansAsync();
+// const b = avecAsync();
+
+
+// function performGetRequest() {
+//     var resultElement = document.getElementById('getResult1');
+//     resultElement.innerHTML = '';
 //
 //
+//     fetch('http://localhost:4000/api/informations')
+//         .then(res => {
+//             try {
+//                 if (res.ok) {
+//                     resultElement.innerHTML = '<pre class="bg-red-300">' + res.status + ' ' + res.statusText + '</pre>' +
+//                         '<p class="text-xl">Headers:</h5>' + res.json();
+//                 } else {
+//                     throw new Error(res)
+//                 }
+//             }
+//             catch (err) {
+//                 console.log(err.message)
+//                 return WHATEVER_YOU_WANT_TO_RETURN
+//             }
+//         })
+//         .then (resJson => {
+//             return resJson.data
+//         })
+//         .catch(err => console.log(err))
+
 // function performGetRequest1() {
 //     var resultElement = document.getElementById('getResult1');
 //     resultElement.innerHTML = '';
@@ -32,7 +69,7 @@ function performGetRequest() {
 //         .catch(function (error) {
 //             resultElement.innerHTML = generateErrorHTMLoutput(error);
 //         });
-}
+// }
 // function generateSuccessHTMLoutput(response) {
 //     return '<h4>Result:</h4>' + '<h5>Status:</h5>'+ '<pre>' + response.status + '' + response.statusText + '</pre>' +
 //         '<h5>Headers:</h5>' + '<pre>'+ JSON.stringify(response.headers, null, '\t') + '</pre>' +
@@ -64,4 +101,4 @@ function performGetRequest() {
 //         });
 // }
 // performGetRequest2();
-    performGetRequest();
+performGetRequest();
