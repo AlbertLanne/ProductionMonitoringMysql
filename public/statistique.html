@@ -31,30 +31,6 @@
                     <input type="radio" name="4B" value="female"> Type 4B<br>
                     <input type="radio" name="CHARBON" value="other"> Charbon <br>
                     <input type="radio" name="CS" value="other"> Soudure - CS NM
-
-                    <!--                    <div class="flex ml-4">-->
-                    <!--                        <div class="w-1/2 bg-gray-300 p-2">-->
-                    <!--                            <input type="radio" name="filtre" value="z"> FP-SL<br>-->
-                    <!--                            <input type="radio" name="filtre" value="a"> PSM - PFPE - PRP3 - FG2P - PRP4 - FG4P - -->
-                    <!--                            PKP1<br>-->
-                    <!--                            <input type="radio" name="filtre" value="e"> Recharge 3B<br>-->
-                    <!--                            <input type="radio" name="filtre" value="male"> Manche avec fond et ou velcro<br>-->
-                    <!--                            <input type="radio" name="filtre" value="z"> MSP - manche<br>-->
-                    <!--                            <input type="radio" name="filtre" value="e"> Jonc <br>-->
-                    <!--                            <input type="radio" name="filtre" value="male"> Ecopack - GPM-->
-                    <!--                        </div>-->
-                    <!--                        <div class="w-1/2">-->
-
-                    <!--                            <input type="radio" name="filtre" value="female"> FM - RP6 - RP4 - KP1 - RP2 - Cadre Pincés<br>-->
-                    <!--                            <input type="radio" name="filtre" value="other"> Cylindrique RP6<br>-->
-                    <!--                            <input type="radio" name="filtre" value="male"> SG - Type 1 - SM<br>-->
-                    <!--                            <input type="radio" name="filtre" value="female"> Type 4B<br>-->
-                    <!--                            <input type="radio" name="filtre" value="other"> Charbon <br>-->
-                    <!--                            <input type="radio" name="filtre" value="other"> Soudure - CS NM-->
-                    <!--                        </div>-->
-                    <!--                    </div>-->
-
-
                 </div>
                 <div class="w-full justify-center content-center bg-gray-100 px-4 p-2 rounded-lg my-6 ">
                     <div class="text-center ">
@@ -68,24 +44,21 @@
                     <button class="border-2 rounded-lg border-gray-700  px-4 p-2 h-12 flex hover:bg-blue-200">
                         Valider
                     </button>
-
-
                 </div>
-
-                <div class="flex-wrap flex">
+                <div class="border-t-4 py-4 border-gray-800 flex-wrap flex">
                     <button onclick="performGetRequest()"
-                            class="mx-2 border-2 rounded-lg border-gray-700  px-4 p-2 h-12 flex hover:bg-blue-200">
+                            class="mx-2 border-2 rounded-lg border-green-700  px-4 p-2 h-12 flex hover:bg-blue-200">
                         Get Requete
                     </button>
 
-<!--                    <button onclick="performGetRequest2()"-->
-<!--                            class="mx-2 border-2 rounded-lg border-gray-700  px-4 p-2 h-12 flex hover:bg-blue-200">-->
-<!--                        Get Requete avec parametre-->
-<!--                    </button>-->
+                                        <button onclick="performGetRequest2()"
+                                                class="mx-2 border-2 rounded-lg  border-red-700 px-4 p-2 h-12 flex hover:bg-blue-200">
+                                            Get Requete avec parametre
+                                        </button>
                 </div>
                 <input type="text" id="todoId" class="m-2 m-4 w-full bg-yellow-100 text-black" placeholder="ID...">
 
-                <form class="wfull flex" id="todoInputForm">
+                <form class="w-full flex" id="todoInputForm">
                     <div class="bg-gray-200 "></div>
                     <input type="text" id="todoTitle" class="m-2 m-4 w-full bg-yellow-100 text-black"
                            placeholder="Title ">
@@ -111,22 +84,27 @@
 
             <div class="w-9/12 justify-center bg-red-100 rounded-lg mx-auto mt-4">
                 <div>
-                    <canvas id="myChart1"></canvas>
+                    <canvas id="myChart" class="w-full h-full"></canvas>
+
                     <!--                <div v-else-if="this.selected === 'C'">-->
                     <!--                    <reactive-example/>-->
                     <!--                </div>-->
 
-                    <div class="text-black border border-black">
-                        <div id="getResult1">
-                            <p>Filtrer par :</p>
-                        </div>
-                        <div id="getResult2" class="bg-red-300">
-                            <p>Filtrer par :</p>
-                        </div>
-                    </div>
 
                 </div>
 
+            </div>
+
+            <div class=" text-black  w-full flex bg-fixed">
+                <div class="flex m-2 p-2 border-2 border-green-700 ">
+                    <div id="getResult1">
+                    </div>
+                </div>
+                <div class="flex m-2 p-2 bg-red-300 border-2 border-red-700">
+                    <div id="getResult2">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis natus obcaecati sed ut voluptates! Aperiam deserunt perferendis rem! At blanditiis corporis deleniti doloremque doloribus molestiae, necessitatibus nesciunt quidem quisquam repellendus?
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -154,11 +132,9 @@
                     <div
                             class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
                     >
-                        <svg
-                                class="fill-current h-4 w-4"
+                        <svg class="fill-current h-4 w-4"
                                 xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 20 20"
-                        >
+                                viewBox="0 0 20 20">
                             <path
                                     d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
                             />
@@ -232,37 +208,30 @@
     </div>
 
 </div>
-<!--<script src="js/bundle.js"></script>-->
 <script src="js/statistique/main.js"></script>
+<script src="js/statistique/mychart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'line',
 
-<!--<script src="js/chart.js">-->
-<!--    function myFunction() {-->
-<!--        document.getElementById("demo").innerHTML = "test";-->
-<!--    }-->
-<!--</script>-->
+        // The data for our dataset
+        data: {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            datasets: [{
+                label: 'My First dataset',
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: [0, 10, 5, 2, 20, 30, 45]
+            }]
+        },
 
-<!--<script type="text/javascript">-->
-<!--    import informationsinformations from '../informations';-->
-
-<!--    async function vieux() {-->
-<!--        // document.getElementById("demo").innerHTML = "Paragraph changed.";-->
-<!--        truc = await informationsinformations.getUser();-->
-<!--        document.getElementById("demo").innerHTML = truc;-->
-<!--    }-->
-<!--</script>-->
-
-<!--<script type="text/javascript">-->
-<!--     import informationsinformations from '../informations';-->
-<!--     async function created() {-->
-<!--         try {-->
-<!--             this.informations = await informationsinformations.getinformations();-->
-<!--         } catch (err) {-->
-<!--             this.informations = err.message;-->
-<!--         }-->
-<!--     }-->
-<!--</script>-->
-
-
+        // Configuration options go here
+        options: {}
+    });
+</script>
 </body>
 
 </html>
