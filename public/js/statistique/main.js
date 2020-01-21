@@ -1,12 +1,13 @@
-async function performGeetRequest() {
-    var resultElement = await document.getElementById('getResult1');
-    resultElement.innerHTML = await '';
-    return await fetch('http://localhost:4000/api/informations')
-        .then(res => {
-            resultElement.innerHTML = '<pre class="bg-red-300">' +  res.status + ' ' + res.statusText + '</pre>' +
-                '<p class="text-xl">Headers:</h5>' + res.json();
-        });
-}
+// async function performGetRequest() {
+//         var resultElement = await document.getElementById('getResult1');
+//         resultElement.innerHTML = await '';
+//         fetch(`http://localhost:4000/api/informations`)
+//             .then(response => response.json())
+//             .then(json => {
+//                 resultElement.innerHTML = '<pre class="bg-red-300">' +  json.status + ' ' + json.statusText + '</pre>' +
+//                     '<p class="text-xl">Headers:</h5>' + json;
+//             });
+// }
 async function performGetRequest()
 {
     var resultElement = await document.getElementById('getResult1');
@@ -14,11 +15,36 @@ async function performGetRequest()
     let response = await fetch(`http://localhost:4000/api/informations`);
     let data = await response.json()
     resultElement.innerHTML = '<pre class="bg-red-300">' +  response.status + ' ' + response.statusText + '</pre>' +
-        '<p class="text-xl">Headers:</h5>' + data.json();
+        '<p class="text-xl">Headers:</p></h5>'+'<p class="font-thin">' + data + '<p>' +
+        '<pre>'+ JSON.stringify(data, null, '\t') + '</pre>' ;
 }
 
-performGetRequest('yourUsernameHere')
-    .then(data => console.log(data));
+
+
+
+/*
+
+fetch('http://localhost:4000/api/informations')
+    .then((response) => {
+        // return response.json();
+        return '<p class="text-2xl">Résultat:</p>' +
+            '<p class="text-xl">Status:</p>'+
+            '<pre class="bg-red-300">' + response.status + '' + response.statusText + '</pre>' +
+            '<h5>Headers:</h5>' + '<pre>'+ JSON.stringify(response.headers, null, '\t') + '</pre>' +
+            '<h5>Data:</h5>' + response.json() +'<pre>'+ JSON.stringify(response.data, null, '\t') + '</pre>';
+    })
+    .then((myJson) => {
+        resultElement.innerHTML = myJson;
+    });
+
+*/
+
+
+
+
+
+
+
 
 
 // async function avecAsync() {
