@@ -1,4 +1,3 @@
-
 async function performGetRequest()
 {
     var resultElement = await document.getElementById('bob');
@@ -6,7 +5,6 @@ async function performGetRequest()
 
     let response = await fetch(`http://localhost:4000/api/informations`);
     let data = await response.json()
-
     resultElement.innerHTML = '<div class="bg-red-300 flex">' +'<p class="">' +"Status -> " +'<p>' +
         response.status + ' ' + response.statusText + '</div>' +
         '<p class="text-xl">Content:</p>'+'<p class="">' + '<p>' +
