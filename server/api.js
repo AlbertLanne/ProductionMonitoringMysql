@@ -8,7 +8,35 @@ router.get('/', async (req, res) => {
     // informations  prend l'array vous pouvez faire un test avec un array statique comme ci dessous en commentaire
 
     // const informations = await loadProductsCollection();
-    informations = [{"salesid":1,"quantity":11,"date":"2020-01-31T23:00:00.000Z"},{"salesid":2,"quantity":3,"date":"2018-12-31T23:00:00.000Z"},{"salesid":7,"quantity":9,"date":"2018-08-31T22:00:00.000Z"},{"salesid":7,"quantity":9,"date":"2018-08-31T22:00:00.000Z"},{"salesid":7,"quantity":9,"date":"2018-08-31T22:00:00.000Z"},{"salesid":7,"quantity":9,"date":"2018-08-31T22:00:00.000Z"},{"salesid":7,"quantity":9,"date":"2018-08-31T22:00:00.000Z"},{"salesid":7,"quantity":9,"date":"2018-08-31T22:00:00.000Z"},{"salesid":7,"quantity":9,"date":"2018-08-31T22:00:00.000Z"},{"salesid":7,"quantity":9,"date":"2018-08-31T22:00:00.000Z"},{"salesid":7,"quantity":9,"date":"2018-08-31T22:00:00.000Z"},{"salesid":7,"quantity":9,"date":"2018-08-31T22:00:00.000Z"}]
+    informations = [{
+        "id": 1,
+        "first_name": "Jeanette",
+        "last_name": "Penddreth",
+        "email": "jpenddreth0@census.gov",
+        "gender": "Female",
+        "ip_address": "26.58.193.2"
+    }, {
+        "id": 2,
+        "first_name": "Giavani",
+        "last_name": "Frediani",
+        "email": "gfrediani1@senate.gov",
+        "gender": "Male",
+        "ip_address": "229.179.4.212"
+    }, {
+        "id": 3,
+        "first_name": "Noell",
+        "last_name": "Bea",
+        "email": "nbea2@imageshack.us",
+        "gender": "Female",
+        "ip_address": "180.66.162.255"
+    }, {
+        "id": 4,
+        "first_name": "Willard",
+        "last_name": "Valek",
+        "email": "wvalek3@vk.com",
+        "gender": "Male",
+        "ip_address": "67.76.188.26"
+    }];
     // const informations = await loadProductsCollection();
     res.send(await informations);
 });

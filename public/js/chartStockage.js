@@ -49,6 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // });
 
 
+    performGetRequest();
 
 
     var graphique = new Chart(ctx.getContext('2d'), {
@@ -59,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 data: donnee
             }],
         },
-    })
+    });
 
 
 
@@ -113,7 +114,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
      // onHide();
-    performGetRequest();
 });
 
 
