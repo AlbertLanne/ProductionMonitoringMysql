@@ -1,15 +1,3 @@
-async function performGetRequest()
-{
-    var resultElement = await document.getElementById('bob');
-    resultElement.innerHTML =  '';
-
-    let response = await fetch(`http://localhost:4000/api/informations`);
-    let data = await response.json()
-    resultElement.innerHTML = '<div class="bg-red-300 flex">' +'<p class="">' +"Status -> " +'<p>' +
-        response.status + ' ' + response.statusText + '</div>' +
-        '<p class="text-xl">Content:</p>'+'<p class="">' + '<p>' +
-        '<pre>'+ JSON.stringify(data, null, '\t') + '</pre>';
-}
 
 // requestAnimeAwait();
 
@@ -58,4 +46,3 @@ function performGetRequest2() {
 performGetRequest2();
  */
 
-performGetRequest();

@@ -1,6 +1,40 @@
+
 document.addEventListener('DOMContentLoaded', function() {
 
     var ctx=document.getElementById('myChart');
+
+var charlie = [];
+    var testlol = [];
+
+    function ajaxGet(url, callback) {
+        var req = new XMLHttpRequest();
+        req.open("GET", url);
+        req.addEventListener("load", function () {
+            if (req.status >= 200 && req.status < 400) {
+                // Appelle la fonction callback en lui passant la réponse de la requête
+                callback(req.responseText);
+            } else {
+                console.error(req.status + " " + req.statusText + " " + url);
+            }
+        });
+        req.addEventListener("error", function () {
+            console.error("Erreur réseau avec l'URL " + url);
+        });
+        req.send(null);
+    }
+
+    ajaxGet("http://localhost:4000/api/informations",function(reponse){
+         charlie =  console.log(reponse);
+        console.log(JSON.parse(charlie));
+    });
+
+testlol.jsonarray.map(function(e){
+    console.log(e.name);
+});
+
+
+
+getFullName(charlie);
 
 
         var graphique = new Chart(ctx.getContext('2d'), {
@@ -72,11 +106,7 @@ function getRandomInt() {
     }
 
 
-var chaussure;
-$.getJSON("http://localhost:8080/public/daily-sales-data",function(json){
-    chaussure = json;
-});
-console.log(chaussure);
+
 
      onHide();
 });
