@@ -1,23 +1,14 @@
+// const xlabels = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai'];
+const xlabels = [];
+const ytemps = [];
 
-let test;
+chartIt();
+
+let test = 20;
 
 function getRandomInt() {
     return Math.floor(Math.random() * (50 - 5 + 1)) + 5
 }
- function putdata() {
-    let response =  fetch(`http://localhost:4000/api/informations`);
-    // let data = await response.json();
-    // resultElement.innerHTML = JSON.stringify(data, null, '\t') ;
-    // let truc = JSON.stringify(data, null, '\t');
-
-     let clone = JSON.parse(JSON.stringify(this.response));
-     clone[0].data = data;
-     this.barChartData = clone;
-     console.log(clone);
-
-
- }
-
 
 async function performGetRequest() {
     var resultElement = await document.getElementById('getResult1');
@@ -41,69 +32,50 @@ async function performGetRequest1() {
     test = Object.values(data[1]);
     let digit = Object.values(data[1])[0];
     resultElement.innerHTML = test + 'Le n°0 de lalgo est ' + digit;
-    // resultElement.innerHTML = JSON.stringify(data[1], null, '\t') + ' '+
-    //     JSON.stringify(test, null, '\t');
 }
 
-
-document.addEventListener('DOMContentLoaded', function () {
-    var ctx = document.getElementById('myChart');
-
-    var graphique = new Chart(ctx.getContext('2d'), {
+// var resultElement = await document.getElementById('getResult2');
+// resultElement.innerHTML = '';
+//
+// let response = await fetch(`http://localhost:4000/api/informations`);
+// let data = await response.json();
+// test = Object.values(data[1]);
+// let digit = Object.values(data[1])[0];
+// resultElement.innerHTML = test + 'Le n°0 de lalgo est ' + digit;
+async function chartIt() {
+    await getData();
+    const ctx = document.getElementById('myChart');
+    const graphique = new Chart(ctx.getContext('2d'), {
         type: 'line',
         data: {
-            labels: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai'],
+            labels: xlabels,
             datasets: [{
-                label: 'Data useless',
+                label: 'Value of filter',
                 backgroundColor: "rgba(192,0,15,0.4)",
                 borderColor: "rgb(192,140,148)",
                 borderCapStyle: 'butt',
                 fill: false,
-                data: [getRandomInt(), getRandomInt(), getRandomInt(), getRandomInt(), getRandomInt()]
+                data: ytemps
             }],
         },
     })
+}
 
+async function getData() {
+    let response = await fetch(`http://localhost:4000/api/informations`);
+    let data = await response.text();
+    console.log( data);
+    const table = data.split('\n').slice(1);
+    table.forEach(row => {
+        const columns = row.split(',');
+        const year = colums[0];
+        xlabels.push(year);
+        const temp = columns[1];
+        ytemps.push(temp);
+        console.log(year, temp);
 
-    document.getElementById("SelectBox").addEventListener("change", swapGraph);
-    document.getElementById("SelectBox").addEventListener("change", onHide);
-
-    function onHide() {
-        if (document.getElementById("SelectBox").value == "default") {
-            document.getElementById("myChart").style.visibility = 'hidden';
-        } else document.getElementById("myChart").style.visibility = 'visible';
-
-    }
-
-    function swapGraph() {
-        if (document.getElementById("SelectBox").value == "blindax") {
-            graphique.data.datasets[0].data[0] = [60];
-            graphique.data.datasets[0].data[1] = [60];
-            graphique.data.datasets[0].data[2] = [60];
-            graphique.data.datasets[0].data[3] = [60];
-            graphique.data.datasets[0].data[4] = [60];
-            graphique.data.datasets[0].data[5] = [60];
-            graphique.data.datasets[0].data[6] = [60];
-
-        } else {
-            graphique.data.datasets[0].data[0] = [40];
-            graphique.data.datasets[0].data[1] = [40];
-            graphique.data.datasets[0].data[2] = [60];
-            graphique.data.datasets[0].data[3] = [60];
-            graphique.data.datasets[0].data[4] = [60];
-            graphique.data.datasets[0].data[5] = [60];
-            graphique.data.datasets[0].data[6] = [60];
-        }
-
-
-        // graphique.config.data.labels =["Test","Charlie"];
-        graphique.update();
-
-    }
-
-
-    onHide();
-});
+    });
+}
 
 
 
