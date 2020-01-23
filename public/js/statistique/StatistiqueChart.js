@@ -1,6 +1,4 @@
 // const xlabels = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai'];
-const xlabels = [];
-const ytemps = [];
 
 chartIt();
 
@@ -43,38 +41,46 @@ async function performGetRequest1() {
 // let digit = Object.values(data[1])[0];
 // resultElement.innerHTML = test + 'Le n°0 de lalgo est ' + digit;
 async function chartIt() {
-    await getData();
+    const data = await getData();
     const ctx = document.getElementById('myChart');
     const graphique = new Chart(ctx.getContext('2d'), {
         type: 'line',
         data: {
-            labels: xlabels,
+            labels: data.xs,
             datasets: [{
-                label: 'Value of filter',
+                label: 'nb de filtre',
                 backgroundColor: "rgba(192,0,15,0.4)",
                 borderColor: "rgb(192,140,148)",
                 borderCapStyle: 'butt',
                 fill: false,
-                data: ytemps
+                data: data.xy
             }],
         },
     })
 }
 
 async function getData() {
+
+    const xs = [];
+    const xy = [];
+
     let response = await fetch(`http://localhost:4000/api/informations`);
     let data = await response.text();
-    console.log( data);
+
     const table = data.split('\n').slice(1);
+
     table.forEach(row => {
         const columns = row.split(',');
-        const year = colums[0];
-        xlabels.push(year);
+        const UpdateDuLabel = 'ici lupdate';
+        const year = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai'];
         const temp = columns[1];
-        ytemps.push(temp);
-        console.log(year, temp);
+
+        xs.push(year);
+        ys.push(digit);
+        vOfFileter.push(UpdateDuLabel);
 
     });
+    return {xs,xy};
 }
 
 
