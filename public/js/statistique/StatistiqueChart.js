@@ -3,31 +3,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     var ctx=document.getElementById('myChart');
-
-
     async function performGetRequest() {
         let response = await fetch(`http://localhost:4000/api/informations`);
         let data = await response.json();
-        let donnee = data.map(function(item){
+        let ValueX = data.map(function(item){
             return item.id;
         });
-        let labels = data.map(function(item){
+        let ValueY = data.map(function(item){
             return item.first_name;
         });
 
-        console.log(donnee);
-        console.log(labels);
+        console.log(ValueX);
+        console.log(ValueY);
         var graphique = new Chart(ctx.getContext('2d'), {
             type: 'line',
             data: {
-                labels: labels,
+                ValueY: ValueY,
                 datasets: [{
                     label: 'Test',
                     backgroundColor: "rgba(192,0,15,0.4)",
                     borderColor: "rgb(192,140,148)",
                     borderCapStyle: 'butt',
                     fill: false,
-                    data: donnee
+                    data: ValueX
                 }],
             },
         });
