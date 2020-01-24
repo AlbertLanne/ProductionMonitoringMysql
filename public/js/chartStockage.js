@@ -9,10 +9,10 @@ document.addEventListener('DOMContentLoaded', function() {
         let response = await fetch(`http://localhost:4000/api/informations`);
         let data = await response.json();
         let donnee = data.map(function(item){
-            return item.id;
+            return item.salesid;
         });
         let labels = data.map(function(item){
-            return item.first_name;
+            return item.date;
         });
 
         console.log(donnee);
