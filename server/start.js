@@ -10,11 +10,13 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-const informations = require('./api');
+const fulldata = require('./api');
+const filtres = require('./api');
 
 
 // Le lien avec le serveur d'api   ==>  http://localhost:4000/api/informations
-app.use('/api/informations', informations);
+app.use('/api/', fulldata);
+app.use('/api/', filtres);
 
 const port = process.env.PORT || 4000;
 
