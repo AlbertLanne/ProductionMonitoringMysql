@@ -7,10 +7,10 @@ document.addEventListener('DOMContentLoaded', function() {
         let response = await fetch(`http://localhost:4000/api/informations`);
         let data = await response.json();
         let ValueX = data.map(function(item){
-            return item.id;
+            return item.quantity;
         });
         let ValueY = data.map(function(item){
-            return item.first_name;
+            return item.Janvier;
         });
 
         console.log(ValueX);
