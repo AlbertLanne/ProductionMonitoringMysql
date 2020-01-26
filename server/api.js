@@ -10,6 +10,7 @@ async function FullDataFromDB() {
     var con = mysql.createConnection('mysql://uisomclwcgug5cj5:58Eg8vzqeQ4Rx0zxjhFw@bfgvnm6ajhbocjxbjmly-mysql.services.clever-cloud.com:3306/bfgvnm6ajhbocjxbjmly');
     connection = con.connect(function (err) {
         if (err) throw err;
+        console.log(" -- Connection réeussit! -- ");
         //Select all customers and return the result object:
         con.query("SELECT * FROM `producttable`", function (err, result, fields) {
             if (err) throw err;
@@ -53,6 +54,9 @@ router.get('/fulldata', async (req, res) => {
     //     "ip_address": "67.76.188.26"
     // }];
     const fulldata = await FullDataFromDB();
+
+    console.log(fulldata);
+
     res.send(await fulldata);
 });
 
@@ -75,7 +79,6 @@ router.get('/filtres', async (req, res) => {
     // informations  prend l'array vous pouvez faire un test avec un array statique comme ci dessous en commentaire
 
     const filtresData = await filtres();
-    console.log(filtresData);
     // informations = [{
     //     "id": 40,
     //     "first_name": "Jeanette",

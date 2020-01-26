@@ -9,8 +9,40 @@
 </head>
 
 <body>
+
+<nav class="align-baseline items-center justify-between bg-white flex">
+
+    <div class="sm:px-6 sm:mx-0 mx-auto flex">
+        <a href="/" class="-pt-8 sm:h-26 h-24 w-auto justify-start mt-2 flex mr-8">
+            <img src="https://i.imgur.com/Oh1nxQu.png" class="-pt-8 py-18 fill-current stroke-current sm:h-20 sm:w-26 h-24 w-auto">
+        </a>
+        <div class="text-xl ">
+            <div class="border-l border-gray-800 pl-2">
+            <p id="dateheure"></p>
+            <p class="text-xl italic"> Status Connection Serveur</p>
+            </div>
+            <div class="items-stretch border border-gray-800 w-full align-baseline flex rounded-b-lg">
+                <div class="font-mono w-5/6 text-center justify-center items-center  flex text-lg text-green-800">
+                    Connection ok
+                </div>
+                <div class="w-1/6 justify-center  justify-center border-l border-gray-800 ">
+                    <svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M192 512a320 320 0 10640 0 320 320 0 10-640 0z" fill="#1afa29"/></svg>
+                </div>
+                <!--                <div class="w-1/6 justify-center  justify-center border-l border-gray-800">-->
+                <!--                    <svg class="h-10 flex mx-auto" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" >-->
+                <!--                    <path d="M192 512a320 320 0 10640 0 320 320 0 10-640 0z" fill="#d81e06"/></svg>-->
+                <!--                </div>-->
+            </div>
+        </div>
+    </div>
+    <div class=" align-baseline flex justify-end  text-copy-primary sm:mx-0 mx-auto ">
+        <a href="../statistique.html" class="text-center no-underline  border-b-4 border-black mx-3 py-2 m-2 sm:inline-block hover:bg-blue-300  hover:border-blue-600">Statistique</a>
+        <a href="/stockage.html" class="text-center no-underline  border-b-4 border-black mx-3 py-2 m-2 sm:inline-block hover:bg-blue-300  hover:border-blue-600" >stockage</a>
+        <a href="/connexion.html" class="text-center no-underline  border-b-4 border-black mx-3 py-2 m-2 sm:inline-block hover:bg-blue-300  hover:border-blue-600" >Connexion</a>
+    </div>
+</nav>
 <div id="navbar"></div>
-</div>
 
 <div class="bg-purple-800 min-h-screen ">
     <div class="flex">
@@ -32,6 +64,17 @@
     </div>
 </div>
 </div>
+
+<script>
+    function getDateTime() {
+        var date = new Date().toLocaleString(); // dd:mm:y
+        document.getElementById("dateheure").innerHTML = date;
+        setTimeout(getDateTime, 1000); // mise à jour du contenu "getDateTime" toutes les secondes
+    }
+
+    getDateTime();
+
+</script>
 
 <script src="js/chart.js" defer></script>
 <script src="js/navbar.js"></script>
