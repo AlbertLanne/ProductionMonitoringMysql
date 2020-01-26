@@ -10,8 +10,13 @@
 
 <body>
 
-<nav class="align-baseline items-center justify-between bg-white flex">
+<!--=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=
+        Pour mettre à jour simplement la navbarre, la version de la page index.html et un double (l'original) !
+                             Donc ne supprimez pas pas la version ici
+=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=--->
 
+<!--<div id="navbar"></div>-->
+<nav class="align-baseline items-center justify-between bg-gray-200 border border-black flex">
     <div class="sm:px-6 sm:mx-0 mx-auto flex">
         <a href="/" class="-pt-8 sm:h-26 h-24 w-auto justify-start mt-2 flex mr-8">
             <img src="https://i.imgur.com/Oh1nxQu.png" class="-pt-8 py-18 fill-current stroke-current sm:h-20 sm:w-26 h-24 w-auto">
@@ -19,8 +24,7 @@
         <div class="text-xl ">
             <div class="border-l border-gray-800 pl-2">
             <p id="dateheure"></p>
-            <p class="text-xl italic"> Status Connection Serveur</p>
-            </div>
+            <p class="text-xl italic"> Status Connection Serveur</p></div>
             <div class="items-stretch border border-gray-800 w-full align-baseline flex rounded-b-lg">
                 <div class="font-mono w-5/6 text-center justify-center items-center  flex text-lg text-green-800">
                     Connection ok
@@ -42,17 +46,37 @@
         <a href="/connexion.html" class="text-center no-underline  border-b-4 border-black mx-3 py-2 m-2 sm:inline-block hover:bg-blue-300  hover:border-blue-600" >Connexion</a>
     </div>
 </nav>
-<div id="navbar"></div>
+
+
 
 <div class="bg-purple-800 min-h-screen ">
     <div class="flex">
-        <p class="px-6 text-4xl text-center text-white border rounded-lg mx-auto my-4">Prototype de simple fichier HTML avec TailwindCSS
+        <p class="px-6 text-4xl text-center text-white  mx-auto my-4">
             <br> INDEX.HTML </p>
 
     </div>
-    <div class="flex justify-center ">
-        <p class="w-5/6 p-2 px-6  text-justify text-lg text-center text-white border border-red-500 rounded-lg mx-auto my-4">
-            Fusce pharetra convallis urna. Nullam quis ante. Curabitur blandit mollis lacus. Sed in libero ut nibh placerat accumsan. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Nullam cursus lacinia erat. Quisque id mi. Aenean vulputate eleifend tellus. Quisque ut nisi. Vivamus elementum semper nisi. Nullam accumsan lorem in dui. Etiam vitae tortor. Sed lectus. Pellentesque auctor neque nec urna. Fusce risus nisl, viverra et, tempor et, pretium in, sapien.</p>
+    <div class="m-2 mx-4 font-light justify-center items-stretch ">
+
+        <div class="w-full flex items-stretch justify-center">
+            <div class="w-1/2 items-stretch">
+                <canvas id="myLineChart"></canvas>
+            </div>
+            <div class="w-1/2 items-stretch">
+                <canvas id="myLineGreen"></canvas>
+
+            </div>
+        </div>
+
+        <div class="w-full flex  items-stretch">
+            <div class="w-1/2 items-stretch">
+                <canvas id="myLineBlue"></canvas>
+            </div>
+            <div class="w-1/2 items-stretch rounded-lg">
+                <canvas id="myLinePurple"></canvas>
+            </div>
+        </div>
+
+
     </div>
     <div class=" min-h-screen w-full h-full  bg-purple-800 text-white text-xl font-light">
         <div class="flex text-center text-3xl w-full justify-center py-8 border-b border-white">
@@ -75,8 +99,8 @@
     getDateTime();
 
 </script>
-
-<script src="js/chart.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script src="js/statistique/protoChart.js"></script>
 <script src="js/navbar.js"></script>
 </body>
 
