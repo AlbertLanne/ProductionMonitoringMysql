@@ -1,33 +1,17 @@
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .gauche, .centre, .droite{
     padding:1px 0;
 
 }
 
 .gauche {
-    width: 960px;
+    width: 558px;
     height: auto;
     float: left;
-    background-color: pink;
+    background-color: lightslategrey;
     margin: 0;
+    font-family: Georgia;
 }
 
 .centre {
@@ -40,8 +24,16 @@
     width: auto;
     height: auto;
     float: right;
-    background-color: white;
 
+}
+
+.boutonspanel{
+    display:block;
+    margin:auto;
+    background-color:dimgrey;
+    border-radius:1px;
+    width:100px;
+    border: 2px solid darkred;
 
 }
 
@@ -71,4 +63,11 @@ footer {
 #mychart2{
     position:absolute;
 
+}
+
+.textecenterpanneaugauche{
+    color: black;
+    font-family:Georgia;
+    text-align:center;
+    background-color:slategrey;
 }

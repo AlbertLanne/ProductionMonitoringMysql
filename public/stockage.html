@@ -6,7 +6,7 @@
     <title>Interfiltre Gestion des Grillages</title>
 
     <!-- CSS -->
-    <link href="https://unpkg.com/tailwindcss@%5E1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link href="css/tailwind.css" rel="stylesheet">
     <link href="css/stockage.css" rel="stylesheet">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
@@ -15,8 +15,17 @@
 <div id="navbar"></div>
 
 <div class="gauche">
-    <p></p>
-    <button onclick="performGetRequest()">getrequete</button>
+    <p class="textecenterpanneaugauche">CONTROL PANEL</p>
+    <select name="Filtragegraph" class="droite" id="SelectBox">
+        <option value="default" >Choisissez un type de graphique</option>
+        <option value="metal">Grillage en metal</option>
+        <option value="blindax">Grillage blindax</option>
+    </select>
+    <div id="getResult1">
+        <p>Filtrer par :</p>
+        <p>Dater les graphiques par :   </p><button class="boutonspanel">mois</button><button class="boutonspanel">année</button><button class="boutonspanel">jour</button>
+        <p>Mettre à jour le graphique :</p> <button class="boutonspanel">update</button>
+    </div>
 
 </div>
 <div class="centre">
@@ -25,14 +34,6 @@
 
 <div class="droite">
 
-    <select name="Filtragegraph" class="droite" id="SelectBox">
-        <option value="default" >Choisissez un type de graphique</option>
-        <option value="metal">Grillage en metal</option>
-        <option value="blindax">Grillage blindax</option>
-    </select>
-    <div id="getResult1">
-        <p>Filtrer par :</p>
-    </div>
     <section>
         <canvas id="myChart" width="1280px" height="800px"></canvas>
     </section>
@@ -41,7 +42,7 @@
 
     <script src="js/chartStockage.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="js/chartJS.js"></script>
     <script src="js/navbar.js"></script>
     <script src="js/statistique/main.js"></script>
 
