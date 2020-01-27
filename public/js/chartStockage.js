@@ -6,13 +6,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     async function performGetRequest() {
+
+        var testicule = [{"jour":"Lundi","vente":"5"},{"jour":"Mardi","vente":"1"},{"jour":"Mercredi","vente":"10"},{"jour":"Jeudi","vente":"7"},{"jour":"Vendredi","vente":"3"},{"jour":"Samedi","vente":"12"},{"jour":"Dimanche","vente":"2"}]
+
+
+
         let response = await fetch(`http://localhost:4000/api/fulldata`);
         let data = await response.json();
-        let donnee = data.map(function(item){
-            return item.salesid;
+        let donnee = testicule.map(function(item){
+            return item.vente;
         });
-        let labels = data.map(function(item){
-            return item.date;
+        let labels = testicule.map(function(item){
+            return item.jour;
         });
 
         console.log(donnee);
