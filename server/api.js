@@ -7,14 +7,17 @@ var GlobalVarFiltre = [];
 
 
 async function FullDataFromDB() {
+
     var con = mysql.createConnection('mysql://uisomclwcgug5cj5:58Eg8vzqeQ4Rx0zxjhFw@bfgvnm6ajhbocjxbjmly-mysql.services.clever-cloud.com:3306/bfgvnm6ajhbocjxbjmly');
     connection = con.connect(function (err) {
         if (err) throw err;
+        else
         console.log(" -- Connection réeussit! -- ");
         //Select all customers and return the result object:
         con.query("SELECT * FROM `producttable`", function (err, result, fields) {
             if (err) throw err;
             GlobalVarData = result;
+            con.destroy();
         });
     });
     return GlobalVarData;

@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     async function performGetRequest() {
-        let response = await fetch(`http://localhost:4000/api/informations`);
+        let response = await fetch(`http://localhost:4000/api/fulldata`);
         let data = await response.json();
         let donnee = data.map(function(item){
             return item.salesid;
