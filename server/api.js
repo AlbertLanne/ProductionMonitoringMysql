@@ -2,61 +2,37 @@ const express = require('express');
 var mysql = require('mysql');
 const router = express.Router();
 
-var GlobalVarData = [];
-var GlobalVarFiltre = [];
+
+var output = []
 
 
-async function FullDataFromDB() {
+
+
+
+async function GetDataFromDB(requete) { //Cette fonction est désormais générale à toutes les requêtes.
+                                        //Elle prends en paramètre la requête et renvoie son resultat
 
     var con = mysql.createConnection('mysql://uisomclwcgug5cj5:58Eg8vzqeQ4Rx0zxjhFw@bfgvnm6ajhbocjxbjmly-mysql.services.clever-cloud.com:3306/bfgvnm6ajhbocjxbjmly');
     connection = con.connect(function (err) {
         if (err) throw err;
         else
-        console.log(" -- Connection réeussit! -- ");
-        //Select all customers and return the result object:
-        con.query("SELECT * FROM `producttable`", function (err, result, fields) {
+            console.log(" -- Connection réeussie! -- ");
+        con.query(requete, function (err, result, fields) {
             if (err) throw err;
-            GlobalVarData = result;
+            output = result;
             con.destroy();
         });
     });
-    return GlobalVarData;
+    return output;
 }
+
+
+// Ci-dessous les API. Pour être peuplées, elles utilisent GetDataFromDB prenant en paramètre la requête SQL.
+
 
 router.get('/fulldata', async (req, res) => {
 
-    // fulldata  prend l'array vous pouvez faire un test avec un array statique comme ci dessous en commentaire
-
-    // fulldata = [{
-    //     "id": 40,
-    //     "first_name": "Jeanette",
-    //     "last_name": "Penddreth",
-    //     "email": "jpenddreth0@census.gov",
-    //     "gender": "Female",
-    //     "ip_address": "26.58.193.2"
-    // }, {
-    //     "id": 2,
-    //     "first_name": "Giavani",
-    //     "last_name": "Frediani",
-    //     "email": "gfrediani1@senate.gov",
-    //     "gender": "Male",
-    //     "ip_address": "229.179.4.212"
-    // }, {
-    //     "id": 3,
-    //     "first_name": "Noell",
-    //     "last_name": "Bea",
-    //     "email": "nbea2@imageshack.us",
-    //     "gender": "Female",
-    //     "ip_address": "180.66.162.255"
-    // }, {
-    //     "id": 4,
-    //     "first_name": "Willard",
-    //     "last_name": "Valek",
-    //     "email": "wvalek3@vk.com",
-    //     "gender": "Male",
-    //     "ip_address": "67.76.188.26"
-    // }];
-    const fulldata = await FullDataFromDB();
+    const fulldata = await GetDataFromDB("SELECT * FROM `producttable`");
 
     console.log(fulldata);
 
@@ -64,54 +40,11 @@ router.get('/fulldata', async (req, res) => {
 });
 
 
-async function filtres() {
-    var con = mysql.createConnection('mysql://uisomclwcgug5cj5:58Eg8vzqeQ4Rx0zxjhFw@bfgvnm6ajhbocjxbjmly-mysql.services.clever-cloud.com:3306/bfgvnm6ajhbocjxbjmly');
-    connection = con.connect(function (err) {
-        if (err) throw err;
-        //Select all customers and return the result object:
-        con.query("SELECT * FROM `producttable` WHERE year = '2018'", function (err, result, fields) {
-            if (err) throw err;
-            GlobalVarFiltre = result;
-        });
-    });
-    return GlobalVarFiltre;
-}
-
 router.get('/filtres', async (req, res) => {
 
-    // informations  prend l'array vous pouvez faire un test avec un array statique comme ci dessous en commentaire
 
-    const filtresData = await filtres();
-    // informations = [{
-    //     "id": 40,
-    //     "first_name": "Jeanette",
-    //     "last_name": "Penddreth",
-    //     "email": "jpenddreth0@census.gov",
-    //     "gender": "Female",
-    //     "ip_address": "26.58.193.2"
-    // }, {
-    //     "id": 2,
-    //     "first_name": "Giavani",
-    //     "last_name": "Frediani",
-    //     "email": "gfrediani1@senate.gov",
-    //     "gender": "Male",
-    //     "ip_address": "229.179.4.212"
-    // }, {
-    //     "id": 3,
-    //     "first_name": "Noell",
-    //     "last_name": "Bea",
-    //     "email": "nbea2@imageshack.us",
-    //     "gender": "Female",
-    //     "ip_address": "180.66.162.255"
-    // }, {
-    //     "id": 4,
-    //     "first_name": "Willard",
-    //     "last_name": "Valek",
-    //     "email": "wvalek3@vk.com",
-    //     "gender": "Male",
-    //     "ip_address": "67.76.188.26"
-    // }];
-    // const informations = await FullDataFromDB();
+    const filtresData = await GetDataFromDB("SELECT * FROM `producttable` WHERE year = '2018'");
+
     res.send(await filtresData);
 });
 
