@@ -1,6 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const nodemailer = require("nodemailer");
+
 
 // API SERVER HTTP AXIOS HERE
 const app = express();
@@ -21,3 +23,7 @@ app.use('/api/', filtres);
 const port = process.env.PORT || 4000;
 
 app.listen(port, () => console.log(`L'api fonctionne sur le port ${port}`));
+
+
+
+

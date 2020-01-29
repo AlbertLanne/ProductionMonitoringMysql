@@ -1,7 +1,7 @@
 const express = require('express');
 var mysql = require('mysql');
 const router = express.Router();
-
+const nodemailer = require('nodemailer');
 
 var output = []
 
@@ -47,6 +47,47 @@ router.get('/filtres', async (req, res) => {
 
     res.send(await filtresData);
 });
+
+
+router.post('/sendMail',function(req,res){
+    let transporter = nodemailer.createTransport({
+        host: "smtp.gmail.com",
+        port: 25,
+        secure: false, // true for 465, false for other ports
+        auth: {
+            user: "dadaslashfaq@gmail.com", // generated ethereal user
+            pass: "ranpmdxbrxtkitjm" // generated ethereal password
+        },
+        tls:{
+            rejectUnauthorized:false,
+        }
+    });
+
+    let mailOptions = {
+        from: '"Aredi" <dadaslashfaq@gmail.com>', // sender address
+        to: "arediyt@gmail.com", // list of receivers
+        subject: "Notification intefiltre", // Subject line
+        text: "Le stock part en couille", // plain text body
+        html: "<b>Auto destruction dans trois deux un</b>" // html body
+    };
+
+    // send mail with defined transport object
+    transporter.sendMail(mailOptions,(error,info)=>{
+        if(error){
+            return console.log(error);
+        }
+        console.log('Le message a ete correctement envoye');
+        res.render('index');
+
+
+    });
+
+    console.log('testAPI');
+
+
+});
+
+
 
 
 

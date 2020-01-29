@@ -1,5 +1,5 @@
 var express = require('express');
-// const nodemailer = require('nodemailer');
+const nodemailer = require("nodemailer");
 
 var app = express();
 var path = require('path');
@@ -23,24 +23,5 @@ app.post('/followers',function(req,res){
 
 
 });
-
-
-
-
-// async function makeRequest() {
-//
-//   let res = await axios.head('http://webcode.me');
-//
-//   console.log(`Status: ${res.status}`)
-//   console.log(`Server: ${res.headers.server}`)
-//   console.log(`Date: ${res.headers.date}`)
-//   return "test";
-// }
-//
-// makeRequest();
-
-
-
-
 
 
