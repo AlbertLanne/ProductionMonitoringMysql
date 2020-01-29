@@ -1,32 +1,68 @@
-
 document.addEventListener('DOMContentLoaded', function() {
 
 
+
+    // Cette array vas être une fonction qui vas changer en fonction de la requete SQL
+    var testicule = [{"jour":"Lundi","vente":"5"},{"jour":"Mardi","vente":"1"},{"jour":"Mercredi","vente":"10"},{"jour":"Jeudi","vente":"7"},{"jour":"Vendredi","vente":"3"},{"jour":"Samedi","vente":"12"},{"jour":"Dimanche","vente":"2"}]
+
+
+    // Cette array vas être une fonction qui vas changer en fonction de la requete SQL
+    async function recupX() {
+        let ValueX = testicule.map(function(item){
+            return item.vente;
+        });
+        return ValueX;
+    }
+
+    async function recupY() {
+        let ValueY = testicule.map(function(item){
+            return item.jour;
+        });
+        return ValueY;
+    }
+
     var ctx=document.getElementById('myChart');
+
+
+    let dataY = testicule.map(function(item){
+        return item.vente;
+    });
+
+    let dataX = testicule.map(function(item){
+        return item.jour;
+    });
+    console.log(dataX);
+    console.log(dataY);
+
+    // dataY = recupY();
+    // dataX = recupX();
+
+    /** Derniere modif, modification de performGetRequest pour avoir 2 params
+     *  ou alors faire passer
+     * @param dataY
+     * @param dataX
+     * @returns {Promise<void>}
+     */
+
+/**
+ *
+ *  function myFunction(Filtre, Mois) {
+        return SELECT FROM "FILTRE' ET "MOIS;
+        }
+        window.myFunction(BoutonFILTREY, boutonTIMEX);    // Will also return 20
+ */
+
     async function performGetRequest() {
-        let response = await fetch(`http://localhost:4000/api/fulldata`);
-        let data = await response.json();
-        let ValueX = data.map(function(item){
-            return item.quantity;
-
-        });
-        let ValueY = data.map(function(item){
-            return item.Janvier;
-        });
-
-        console.log(ValueX);
-        console.log(ValueY);
         var graphique = new Chart(ctx.getContext('2d'), {
             type: 'line',
             data: {
-                ValueY: ValueY,
+                labels: dataY,
                 datasets: [{
                     label: 'Test',
-                    backgroundColor: "rgba(192,0,15,0.4)",
-                    borderColor: "rgb(192,140,148)",
-                    borderCapStyle: 'butt',
+                    data: dataX,
                     fill: false,
-                    data: ValueX
+                    lineTension : 0.2,
+                    borderWidth: 10,
                 }],
             },
         });

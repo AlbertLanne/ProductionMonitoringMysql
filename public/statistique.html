@@ -17,8 +17,8 @@
                 <div class="w-full bg-gray-100 px-4 p-2 rounded-b-lg ">
                     <p class="text-center text-xl my-2"> Choix du type de filtres </p>
 
-                    <input type="radio" name="FPSL" value="z"> FP-SL<br>
-                    <input type="radio" name="PSM" value="a"> PSM - PFPE - PRP3 - FG2P - PRP4 - FG4P -
+                    <input type="radio" name="FPSL" value="z" onclick="performGetRequest()"> FP-SL<br>
+                    <input type="radio" name="PSM" value="a" onclick="performGetRequest1()"> PSM - PFPE - PRP3 - FG2P - PRP4 - FG4P -
                     PKP1<br>
                     <input type="radio" name="3B" value="e"> Recharge 3B<br>
                     <input type="radio" name="VELCRO" value="male"> Manche avec fond et ou velcro<br>
@@ -35,7 +35,7 @@
                 <div class="w-full justify-center content-center bg-gray-100 px-4 p-2 rounded-lg my-6 ">
 
                     <div class="text-center ">
-                        <input type="radio" name="filtre" value="mois">Mois</input>
+                        <input type="radio" name="filtre" value="mois" onclick="TakeMonth()">Mois</input>
                         <input type="radio" class="ml-4" name="annee" value="annee">Année</input>
                         <input type="radio" class="ml-4" name="tannee" value="totalannee">Total année</input>
                         <input type="radio" class="ml-4" name="tmois" value="totalmois">Total mois</input>
