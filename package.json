@@ -5,8 +5,8 @@
   "author": "Alexis, Albert",
   "main": "index.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development nodemon server.js --watch server",
-    "start": "cross-env NODE_ENV=production node server/start.js"
+    "dev": "nodemon server.js --watch server",
+    "start": "node server/start.js"
   },
   "repository": {
     "type": "git",
@@ -27,7 +27,6 @@
     "nodemailer": "^6.4.2"
   },
   "devDependencies": {
-    "cross-env": "^6.0.3",
     "nodemon": "^2.0.2"
   },
   "keywords": []
