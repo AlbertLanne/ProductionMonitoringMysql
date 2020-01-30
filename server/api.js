@@ -19,11 +19,9 @@ async function GetDataFromDB(requete) { //Cette fonction est désormais généra
             console.log(" -- Connection réeussie! -- ");
         con.query(requete, function (err, result, fields) {
             if (err) throw err;
-            output = result;
             con.destroy();
         });
     });
-    return output;
 }
 
 
