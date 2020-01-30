@@ -10,17 +10,31 @@
     <link href="css/stockage.css" rel="stylesheet">
 </head>
 
-<body>
+<>
 <div id="navbar"></div>
 
-<div>
-    <p>Ceci est un test</p>
+<div class="gauche">
+    <p class="textecenterpanneaugauche">Selection commande en cours</p>
+    <br>
+    <select name="selectBC" class="droite" id="SelectBox">
+        <option value="default" >Choisissez une commande enregistrée</option>
+        <option value="">BC20/01/2020</option>
+        <option value="champ1">BC18/01/2020</option>
+    </select>
+    <br>
+    <br>
+    <button class="boutonspanel">Valider</button>
+    <br>
+    <p class="textecenterpanneaugauche">Nouvelle commande :</p>
+    <br>
+    <input class="centre" type="text" name="addBC" placeholder="Nom du fichier CSV (Ex : BC20/01/2020)"/>
+</div>
+<div class="">
+    <p>test</p>
 </div>
 
 
 <script src="js/navbar.js"></script>
-
-
 </body>
 
 </html>
