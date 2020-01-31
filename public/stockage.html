@@ -16,24 +16,26 @@
 <div class="gauche">
     <p class="textecenterpanneaugauche">CONTROL PANEL</p>
     <select name="Filtragegraph" class="droite" id="SelectBox">
-        <option value="default" >Choisissez un type de graphique</option>
+        <option value="default" selected disabled>Choisissez un type de graphique</option>
         <option value="metal">Grillage en metal</option>
         <option value="blindax">Grillage blindax</option>
     </select>
     <div id="getResult1">
         <p>Filtrer par :</p>
-        <p>Dater les graphiques par :   </p><button class="boutonspanel" onclick="addData(graphique,newdata)">add</button><button class="boutonspanel">année</button><button class="boutonspanel" onclick="removeData(graphique)">remove</button>
+        <p class>Dater les graphiques par :   </p><button class="boutonspanel" onclick="bobDylan()">add</button><button class="boutonspanel">année</button><button class="boutonspanel" onclick="removeData(graphique)">remove</button>
         <p>Mettre à jour le graphique :</p> <button class="boutonspanel" onclick="sendMail()">update</button>
     </div>
 
 </div>
 <div class="centre">
-    <img src="https://i.imgur.com/Oh1nxQu.png" class="">
 </div>
 
 <div class="droite">
 
     <section>
+        <button onclick="changeGraphType('line')" class="btn">Linéaire</button>
+        <button onclick="changeGraphType('pie')" class="btn btn-blue">Camembert</button>
+        <button onclick="changeGraphType('bar')" class="btn btn-red">Barres</button>
         <canvas id="myChart" width="1280px" height="800px"></canvas>
     </section>
 </div>

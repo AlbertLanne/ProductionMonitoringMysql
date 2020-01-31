@@ -11,7 +11,10 @@
     float: left;
     background-color: lightslategrey;
     margin: 0;
-    font-family: Georgia;
+    font-family: Georgia, serif;
+    animation-name:slide-in-top;
+    animation-duration:1s;
+
 }
 
 .centre {
@@ -42,9 +45,13 @@
 }
 
 
+
 section{
     width:960px;
     float:right;
+    animation-name:slide-in-top;
+    animation-duration:1s;
+
 }
 
 .textedroite{
@@ -65,9 +72,18 @@ footer {
 
 }
 
+
+#navbar{
+    animation-name:slide-in-top;
+    animation-duration:1s;
+}
+
 .textecenterpanneaugauche{
     color: black;
     font-family:Georgia;
     text-align:center;
     background-color:slategrey;
 }
+
+@-webkit-keyframes slide-in-top{0%{-webkit-transform:translateY(-1000px);transform:translateY(-1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}@keyframes slide-in-top{0%{-webkit-transform:translateY(-1000px);transform:translateY(-1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}
+@-webkit-keyframes slide-in-fwd-tl{0%{-webkit-transform:translateZ(-1400px) translateY(-800px) translateX(-1000px);transform:translateZ(-1400px) translateY(-800px) translateX(-1000px);opacity:0}100%{-webkit-transform:translateZ(0) translateY(0) translateX(0);transform:translateZ(0) translateY(0) translateX(0);opacity:1}}@keyframes slide-in-fwd-tl{0%{-webkit-transform:translateZ(-1400px) translateY(-800px) translateX(-1000px);transform:translateZ(-1400px) translateY(-800px) translateX(-1000px);opacity:0}100%{-webkit-transform:translateZ(0) translateY(0) translateX(0);transform:translateZ(0) translateY(0) translateX(0);opacity:1}}
