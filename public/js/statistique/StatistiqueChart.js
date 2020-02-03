@@ -38,20 +38,33 @@ document.addEventListener('DOMContentLoaded', function() {
     // donnee = data.map(function (item) {
     //     return item.janvier;
     // });
+    dataY = data.map(function (item) {
 
-     dataX = data.map(function (item) {
-         let val = data[1][1];
-         return val.jour;
 
-     });
-    console.log(dataX);
-
-     dataY = data.map(function (item) {
-
-         let val = data[1][0];
-         return val.vente;
+        let val = data[1][0];
+        return val.vente;
     });
     // console.log(dataY);
+     dataX = data.map(function (item) {
+         // let val = data[1][0];
+         // return val.jour;
+/**
+         for (let i = 0; i < 31; i++) {
+             let val = data[1][i];
+             return val.jour;
+         };
+*/
+         for(var i = 0; i < data.length; i++) {
+             let val = data[1][i];
+
+             // for(var j = 0; j < cube.length; j++) {
+             //     display("cube[" + i + "][" + j + "] = " + cube[j]);
+             // }
+     };
+    console.log(dataX);
+
+
+
 
 
         var graphique = new Chart(ctx.getContext('2d'), {
