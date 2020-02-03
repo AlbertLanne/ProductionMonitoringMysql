@@ -15,15 +15,17 @@
 
 <div class="gauche">
     <p class="textecenterpanneaugauche">CONTROL PANEL</p>
-    <select name="Filtragegraph" class="droite" id="SelectBox">
-        <option value="default" selected disabled>Choisissez un type de graphique</option>
-        <option value="metal">Grillage en metal</option>
-        <option value="blindax">Grillage blindax</option>
-    </select>
     <div id="getResult1">
         <p>Filtrer par :</p>
-        <p class>Dater les graphiques par :   </p><button class="boutonspanel" onclick="bobDylan()">add</button><button class="boutonspanel">année</button><button class="boutonspanel" onclick="removeData(graphique)">remove</button>
-        <p>Mettre à jour le graphique :</p> <button class="boutonspanel" onclick="sendMail()">update</button>
+        <input type="radio" name="radAnswer">Grillage en métal</input>
+        <input type="radio" name="radAnswer">Grillage en papier</input>
+        <p>Dater les graphiques par :   </p>        <input type="radio" name="radAnswer">Année</input>
+        <input type="radio" name="radAnswer">Mois</input>
+        <input type="radio" name="radAnswer">Semaine</input>
+        <p>Choisir le type de graphique :</p>
+        <input type="radio" name="radAnswer">Ligne</input>
+        <input type="radio" name="radAnswer">Barre</input>
+        <input type="radio" name="radAnswer">Camembert</input>
     </div>
 
 </div>
@@ -37,6 +39,12 @@
         <button onclick="changeGraphType('pie')" class="btn btn-blue">Camembert</button>
         <button onclick="changeGraphType('bar')" class="btn btn-red">Barres</button>
         <canvas id="myChart" width="1280px" height="800px"></canvas>
+        <canvas id="myChart2" width="1280px" height="800px"></canvas>
+        <canvas id="myChart3" width="1280px" height="800px"></canvas>
+        <canvas id="myChart4" width="1280px" height="800px"></canvas>
+        <canvas id="myChart5" width="1280px" height="800px"></canvas>
+        <canvas id="myChart6" width="1280px" height="800px"></canvas>
+
     </section>
 </div>
 
