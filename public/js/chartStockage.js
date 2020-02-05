@@ -3,8 +3,6 @@ let newdata = [];
 var graphique = [];
 let labels = [];
 let donnee = [];
-var ctx = document.getElementById('myChart');
-var gradctx =  document.getElementById('myChart').getContext("2d");
 
 
 
@@ -16,6 +14,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     async function performGetRequest() {
+        var gradctx =  document.getElementById('myChart').getContext("2d");
+        var ctx = document.getElementById('myChart');
+        var ctx1 = document.getElementById('myChart2');
+        var ctx2 = document.getElementById('myChart3');
+        var ctx3 = document.getElementById('myChart4');
+        var ctx4 = document.getElementById('myChart5');
+        var ctx5= document.getElementById('myChart6');
+
+
         let response = await fetch(`http://localhost:4000/api/fulldata`);
         let data = await response.json();
          donnee = testArray.map(function (item) {
@@ -57,6 +64,8 @@ document.addEventListener('DOMContentLoaded', function() {
 performGetRequest();
 });
 
+
+//Configuration du fetch de l'envoi à l'API sendMail pour envoyer un mail.
 var MyInit = {
     headers:{
         'Accept': 'application/json',
@@ -102,7 +111,10 @@ function removeData(chart) {
 }
 
 function changeGraphType(type){
+    var gradctx =  document.getElementById('myChart').getContext("2d");
+
     let gradient = gradctx.createLinearGradient(0, 0, 0, 600);
+    var ctx = document.getElementById('myChart');
 
     //gradient bar & line
     gradient.addColorStop(0, 'orange');
