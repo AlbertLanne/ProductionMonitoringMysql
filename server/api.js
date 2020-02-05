@@ -29,16 +29,14 @@ async function GetDataFromDB(requete) { //Cette fonction est désormais généra
 // Ci-dessous les API. Pour être peuplées, elles utilisent GetDataFromDB prenant en paramètre la requête SQL.
 
 
+
 router.get('/fulldata', async (req, res) => {
+    // var fulldata = [{"jour":"Lundi","vente":"5", "date":"2018-10-10"},{"jour":"Mardi","vente":"1", "date":"2017-10-01"},
+    //     {"jour":"Mercredi","vente":"10", "date":"2018-01-01"},{"jour":"Jeudi","vente":"7", "date":"2018-01-01"},
+    //     {"jour":"Vendredi","vente":"3", "date":"2018-06-01"},{"jour":"Samedi","vente":"12", "date":"2018-02-08"},
+    //     {"jour":"Dimanche","vente":"2", "date":"2018-03-01"}]
 
-
-
-    var fulldata = [{"jour":"Lundi","vente":"5", "date":"2018-10-10"},{"jour":"Mardi","vente":"1", "date":"2017-10-01"},
-        {"jour":"Mercredi","vente":"10", "date":"2018-01-01"},{"jour":"Jeudi","vente":"7", "date":"2018-01-01"},
-        {"jour":"Vendredi","vente":"3", "date":"2018-06-01"},{"jour":"Samedi","vente":"12", "date":"2018-02-08"},
-        {"jour":"Dimanche","vente":"2", "date":"2018-03-01"}]
-
-    // const fulldata = await GetDataFromDB("SELECT * FROM `producttable`");
+    const fulldata = await GetDataFromDB("SELECT * FROM `producttable`");
     console.log(fulldata);
     res.send(await fulldata);
 });

@@ -7,6 +7,17 @@ const nodemailer = require("nodemailer");
 // API SERVER HTTP AXIOS HERE
 const app = express();
 
+app.get('/api',(req,res) => {
+    res.send('Rien ici, verifiez les routes dispo.')
+})
+app.get('/',(req,res) => {
+    res.send('<h1>API!</h1> <br>' +
+        '<h2>Docs :</h2>' +
+        '<p>  https://www.redhat.com/fr/topics/middleware/what-is-middleware</p> <br>' +
+        '<p>  https://www.redhat.com/fr/topics/api/what-are-application-programming-interfaces</p>')
+
+})
+
 // MIDDLEWARE
 
 app.use(bodyParser.json());
