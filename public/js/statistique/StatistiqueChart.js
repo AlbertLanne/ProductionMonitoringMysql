@@ -1,71 +1,26 @@
 let graphique = [];
-let dataX = [];
+// let dataX = [];
 let dataY = [];
-
+var dataX = ['1', '8', '10', '10', '9', '7','5'];
 
 document.addEventListener('DOMContentLoaded', function() {
 
     // Cette array vas être une fonction qui vas changer en fonction de la requete SQL
 
-
     var ctx=document.getElementById('myChart');
-
-
-
-
-    // dataY = recupY();
-    // dataX = recupX();
-    /** Derniere modif, modification de performGetRequest pour avoir 2 params
-     *  ou alors faire passer
-     * @param dataY
-     * @param dataX
-     * @returns {Promise<void>}
-     */
-/**
-   function myFunction(Filtre, Mois) {
-        return SELECT FROM "FILTRE' ET "MOIS;
-        }
-        window.myFunction(BoutonFILTREY, boutonTIMEX);    // Will also return 20
- **/
-
     async function performGetRequest() {
 
     let response = await fetch(`http://localhost:4000/api/fulldata`);
 
     let data = await response.json();
-    // console.log(data);
 
-    // donnee = data.map(function (item) {
-    //     return item.janvier;
-    // });
     dataY = data.map(function (item) {
-
-
-        let val = data[1][0];
-        return val.vente;
+        return item.vente;
     });
-    // console.log(dataY);
-     dataX = data.map(function (item) {
-         // let val = data[1][0];
-         // return val.jour;
-/**
-         for (let i = 0; i < 31; i++) {
-             let val = data[1][i];
-             return val.jour;
-         };
-*/
-         for(var i = 0; i < data.length; i++) {
-             let val = data[1][i];
-
-             // for(var j = 0; j < cube.length; j++) {
-             //     display("cube[" + i + "][" + j + "] = " + cube[j]);
-             // }
-     };
+    //     dataX = data.map(function (item) {
+    //     return item.jour;
+    // });
     console.log(dataX);
-
-
-
-
 
         var graphique = new Chart(ctx.getContext('2d'), {
             type: 'line',
@@ -84,7 +39,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
     performGetRequest();
 
+
+    async function TakeMonth() {
+        var dataX = ['1', '8', '10', '10', '9', '7', '5'];
+        var dataY = ['5', '3', '4', '8', '10', '11', '10', '9'];
+        var data = graphique.config.data;
+        data.datasets[0].data = dataY;
+        // data.datasets[1].data = rain_dataset;
+        data.labels = dataX;
+        TakeMonth.update();
+    }
+
+
+    TakeMonth()
+
+
 });
+
+
+
 
 // function getRandomInt() {
 //     return Math.floor(Math.random() * (50 - 5 + 1)) + 5
@@ -102,7 +75,8 @@ async function performGetRequest() {
         '<pre>' + JSON.stringify(data, null, '\t') + '</pre>';
 }
 
-async function performGetRequest1() {
+
+    async function performGetRequest1() {
     var resultElement = await document.getElementById('getResult2');
     resultElement.innerHTML = '';
 
