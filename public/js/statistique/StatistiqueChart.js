@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
     performGetRequest();
 
 
+
     async function TakeMonth() {
         var dataX = ['1', '8', '10', '10', '9', '7', '5'];
         var dataY = ['5', '3', '4', '8', '10', '11', '10', '9'];
@@ -67,8 +68,7 @@ async function performGetRequest() {
     resultElement.innerHTML = '';
 
     let response = await fetch(`http://localhost:4000/api/fulldata`);
-    let data = await response.json()
-
+    let data = await response.json();
     resultElement.innerHTML = '<div class="bg-red-300 flex">' + '<p class="">' + "Status -> " + '<p>' +
         response.status + ' ' + response.statusText + '</div>' +
         '<p class="text-xl">Content:</p>' + '<p class="">' + '<p>' +
@@ -77,14 +77,14 @@ async function performGetRequest() {
 
 
     async function performGetRequest1() {
-    var resultElement = await document.getElementById('getResult2');
-    resultElement.innerHTML = '';
-
-    let response = await fetch(`http://localhost:4000/api/fulldata`);
-    let data = await response.json();
-    test = Object.values(data[1]);
-    let digit = Object.values(data[1])[0];
-    resultElement.innerHTML = test + 'Le n°0 de lalgo est ' + digit;
+        var resultElement2 = await document.getElementById('getResult2');
+        resultElement2.innerHTML = '';
+        let response = await fetch(`http://localhost:4000/api/filtres`);
+        let data = await response.json();
+        resultElement2.innerHTML = '<div class="bg-red-300 flex">' + '<p class="">' + "Status -> " + '<p>' +
+            response.status + ' ' + response.statusText + '</div>' +
+            '<p class="text-xl">Content:</p>' + '<p class="">' + '<p>' +
+            '<pre>' + JSON.stringify(data, null, '\t') + '</pre>';
 }
 
 // var resultElement = await document.getElementById('getResult2');
