@@ -11,11 +11,15 @@ app.get('/api',(req,res) => {
     res.send('Rien ici, verifiez les routes dispo.')
 })
 app.get('/',(req,res) => {
-    res.send('<h1>API!</h1> <br>' +
+    res.send('Bienvenue sur l\'api ❤❤❤!' +
         '<h2>Docs :</h2>' +
         '<p>  https://www.redhat.com/fr/topics/middleware/what-is-middleware</p> <br>' +
         '<p>  https://www.redhat.com/fr/topics/api/what-are-application-programming-interfaces</p>')
 
+})
+app.use((req,res,next)=>{
+    console.log(' L\'URL utilisé est la suivante : ' + req.url)
+    next()
 })
 
 // MIDDLEWARE
