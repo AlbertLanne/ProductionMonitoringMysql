@@ -1,55 +1,36 @@
 var graphique = [];
 ctx = document.getElementById('myChart').getContext("2d");
-var chartData = {
-    labels: ["Placeholder"],
-    datasets: [{
-        label: 'Grillage en metal',
-        data: [123456789]
-    }]
-};
+let gradient = ctx.createLinearGradient(0, 0, 0, 600);
+gradient.addColorStop(0, 'orange');
+gradient.addColorStop(1, 'purple');
+
 var label = [];
 var testArray= [{"production":"12","mois":"janvier"},{"production":"5","mois":"février"},{"production":"9","mois":"mars"},{"production":"17","mois":"avril"},{"production":"6","mois":"mai"},{"production":"8","mois":"juin"},{"production":"17","mois":"juillet"},{"production":"7","mois":"aout"},{"production":"10","mois":"septembre"}];
+var chartData = {
+    labels: ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin"],
+    datasets: [{
+        label: 'Stock',
+        data: [7,2,5,9,8,6],
+        backgroundColor: gradient
+
+    }]
 
 
-chartData.datasets.data  = testArray.map(function (item) {
-    return item.production;
-    console.log(chartData.datasets.data)
-});
+};
 
-chartData.labels = testArray.map(function (item) {
-    return item.mois;
-});
+function updateData(){
+    chartData.datasets[0].data = testArray.map(item => Number(item.production));
+    chartData.labels = testArray.map(item => item.mois);
+    graphique.update();
 
 
- function graphInit(){
+}
 
 
+function graphInit() {
     graphique = new Chart(ctx, {
         type: 'bar',
-        data: {
-            labels: chartData.labels,
-            datasets: [{
-                label: 'test',
-                data: chartData.datasets.data,
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
+        data: chartData,
         options: {
             scales: {
                 yAxes: [{
@@ -61,6 +42,8 @@ chartData.labels = testArray.map(function (item) {
         }
     });
 }
+
+
 
 function handleChartTimeChange(){
 
@@ -70,85 +53,44 @@ function handleChartDataChange(){
 
 }
 
- document.getElementById('changeToPie').onclick = function() {
 
+
+
+
+function changeToBar() {
          graphique.destroy();
-        graphique =  graphique = new Chart(ctx, {
-            type: 'pie',
-            data: {
-                labels: chartData.labels,
-                datasets: [{
-                    label: 'test',
-                    data: chartData.datasets.data,
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
-                }
-            }
-        });
+         graphique = new Chart(ctx, {
+             type: 'bar',
+             data: chartData
+         });
      };
 
-document.getElementById('changeToPie').onclick = function() {
+function changeToLine(){
 
-    graphique.destroy();
-    graphique =  graphique = new Chart(ctx, {
-        type: 'pie',
-        data: {
-            labels: chartData.labels,
-            datasets: [{
-                label: 'test',
-                data: chartData.datasets.data,
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            }
-        }
-    });
+        graphique.destroy();
+        graphique = new Chart(ctx, {
+            type: 'line',
+            data: chartData
+        });
+
+}
+
+var MyInit = {
+    headers:{
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    },
+    method: 'POST',
+    mode: 'no-cors',
+    cache: 'default'
+
 };
+
+
+function sendMail() {
+    fetch(`http://localhost:4000/api/sendMail`, MyInit);
+
+
+}
+
 

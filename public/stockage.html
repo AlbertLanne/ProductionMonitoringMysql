@@ -10,22 +10,23 @@
     <link href="css/stockage.css" rel="stylesheet">
 </head>
 
-<body>
+<body onload="graphInit()">
 <div id="navbar"></div>
 
 <div class="gauche">
     <p class="textecenterpanneaugauche">CONTROL PANEL</p>
     <div id="getResult1">
         <p>Filtrer par :</p>
-        <input type="radio" name="radAnswer">Grillage en métal</input>
-        <input type="radio" name="radAnswer">Grillage en papier</input>
-        <p>Dater les graphiques par :   </p>        <input type="radio" name="radAnswer">Année</input>
-        <input type="radio" name="radAnswer">Mois</input>
-        <input type="radio" name="radAnswer">Semaine</input>
+        <input type="radio" name="radAnswer" checked="checked" value="metal">Grillage en métal</input>
+        <input type="radio" name="radAnswer" value="papier">Grillage en papier</input>
+        <p>Dater les graphiques par :   </p>
+        <input type="radio" name="radAnswer" value="yearly">Année</input>
+        <input type="radio" name="radAnswer" value="monthly">Mois</input>
+        <input type="radio" name="radAnswer" value="weekly">Semaine</input>
         <p>Choisir le type de graphique :</p>
-        <input type="radio" name="radAnswer">Ligne</input>
-        <input type="radio" name="radAnswer">Barre</input>
-        <input type="radio" name="radAnswer">Camembert</input>
+        <input type="radio" name="radioType" id="radioLine" onclick="changeToLine()">Ligne</input>
+        <input type="radio" name="radioType" id="radioBar" onclick="changeToBar()">Barre</input>
+        <button id="updateData" onclick="updateData()">Update Data</button>
     </div>
 
 </div>
@@ -34,21 +35,21 @@
 
 <div class="droite">
 
-    <section>
-      <button onclick="graphInit()" class="btn">Linéaire</button>
-        <button id="changeToPie">Test</button>
-<!--        <button onclick="changeGraphType('bar')" class="btn btn-red">Barres</button>-->
-        <canvas id="myChart" width="1280px" height="800px"></canvas>
+    <section onload="">
+
+
+        <canvas id="myChart" width="1280px" height="800px" ></canvas>
 
 
     </section>
 </div>
 
 
-    <script src="js/chartStockage.js"></script>
     <script src="js/chartJS.js"></script>
     <script src="js/navbar.js"></script>
     <script src="js/statistique/main.js"></script>
+    <script src="js/chartStockage.js"></script>
+
 
 
 
