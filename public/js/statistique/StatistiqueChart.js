@@ -1,98 +1,138 @@
-let graphique = [];
-// let dataX = [];
-let dataY = [];
-var dataX = ['1', '8', '10', '10', '9', '7','5'];
-
-document.addEventListener('DOMContentLoaded', function() {
-
-    // Cette array vas être une fonction qui vas changer en fonction de la requete SQL
-
-    var ctx=document.getElementById('myChart');
-    async function performGetRequest() {
-
-    let response = await fetch(`http://localhost:4000/api/fulldata`);
-
-    let data = await response.json();
-
-    dataY = data.map(function (item) {
-        return item.vente;
-    });
-    //     dataX = data.map(function (item) {
-    //     return item.jour;
-    // });
-    console.log(dataX);
-
-        var graphique = new Chart(ctx.getContext('2d'), {
-            type: 'line',
-            data: {
-                labels: dataX,
-                datasets: [{
-                    label: 'Test',
-                    data: dataY,
-                    fill: false,
-                    lineTension : 0.2,
-                    borderWidth: 10,
-                }],
-            },
-        });
-    }
-
-    performGetRequest();
+var graphique = [];
+ctx = document.getElementById('myChart').getContext("2d");
 
 
-
-    async function TakeMonth() {
-        var dataX = ['1', '8', '10', '10', '9', '7', '5'];
-        var dataY = ['5', '3', '4', '8', '10', '11', '10', '9'];
-        var data = graphique.config.data;
-        data.datasets[0].data = dataY;
-        // data.datasets[1].data = rain_dataset;
-        data.labels = dataX;
-        TakeMonth.update();
-    }
-
-
-    TakeMonth()
-
-
-});
-
-
-
-
-// function getRandomInt() {
-//     return Math.floor(Math.random() * (50 - 5 + 1)) + 5
-// }
-async function performGetRequest() {
-    var resultElement = await document.getElementById('getResult1');
-    resultElement.innerHTML = '';
-
-    let response = await fetch(`http://localhost:4000/api/fulldata`);
-    let data = await response.json();
-    resultElement.innerHTML = '<div class="bg-red-300 flex">' + '<p class="">' + "Status -> " + '<p>' +
-        response.status + ' ' + response.statusText + '</div>' +
-        '<p class="text-xl">Content:</p>' + '<p class="">' + '<p>' +
-        '<pre>' + JSON.stringify(data, null, '\t') + '</pre>';
-}
-
-
-    async function performGetRequest1() {
-        var resultElement2 = await document.getElementById('getResult2');
-        resultElement2.innerHTML = '';
-        let response = await fetch(`http://localhost:4000/api/filtres`);
-        let data = await response.json();
-        resultElement2.innerHTML = '<div class="bg-red-300 flex">' + '<p class="">' + "Status -> " + '<p>' +
-            response.status + ' ' + response.statusText + '</div>' +
-            '<p class="text-xl">Content:</p>' + '<p class="">' + '<p>' +
-            '<pre>' + JSON.stringify(data, null, '\t') + '</pre>';
-}
-
-// var resultElement = await document.getElementById('getResult2');
-// resultElement.innerHTML = '';
 //
-// let response = await fetch(`http://localhost:4000/api/informations`);
+//
+// let response = await fetch(`http://localhost:4000/api/filtres`);
 // let data = await response.json();
-// test = Object.values(data[1]);
-// let digit = Object.values(data[1])[0];
-// resultElement.innerHTML = test + 'Le n°0 de lalgo est ' + digit;
+// dataY = data.map(function (item) {
+//     return item.vente;
+// });
+// dataX = data.map(function (item) {
+//     return item.jour;
+// });
 
+
+var label = [];
+var testArray= [{"production":"12","mois":"janvier"},{"production":"5","mois":"février"},{"production":"9","mois":"mars"},{"production":"17","mois":"avril"},{"production":"6","mois":"mai"},{"production":"8","mois":"juin"},{"production":"17","mois":"juillet"},{"production":"7","mois":"aout"},{"production":"10","mois":"septembre"}];
+var chartData = {
+    labels: ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin"],
+    datasets: [{
+        label: 'Stock',
+        data: [7,2,5,9,8,6],
+        backgroundColor : '',
+    }]
+};
+
+function updateData(){
+    chartData.datasets[0].data = testArray.map(item => Number(item.production));
+    chartData.labels = testArray.map(item => item.mois);
+
+    let gradient = ctx.createLinearGradient(0, 0, 0, 600);
+    gradient.addColorStop(0, 'yellow');
+    gradient.addColorStop(1, 'white');
+    chartData.datasets[0].backgroundColor= gradient;
+    graphique.update();
+}
+
+function ChangeAPI(){
+    var filtres = [{"jour":"Lundi","vente":"5", "date":"2018-10-10"},{"jour":"Mardi","vente":"1", "date":"2017-10-01"},
+        {"jour":"Mercredi","vente":"10", "date":"2018-01-01"},{"jour":"Jeudi","vente":"7", "date":"2018-01-01"},
+        {"jour":"Vendredi","vente":"3", "date":"2018-06-01"},{"jour":"Samedi","vente":"12", "date":"2018-02-08"},
+        {"jour":"Dimanche","vente":"2", "date":"2018-03-01"}]
+
+    var test = [{"production":"102","mois":"janvier"},{"production":"520","mois":"février"},{"production":"900","mois":"mars"},{"production":"170","mois":"avril"},{"production":"600","mois":"mai"},{"production":"888","mois":"juin"},{"production":"178","mois":"juillet"},{"production":"788","mois":"aout"},{"production":"180","mois":"septembre"}];
+
+    chartData.datasets[0].data = test.map(item => Number(item.production));
+    chartData.labels = test.map(item => item.mois);
+
+    let gradient = ctx.createLinearGradient(0, 0, 0, 600);
+    gradient.addColorStop(0, 'Red');
+    gradient.addColorStop(1, 'white');
+    chartData.datasets[0].backgroundColor= gradient;
+    graphique.update();
+}
+function FiltreFP(){
+    var filtres = [{"jour":"Lundi","vente":"5", "date":"2018-10-10"},{"jour":"Mardi","vente":"1", "date":"2017-10-01"},
+        {"jour":"Mercredi","vente":"10", "date":"2018-01-01"},{"jour":"Jeudi","vente":"7", "date":"2018-01-01"},
+        {"jour":"Vendredi","vente":"3", "date":"2018-06-01"},{"jour":"Samedi","vente":"12", "date":"2018-02-08"},
+        {"jour":"Dimanche","vente":"5", "date":"2018-03-01"}, {"jour":"Dimanche","vente":"2", "date":"2018-03-01"},
+        {"jour":"Dimanche","vente":"3", "date":"2018-03-01"}]
+
+    var test = [{"production":"102","mois":"janvier"},{"production":"520","mois":"février"},{"production":"900","mois":"mars"},{"production":"170","mois":"avril"},{"production":"600","mois":"mai"},{"production":"888","mois":"juin"},{"production":"178","mois":"juillet"},{"production":"788","mois":"aout"},{"production":"180","mois":"septembre"}];
+
+    chartData.datasets[0].data = filtres.map(item => Number(item.vente));
+    chartData.labels = test.map(item => item.mois);
+
+    let gradient = ctx.createLinearGradient(0, 0, 0, 600);
+    gradient.addColorStop(0, 'cyan');
+    gradient.addColorStop(1, 'white');
+    chartData.datasets[0].backgroundColor= gradient;
+    graphique.update();
+}
+function Year(){
+    var filtres = [{"year":"2000","vente":"5", "date":"2018-10-10"},{"year":"2001","vente":"1", "date":"2017-10-01"},
+        {"year":"2002","vente":"10", "date":"2018-01-01"},{"year":"2003","vente":"7", "date":"2018-01-01"},
+        {"year":"2004","vente":"3", "date":"2018-06-01"},{"year":"2005","vente":"12", "date":"2018-02-08"},
+        {"year":"2006","vente":"2", "date":"2018-03-01"}]
+
+    chartData.labels = filtres.map(item => item.year);
+
+    let gradient = ctx.createLinearGradient(0, 0, 0, 600);
+
+    graphique.update();
+}
+function Month(){
+    var test = [{"production":"102","mois":"janvier"},{"production":"520","mois":"février"},{"production":"900","mois":"mars"},{"production":"170","mois":"avril"},{"production":"600","mois":"mai"},{"production":"888","mois":"juin"},{"production":"178","mois":"juillet"},{"production":"788","mois":"aout"},{"production":"180","mois":"septembre"}];
+    chartData.labels = test.map(item => item.mois);
+    graphique.update();
+}
+
+function graphInit() {
+    graphique = new Chart(ctx, {
+        type: 'line',
+        data: chartData,
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+}
+
+// fpFiltre()
+// psm()
+
+// function changeToBar() {
+//     graphique.destroy();
+//     graphique = new Chart(ctx, {
+//         type: 'bar',
+//         data: chartData
+//     });
+// };
+//
+// function changeToLine(){
+//
+//     graphique.destroy();
+//     graphique = new Chart(ctx, {
+//         type: 'line',
+//         data: chartData
+//     });
+//
+// }
+//
+// var MyInit = {
+//     headers:{
+//         'Accept': 'application/json',
+//         'Content-Type': 'application/json'
+//     },
+//     method: 'POST',
+//     mode: 'no-cors',
+//     cache: 'default'
+//
+// };

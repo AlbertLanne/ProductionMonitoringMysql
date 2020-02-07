@@ -6,19 +6,19 @@
     <title>Interfltre - Page Statistique</title>
     <link href="css/tailwind.css" rel="stylesheet">
 </head>
-<body>
+<body onload="graphInit()">
 <div id="navbar"></div>
 <script src="js/navbar.js"></script>
 
 <div class="bg-gray-500  flex-wrap text-copy-primary flex flex-wrap ">
-    <div class="chart w-full flex justify-center">
+    <div class="w-full flex justify-center">
         <div class="bg-red-500 rounded-lg  w-5/12 flex  justify-center align-middle">
             <div class="">
                 <div class="w-full bg-gray-100 px-4 p-2 rounded-b-lg ">
                     <p class="text-center text-xl my-2"> Choix du type de filtres </p>
 
-                    <input type="radio" name="FPSL" value="z" onclick="performGetRequest()"> FP-SL<br>
-                    <input type="radio" name="PSM" value="a" onclick="performGetRequest1()"> PSM - PFPE - PRP3 - FG2P - PRP4 - FG4P -
+                    <input type="radio" name="FPSL" value="z" onclick="fpFiltre()"> FP-SL<br>
+                    <input type="radio" name="PSM" value="a" onclick="psm()"> PSM - PFPE - PRP3 - FG2P - PRP4 - FG4P -
                     PKP1<br>
                     <input type="radio" name="3B" value="e"> Recharge 3B<br>
                     <input type="radio" name="VELCRO" value="male"> Manche avec fond et ou velcro<br>
@@ -35,26 +35,35 @@
                 <div class="w-full justify-center content-center bg-gray-100 px-4 p-2 rounded-lg my-6 ">
 
                     <div class="text-center ">
-                        <input type="radio" name="filtre" value="mois" onclick="TakeMonth()">Mois</input>
-                        <input type="radio" class="ml-4" name="annee" value="annee">Année</input>
+                        <input type="radio" name="filtre" value="mois" onclick="Month()">Mois</input>
+                        <input type="radio" class="ml-4" name="annee"onclick="Year()" >Année</input>
                         <input type="radio" class="ml-4" name="tannee" value="totalannee">Total année</input>
                         <input type="radio" class="ml-4" name="tmois" value="totalmois">Total mois</input>
                     </div>
                 </div>
                 <div class="justify-end flex my-4 mx-2">
-                    <button class="border-2 rounded-lg border-gray-700  px-4 p-2 h-12 flex hover:bg-blue-200">
-                        Valider
+                    <button  onclick="FiltreFP()" class="border-2 rounded-lg border-gray-700  px-4 p-2 h-12  hover:bg-blue-200">
+                        <p class="text-lg">Valider</p>
+                        <p class="text-lg italic text-blue-600">FiltreFP()</p>
                     </button>
+                    <button  onclick="updateData()" class="border-2 rounded-lg border-gray-700  px-4 p-2 h-12  hover:bg-blue-200">
+                        <p class="text-lg">Valider</p>
+                        <p class="text-lg italic text-blue-600">UpdateData()</p>
+                    </button>
+                        <button  onclick="ChangeAPI()" class="border-2 rounded-lg border-gray-700  px-4 p-2 h-12  hover:bg-blue-200">
+                            <p class="text-lg">Valider</p>
+                            <p class="text-lg italic text-blue-600">ChangeAPI()</p>
+                        </button>
                 </div>
                 <div class="border-t-4 py-4 border-gray-800 flex-wrap flex">
-                    <button onclick="performGetRequest()"
+                    <button onclick="Requete1SurApi()"
                             class="bg-green-200 mx-2 border-2 rounded-lg border-green-700  px-4 p-2 h-12 flex hover:bg-blue-200">
-                        Get Requete
+                        Requete API V1
                     </button>
 
-                    <button onclick="performGetRequest1()"
+                    <button onclick=""
                             class="mx-2 border-2 rounded-lg  border-red-700 px-4 p-2 h-12 flex hover:bg-blue-200">
-                        Get Requete avec parametre
+                        Autre API V2
                     </button>
                 </div>
                 <input type="text" id="todoId" class="m-2 m-4 w-full bg-yellow-100 text-black" placeholder="ID...">
@@ -68,7 +77,7 @@
                         send
                     </button>
                 </form>
-                <button type="submit" onclick="clearOutput()"
+                <button type="submit" onclick=""
                         class="border border-red-300 mx-2 border-2 rounded-lg px-4 p-2 h-12 flex hover:bg-blue-200">
                     Clear
                 </button>
@@ -81,14 +90,14 @@
         <div class="bg-gray-500  h-full w-full justify-center  items-center">
 
             <div class=" justify-center bg-red-100 rounded-lg w-auto px-4  mx-4 my-4 ">
+
                 <div>
-                    <canvas id="myChart" class="w-auto h-full"></canvas>
-
-                    <!--                <div v-else-if="this.selected === 'C'">-->
-                    <!--                    <reactive-example/>-->
-                    <!--                </div>-->
-
+                    <canvas id="myChart" class="w-auto h-32"></canvas>
                 </div>
+                <div class="items-stretch flex ">
+                    <canvas id="myChartUn" class="w-auto h-16"></canvas>
+                </div>
+
 
             </div>
             <div class=" text-black  w-full flex bg-fixed h-40 overflow-auto ">
@@ -172,8 +181,10 @@
         </div>
 </div>
 <script src="js/statistique/main.js"></script>
+<script src="js/statistique/StatistiquePageRequete.js"></script>
 <script src="js/statistique/StatistiqueChart.js"></script>
 <script src="js/statistique/RadioButton.js"></script>
+</div>
 
 </body>
 

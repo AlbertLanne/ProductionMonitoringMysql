@@ -9,6 +9,7 @@ document.getElementById("navbar").innerHTML += '<link href="css/navbar.css" rel=
     '        <a href="../index.html">Accueil</a>\n' +
     '        <a href="../statistique.html">Suivi de stock des filtres</a>\n' +
     '        <a href="../stockage.html">Suivi de stock des grillages</a>\n' +
+    '        <a href="../consultationOF.html">Suivi de stock des OF</a>\n' +
     '        <a href="../connexion.html">Panneau administrateur</a>\n' +
     '<a href="../commande.html">Gestion des commandes</a>'
 '<p id="dateheure" class="heuristique"></p>'
