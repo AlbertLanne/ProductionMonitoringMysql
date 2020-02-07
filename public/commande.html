@@ -10,14 +10,14 @@
     <link href="css/stockage.css" rel="stylesheet">
 </head>
 
-<>
+
 <div id="navbar"></div>
 
 <div class="gauche">
-    <p class="textecenterpanneaugauche">Selection commande en cours</p>
+    <p class="textecenterpanneaugauche">Selection commande en cours</p>                                                 <!-- Gestion des fichier CSS pour commande client -->
     <br>
     <select name="selectBC" class="droite" id="SelectBox">
-        <option value="default" >Choisissez une commande enregistrée</option>
+        <option value="default" >Choisissez une commande enregistrée</option>                                           <!-- Selection d'une commade déjà enregistrée -->
         <option value="">BC20/01/2020</option>
         <option value="champ1">BC18/01/2020</option>
     </select>
@@ -27,14 +27,19 @@
     <br>
     <p class="textecenterpanneaugauche">Nouvelle commande :</p>
     <br>
-    <input class="centre" type="text" name="addBC" placeholder="Nom du fichier CSV (Ex : BC20/01/2020)"/>
+    <form>                                                                                                              <!-- Nom du fichier pour ajout des informations dans la base de donnée -->
+        <input class="centre" id="newCSV" type="text" name="addBC" placeholder="Nom du fichier CSV (Ex : BC20/01/2020)"/>
+        <input type="submit" onclick="recup();"/>
+    </form>
 </div>
-<div class="">
+<div class="droite">
     <p>test</p>
 </div>
 
-
 <script src="js/navbar.js"></script>
+<script src="js/commande/genererOF.js" ></script>
+<script src="js/commande/test.js"></script>
+
 </body>
 
 </html>
