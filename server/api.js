@@ -73,7 +73,7 @@ router.post('/sendMail',function(req,res){
         from: '"Aredi" <dadaslashfaq@gmail.com>', // sender address
         to: "arediyt@gmail.com", // list of receivers
         subject: "Notification intefiltre", // Subject line
-        text: "Le stock part en couille", // plain text body
+        text: "Le stock est problématique", // plain text body
         html: "<b>Auto destruction dans trois deux un</b>" // html body
     };
 
