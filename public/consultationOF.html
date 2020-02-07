@@ -1,21 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>ConsultationOF</title>
+    <title>Interfltre - Page Statistique</title>
     <link href="css/tailwind.css" rel="stylesheet">
 </head>
 <body>
+<div id="navbar"></div>
 <script src="js/navbar.js"></script>
+<script src="js/statistique/protoChart.js"></script>
+<script src="js/chartJS.js"></script>
 
 
-<p> truc pouette pouette </p>
 
+<div class="w-full py-5 bg-gray-900 text-white ">
+    <p class="font-thin text-2xl ml-4">Listes ordre de fabrication</p>
+</div>
 
+<div class="w-full bg-gray-800 text-white flex-wrap text-copy-primary flex flex-wrap items-baseline">
+    <p class="font-thin text-2xl m-4">Recherche</p>
 
-<script src="js/statistique/main.js"></script>
-<script src="js/statistique/StatistiquePageRequete.js"></script>
-<script src="js/statistique/StatistiqueChart.js"></script>
-<script src="js/statistique/RadioButton.js"></script>
+    <div class="my-2 flex">
+        <div class="relative">
+            <select
+                    class=" rounded-l border block appearance-none w-full bg-white border-gray-400 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            >
+                <option>5</option>
+                <option>10</option>
+                <option>20</option>
+            </select>
+            <div
+                    class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
+            >
+                <svg class="fill-current h-4 w-4"
+                     xmlns="http://www.w3.org/2000/svg"
+                     viewBox="0 0 20 20">
+                    <path
+                            d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                    />
+                </svg>
+            </div>
+        </div>
+        <div class="relative">
+            <select
+                    class="border-t border-r border-b block appearance-none w-full bg-white border-gray-400 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            >
+                <option>Tout</option>
+                <option>Terminé</option>
+                <option>Terminé</option>
+            </select>
+            <div
+                    class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
+            >
+                <svg
+                        class="fill-current h-4 w-4"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                >
+                    <path
+                            d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                    />
+                </svg>
+            </div>
+        </div>
+        <div class="relative">
+               <span class="absolute inset-y-0 left-0 flex items-center pl-2">
+                 <svg viewBox="0 0 24 24" class="h-4 w-4 fill-current text-gray-500"><path
+                         d="M10 4a6 6 0 100 12 6 6 0 000-12zm-8 6a8 8 0 1114.32 4.906l5.387 5.387a1 1 0 01-1.414 1.414l-5.387-5.387A8 8 0 012 10z"></path></svg>
+               </span>
+            <input placeholder="Filtre..."
+                   class="h-full rounded-r leading-normal border-t border-r border-gray-400 border-b block pl-8 pr-4 py-2 w-full bg-white text-sm placeholder-gray-400 text-gray-700 focus:bg-white focus:placeholder-gray-600 focus:text-gray-700 focus:outline-none"/>
+        </div>
+    </div>
+
+    <div class="flex align-baseline w-full bg-gray-500 ">
+        <div class="mx-2 my-auto">
+        </div>
+    </div>
+</div>
+
+        <div>
+            <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
+                <table class="min-w-full leading-normal">
+                    <thead>
+                    <tr>
+                        <th
+                                class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                             Ordre de fabrication N°
+                        </th>
+                        <th
+                                class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            Données
+                        </th>
+                        <th
+                                class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            Crée le
+                        </th>
+                        <th
+                                class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            Status
+                        </th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr>
+                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0 w-10 h-10">
+                                    <svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><defs><style/></defs><path d="M863.078 1024H160.922c-35.268 0-63.833-28.565-63.833-63.705V159.262c0-35.204 28.597-61.247 63.833-61.247h223.413v63.896H192.838c-17.618 0-31.916 14.267-31.916 31.852v734.68c0 17.586 14.298 31.852 31.916 31.852h638.324c17.618 0 31.916-14.266 31.916-31.852V193.795c0-17.617-14.298-31.884-31.916-31.884H639.665V98.015h223.413c35.236 0 63.833 26.043 63.833 61.247v801.033c0 35.14-28.597 63.705-63.833 63.705zM416.251 384.973h319.163v64.152H416.25v-64.152zm0 159.869l319.163-.67v64.534H416.25v-63.864zm319.163 222.073l-319.163 1.372v-63.832h319.163v62.46zM288.586 385.26l63.833-.99v64.822h-63.833v-63.832zm0 158.208l63.833 1.373v63.864h-63.833V543.47zm63.833 224.818l-63.833-2.042v-61.79h63.833v63.832zm351.078-572.513c17.65 0 31.917 14.267 31.917 31.852v29.97H288.586v-29.97c0-17.554 14.267-31.852 31.917-31.852h95.748s.383-45.289.383-97.057C416.634 44.938 458.157 0 512 0s96.802 47.236 96.802 99.036c0 55.726-1.053 96.738-1.053 96.738h95.748zM512 95.557c-17.65 0-31.916 16.788-31.916 34.374 0 17.618 14.298 31.916 31.916 31.916 17.65 0 31.916-14.298 31.916-31.916 0-17.554-14.266-34.374-31.916-34.374z"/></svg>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-gray-900 whitespace-no-wrap">
+                                        N°190
+                                    </p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                            <div class="w-full flex">
+                                <div class="w-1/2">
+                                    <div class="p-1">
+                                        <div class="inline-flex items-center bg-white leading-none text-pink-600 rounded-full p-2 shadow text-teal text-sm">
+                                            <span class="inline-flex bg-pink-600 text-white rounded-full h-6 px-3 justify-center items-center">Cisailler</span>
+                                            <span class="inline-flex px-2"></span>
+                                        </div>
+                                    </div>
+                                    <div class="p-1">
+                                        <div class="inline-flex items-center bg-white leading-none text-purple-600 rounded-full p-2 shadow text-sm">
+                                            <span class="inline-flex bg-purple-600 text-white rounded-full h-6 px-3 justify-center items-center text-">Encocher cadre</span>
+                                            <span class="inline-flex px-2"></span>
+                                        </div>
+                                    </div>
+                                    <div class="p-1">
+                                        <div class="inline-flex items-center bg-white leading-none text-purple-600 rounded-full p-2 shadow text-teal text-sm">
+                                            <span class="inline-flex bg-indigo-600 text-white rounded-full h-6 px-3 justify-center items-center">Nettoyer/Emballer</span>
+                                            <span class="inline-flex px-2"></span>
+                                        </div>
+                                    </div>
+                                    <div class="p-1">
+                                        <div class="inline-flex items-center bg-white leading-none text-purple-600 rounded-full p-2 shadow text-teal text-sm">
+                                            <span class="inline-flex bg-teal-600 text-white rounded-full h-6 px-3 justify-center items-center">Plier</span>
+                                            <span class="inline-flex px-2"></span>
+                                        </div>
+                                    </div>
+                                    <div class="p-1">
+                                        <div class="inline-flex items-center bg-white leading-none text-purple-600 rounded-full p-2 shadow text-teal text-sm">
+                                            <span class="inline-flex bg-orange-600 text-white rounded-full h-6 px-3 justify-center items-center">Couler</span>
+                                            <span class="inline-flex px-2"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="w-1/2 justify-start">
+                                    <canvas id="myLineChart"></canvas>
+                                </div>
+                            </div>
+
+                        </td>
+                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                            <p class="text-gray-900 whitespace-no-wrap">
+                                Jan 21, 2020
+                            </p>
+                        </td>
+                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                    <span
+                                            class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
+                                        <span aria-hidden
+                                              class="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
+                                        <span class="relative">Actif</span>
+                                    </span>
+                        </td>
+                        <!--                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">-->
+                        <!--                                    <span-->
+                        <!--                                            class="relative inline-block px-3 py-1 font-semibold text-orange-900 leading-tight">-->
+                        <!--                                        <span aria-hidden-->
+                        <!--                                              class="absolute inset-0 bg-orange-200 opacity-50 rounded-full"></span>-->
+                        <!--                                        <span class="relative">Suspendu</span>-->
+                        <!--                                    </span>-->
+                        <!--                        </td>-->
+                        <!--                        <td class="px-5 py-5 bg-white text-sm">-->
+                        <!--                                    <span-->
+                        <!--                                            class="relative inline-block px-3 py-1 font-semibold text-red-900 leading-tight">-->
+                        <!--                                        <span aria-hidden-->
+                        <!--                                              class="absolute inset-0 bg-red-200 opacity-50 rounded-full"></span>-->
+                        <!--                                        <span class="relative">Terminé</span>-->
+                        <!--                                    </span>-->
+                        <!--                        </td>-->
+                    </tr>
+
+                    </tbody>
+
+                </table>
+                <div
+                        class="px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between          ">
+                        <span class="text-xs xs:text-sm text-gray-900">
+                            De 1 à 4 éléments afficher sur 50.
+                        </span>
+                    <div class="inline-flex mt-2 xs:mt-0">
+                        <button
+                                class="text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-l">
+                            Précédent
+                        </button>
+                        <button
+                                class="text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-r">
+                            Suivant
+                        </button>
+                    </div>
+                </div>
+            </div>
+</div>
+
 </body>
+
+
 </html>
+<script>
+    var ctx = document.getElementById('myLineChart');
+    var myLineChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Cisailler', 'Encocher', 'Nettoyer', 'Plier', 'Couler'],
+            datasets: [{
+                label: 'Nombres d\'heures pour chaque taches',
+                data: [12, 19, 3, 5, 2],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(235,6,128,0.2)',
+                    'rgba(11,18,255,0.2)',
+                    'rgba(2,192,12,0.2)',
+                    'rgba(255,171,0,0.2)',
+                ],
+                borderColor: [
+                    'rgb(255,0,72)',
+                    'rgb(235,0,124)',
+                    'rgb(0,4,255)',
+                    'rgb(12,192,0)',
+                    'rgb(255,151,0)',
+                ],
+                borderWidth: 1
+            },
+            ]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+</script>
