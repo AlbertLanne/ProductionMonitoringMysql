@@ -28,19 +28,9 @@
 }
 
 .droite{
-    margin-left:auto;
-
-}
-
-
-
-section{
     width:960px;
     animation-name:slide-in-top;
     animation-duration:1s;
-
-
-
 }
 
 .textedroite{
