@@ -1,5 +1,15 @@
 
 
+.wrapper{
+    display:flex;
+    max-width:1920px;
+    max-height:1080px;
+    justify-content:space-between;
+
+}
+
+
+
 .gauche, .centre, .droite{
     padding:1px 0;
 
@@ -17,40 +27,19 @@
 
 }
 
-.centre {
-    margin-left: auto;
-    margin-right: auto;
-    width: 300px;
-}
+.droite{
+    margin-left:auto;
 
-.droite {
-    width: auto;
-    height: auto;
-    float: right;
-
-}
-
-.boutonspanel{
-    display:block;
-    margin:auto;
-    background-color:dimgrey;
-    border-radius:1px;
-    width:100px;
-    border: 2px solid darkred;
-
-}
-
-.textebleu {
-    color: #ffa445;
 }
 
 
 
 section{
     width:960px;
-    float:right;
     animation-name:slide-in-top;
     animation-duration:1s;
+
+
 
 }
 
@@ -64,10 +53,6 @@ footer {
 }
 
 #myChart{
-    position:absolute;
-
-}
-#mychart2{
     position:absolute;
 
 }
@@ -109,5 +94,17 @@ footer {
     background-color:slategrey;
 }
 
+
 @-webkit-keyframes slide-in-top{0%{-webkit-transform:translateY(-1000px);transform:translateY(-1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}@keyframes slide-in-top{0%{-webkit-transform:translateY(-1000px);transform:translateY(-1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}
-@-webkit-keyframes slide-in-fwd-tl{0%{-webkit-transform:translateZ(-1400px) translateY(-800px) translateX(-1000px);transform:translateZ(-1400px) translateY(-800px) translateX(-1000px);opacity:0}100%{-webkit-transform:translateZ(0) translateY(0) translateX(0);transform:translateZ(0) translateY(0) translateX(0);opacity:1}}@keyframes slide-in-fwd-tl{0%{-webkit-transform:translateZ(-1400px) translateY(-800px) translateX(-1000px);transform:translateZ(-1400px) translateY(-800px) translateX(-1000px);opacity:0}100%{-webkit-transform:translateZ(0) translateY(0) translateX(0);transform:translateZ(0) translateY(0) translateX(0);opacity:1}}
+
+
+.heuristique{
+    float: right;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    background-color: #333;
+
+}

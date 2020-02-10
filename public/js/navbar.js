@@ -2,26 +2,21 @@
 
 
 
-document.getElementById("navbar").innerHTML += '<link href="css/navbar.css" rel="stylesheet">\n' +
-    '\n' +
-    '<nav>\n' +
-     // '<img id="logo" src="https://i.imgur.com/Oh1nxQu.png">'
-    '        <a href="../index.html">Accueil</a>\n' +
-    '        <a href="../statistique.html">Suivi de stock des filtres</a>\n' +
-    '        <a href="../stockage.html">Suivi de stock des grillages</a>\n' +
-    '        <a href="../consultationOF.html">Suivi de stock des OF</a>\n' +
-    '        <a href="../commande.html">Gestion des commandes</a>\n' +
-    '        <a href="../connexion.html">Panneau administrateur</a>'
-'<p id="dateheure" class="heuristique"></p>'
+// language=HTML
+document.getElementById("navbar").innerHTML += `
+    <link href="css/navbar.css" rel="stylesheet">
+    <nav><a href="../index.html">Accueil</a> <a href="../statistique.html">Suivi de stock des filtres</a> <a
+            href="../stockage.html">Suivi de stock des grillages</a> <a href="../consultationOF.html">Suivi de stock des
+        OF</a> <a href="../commande.html">Gestion des commandes</a> <a href="../connexion.html">Panneau
+        administrateur</a>`
     '</nav>'
 
 function getDateTime() {
-    var date = new Date().toLocaleString(); // dd:mm:y
-    document.getElementById("dateheure").innerHTML = date;
+    document.getElementById("dateheure").innerHTML = new Date().toLocaleString();
     setTimeout(getDateTime, 1000); // mise à jour du contenu "getDateTime" toutes les secondes
 }
-
 getDateTime();
+
 
 
 

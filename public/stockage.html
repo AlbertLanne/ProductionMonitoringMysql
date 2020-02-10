@@ -5,56 +5,44 @@
     <meta charset="UTF-8">
     <title>Interfiltre Gestion des Grillages</title>
 
-    <!--Icones-->
-    <script src="https://kit.fontawesome.com/ff299418e9.js" crossorigin="anonymous"></script>
-    <!-- CSS -->
+    <!-- CSS link-->
 
     <link href="css/tailwind.css" rel="stylesheet">
     <link href="css/stockage.css" rel="stylesheet">
-
 </head>
 
 <body onload="graphInit()">
 <link href="css/navbar.css" rel="stylesheet">
 
-<div id="navbar"></div>
-
+<div id="navbar"><p id="dateheure" class="heuristique"></p></div>
+<div class="wrapper">
 <div class="gauche">
     <p class="textecenterpanneaugauche">CONTROL PANEL</p>
     <div id="getResult1">
-        <p class="animated intensifies">Filtrer par :</p>
+        <p>Filtrer par :</p>
         <input type="radio" name="radioGrillage" checked="checked" value="metal" id="metal">Grillage en métal</input>
         <input type="radio" name="radioGrillage" value="papier" id="papier">Grillage en papier</input>
-        <p class="animated intensifies">Dater les graphiques par :   </p>
+        <p>Dater les graphiques par :   </p>
         <input type="radio" name="radioTime" value="yearly" id="Yearly">Année</input>
         <input type="radio" name="radioTime" value="monthly" id="Monthly">Mois</input>
         <input type="radio" name="radioTime" value="weekly" id="Weekly">Semaine</input>
-        <p class="animated intensifies">Choisir le type de graphique :</p>
+        <p>Choisir le type de graphique :</p>
         <input type="radio" name="radioType" id="radioLine" onclick="changeToLine()">Ligne</input>
         <input type="radio" name="radioType" id="radioBar" onclick="changeToBar()">Barre</input>
         <button id="updateData" onclick="updateData()" class="btnUpdate">Update Data</button>
     </div>
 
 </div>
-<div class="centre">
-</div>
 
 <div class="droite">
-
-    <section onload="">
-
-
-        <canvas id="myChart" width="1280px" height="800px" ></canvas>
-
-
-    </section>
+    <section><canvas id="myChart" width="1280px" height="800px" ></canvas></section>
+</div>
 </div>
 
-
-    <script src="js/chartJS.js"></script>
-    <script src="js/navbar.js"></script>
-    <script src="js/statistique/main.js"></script>
-    <script src="js/chartStockage.js"></script>
+<script src="js/navbar.js"></script>
+<script src="js/chartJS.js"></script>
+<script src="js/chartStockage.js"></script>
+<script src="js/statistique/main.js"></script>
 
 
 
