@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const nodemailer = require("nodemailer");
-
+const morgan = require('morgan')
 
 // API SERVER HTTP AXIOS HERE
 const app = express();

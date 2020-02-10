@@ -44,11 +44,26 @@
 
 
 
-<!-- ABOUT THE PROJECT -->
 > !!!! Attention the crossed out text are unfinish parts because for the moment we don't have enought informations !!!!
-## ~~About The Project~~
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+---
+
+## About The Project
+
+| High school Paul Cornu | BTS Systèmes Numériques  | Session 2020 | 
+| -------- | -------- | -------- |
+| 9 Rue Paul Cornu, 14100 Lisieux | Option A Informatique et Réseaux | Session 2020 | 
+
+---
+
+| Professinal Partner | Studens of the project | Teatchers | 
+| -------- | -------- | -------- |
+|   Interfiltre compagnies   |   -Mathieu Sanchez  |   Sébastien Dossier|
+|   Rue de Livarot   |   -Albert Lanne   |  Laurent Blondel |
+|   14140 Farvaques   |   -Alexis Dominguez-Condé   |     |
+|                |   -Louis Evrard   |     |
+
+
 
 There are many great README templates available on GitHub, however, I didn't find one that really suit my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need.
 
@@ -61,29 +76,31 @@ Of course, no one template will serve all projects since your needs may be diffe
 
 A list of commonly used resources that I find helpful are listed in the acknowledgements.
 
-### ~~Built With~~
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+### Built With
+
+The project work with a web app made with nodejs/css. And a mobil applications for QR code. 
 
 * [chart.js](https://www.chartjs.org/)
+* [Express.js](https://www.mysql.com/)
+* [Node.js](https://www.mysql.com/)
+* [java](https://www.mysql.com/)
 * [MySQL](https://www.mysql.com/)
 
 
 
-<!-- GETTING STARTED -->
-## ~~Getting Started~~
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+## Getting Started
+### Prerequisites
+* npm / node.js
+* webstorm
+* MySql server
 
-### ~~Prerequisites~~
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
 ```sh
 npm install npm@latest -g
 ```
 
-### ~~Installation~~
+### Installation
 
 1. Get a free API Key at [https://example.com](https://example.com)
 2. Clone the repo
@@ -134,12 +151,17 @@ git clone https://github.com/<YOUR_GITHUB_USERNAME>/InterfiltreProductionMonitor
 
 
 
-<!-- CONTACT -->
-## ~~Contact~~
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+## Contact
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+<!-- Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com -->
+
+
+Student 2: [https://github.com/AlbertLanne](https://github.com/AlbertLanne)
+
+Student 3: [https://github.com/Aredi](https://github.com/Aredi)
+
+Student 4: [https://github.com/Evouiard](https://github.com/Evouiard)
 
 
 
@@ -147,12 +169,12 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 ## Useful link and ressources 
 * [Markdown mastering](https://guides.github.com/features/mastering-markdown/)
 * [CleverCloud for free DB mysql for unit test + web server](www.clever-cloud.com)
-
-
-## Others ressources (see on discord)
-* [Github cheat sheet command line procedure]()
-* [Online server for testing with apache server (92.222.224.108)]()
-* [Udemy Chart.js course](https://www.udemy.com/course/chart-js-with-mysql-database-data/)
+* [Github wiki]()
+* [Taiga Project management]()
+* [Discord]()
+* [Online server for testing with apache server]()
+* [Mysql database]()
+* [heroku environment deployments]()
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
