@@ -1,19 +1,67 @@
-
-
-.wrapper{
-    display:flex;
-    max-width:1920px;
-    max-height:1080px;
-    justify-content:space-between;
-
+* {
+    margin: 0;
+    padding: 0;
 }
 
-
-
-.gauche, .centre, .droite{
-    padding:1px 0;
-
+html,
+body {
+    min-height: 100%;
+    padding: 0;
+    margin: 0;
 }
+
+/* CONCERNE TOUTE LA PAGE*/
+
+
+
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    min-height: 100%;
+    width: 100%;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 6px 2px;
+    background-color: #333;
+    overflow: hidden;
+    animation-name: slide-in-bottom;
+    animation-duration:1s;
+}
+
+/*CONCERNE LE CONTENU ET LE FOOTER*/
+
+
+
+.footer a {
+    float: right;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+/*REGLE L'APPARENCE DES LIENS DANS LE FOOTER*/
+
+
+#footergauche {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/*AFFICHAGE FOOTER A GAUCHE*/
+
 
 .gauche {
     width: 558px;
@@ -22,73 +70,101 @@
     background-color: lightslategrey;
     margin: 0;
     font-family: Georgia, serif;
-    animation-name:slide-in-top;
-    animation-duration:1s;
-
+    animation-name: slide-in-top;
+    animation-duration: 1s;
 }
 
-.droite{
-    width:960px;
-    animation-name:slide-in-top;
-    animation-duration:1s;
+.textecenterpanneaugauche {
+    color: black;
+    font-family: Georgia, serif;
+    text-align: center;
+    background-color: slategrey;
 }
 
-.textedroite{
-padding-right:10px;
+
+/*REGLE L'ECRITURE A GAUCHE & AU CENTRE DANS LE CONTROL PANEL*/
+
+.droite {
+    width: 960px;
+    animation-name: slide-in-top;
+    animation-duration: 1s;
+    align-self: flex-end;
 }
 
-footer {
-    width: 100%
+/*REGLE L'AFFICHAGE DU CHART A DROITE*/
 
-}
-
-#myChart{
-    position:absolute;
-
-}
 
 .btnUpdate {
-    margin-left:410px;
-    box-shadow:inset 0px 0px 15px 3px #23395e;
+    margin-left: 410px;
+    box-shadow: inset 0px 0px 15px 3px #23395e;
     background: #2e466e linear-gradient(to bottom, #2e466e 5%, #415989 100%);
-    border-radius:17px;
-    border:1px solid #1f2f47;
-    display:inline-block;
-    cursor:pointer;
-    color:#ffffff;
+    border-radius: 17px;
+    border: 1px solid #1f2f47;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
     font-family: Verdana, serif;
-    font-size:18px;
-    padding:6px 13px;
-    text-decoration:none;
-    text-shadow:0px 1px 0px #263666;
+    font-size: 18px;
+    padding: 6px 13px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #263666;
 }
+
 .btnUpdate:hover {
     background: #415989 linear-gradient(to bottom, #415989 5%, #2e466e 100%);
 }
+
 .btnUpdate:active {
-    position:relative;
-    top:1px;
+    position: relative;
+    top: 1px;
+}
+
+/*REGLE LE BOUTON UPDATE DATA*/
+
+
+#navbar {
+    animation-name: slide-in-top;
+    animation-duration: 1s;
+}
+
+/*ANIM NAVBAR*/
+
+
+
+
+@-webkit-keyframes slide-in-top {
+    0% {
+        -webkit-transform: translateY(-1000px);
+        transform: translateY(-1000px);
+        opacity: 0
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1
+    }
+}
+
+@keyframes slide-in-top {
+    0% {
+        -webkit-transform: translateY(-1000px);
+        transform: translateY(-1000px);
+        opacity: 0
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1
+    }
 }
 
 
-
-#navbar{
-    animation-name:slide-in-top;
-    animation-duration:1s;
-}
-
-.textecenterpanneaugauche{
-    color: black;
-    font-family: Georgia, serif;
-    text-align:center;
-    background-color:slategrey;
-}
+@-webkit-keyframes slide-in-bottom{0%{-webkit-transform:translateY(1000px);transform:translateY(1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}@keyframes slide-in-bottom{0%{-webkit-transform:translateY(1000px);transform:translateY(1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}
+/*DATA ANIMS*/
 
 
-@-webkit-keyframes slide-in-top{0%{-webkit-transform:translateY(-1000px);transform:translateY(-1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}@keyframes slide-in-top{0%{-webkit-transform:translateY(-1000px);transform:translateY(-1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}
 
-
-.heuristique{
+.droitenavbar {
     float: right;
     color: #f2f2f2;
     text-align: center;
@@ -96,5 +172,6 @@ footer {
     text-decoration: none;
     font-size: 17px;
     background-color: #333;
-
 }
+
+/* AFFICHAGE NAVBAR A DROITE*/

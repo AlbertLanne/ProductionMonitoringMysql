@@ -14,39 +14,45 @@
 <body onload="graphInit()">
 <link href="css/navbar.css" rel="stylesheet">
 
-<div id="navbar"><p id="dateheure" class="heuristique"></p></div>
+<div id="navbar">
+    <p id="dateheure" class="droitenavbar"></p>
+</div>
 
 <div class="wrapper">
-<div class="gauche">
-    <p class="textecenterpanneaugauche">CONTROL PANEL</p>
-    <div id="getResult1">
-        <p>Filtrer par :</p>
-        <input type="radio" name="radioGrillage" checked="checked" value="metal" id="metal">Grillage en métal</input>
-        <input type="radio" name="radioGrillage" value="papier" id="papier">Grillage en papier</input>
-        <p>Dater les graphiques par :   </p>
-        <input type="radio" name="radioTime" value="yearly" id="Yearly">Année</input>
-        <input type="radio" name="radioTime" value="monthly" id="Monthly">Mois</input>
-        <input type="radio" name="radioTime" value="weekly" id="Weekly">Semaine</input>
-        <p>Choisir le type de graphique :</p>
-        <input type="radio" name="radioType" id="radioLine" onclick="changeToLine()">Ligne</input>
-        <input type="radio" name="radioType" id="radioBar" onclick="changeToBar()">Barre</input>
-        <button id="updateData" onclick="updateData()" class="btnUpdate">Update Data</button>
+    <div class="gauche">
+        <p class="textecenterpanneaugauche">CONTROL PANEL</p>
+        <div id="getResult1">
+            <p>Filtrer par :</p>
+            <input type="radio" name="radioGrillage" checked="checked" value="metal" id="metal">Grillage en métal</input>
+            <input type="radio" name="radioGrillage" value="papier" id="papier">Grillage en papier</input>
+            <p>Dater les graphiques par : </p>
+            <input type="radio" name="radioTime" value="yearly" id="Yearly">Année</input>
+            <input type="radio" name="radioTime" value="monthly" id="Monthly">Mois</input>
+            <input type="radio" name="radioTime" value="weekly" id="Weekly">Semaine</input>
+            <p>Choisir le type de graphique :</p>
+            <input type="radio" name="radioType" id="radioLine" onclick="changeToLine()">Ligne</input>
+            <input type="radio" name="radioType" id="radioBar" onclick="changeToBar()">Barre</input>
+            <button id="updateData" onclick="updateData()" class="btnUpdate">Update Data</button>
+        </div>
+
     </div>
 
-</div>
+    <div class="center">test</div>
+    <div class="droite">
+        <canvas id="myChart" width="1280px" height="800px"></canvas>
+    </div>
+    <div class="footer">
+        <p id="footergauche">Statut connexion BDD</p>
+        <a href="../index.html">A propos</a>
+        <a href="../index.html">Crédits</a>
+    </div>
 
-<div class="droite">
-    <canvas id="myChart" width="1280px" height="800px" ></canvas>
-</div>
 </div>
 
 <script src="js/navbar.js"></script>
 <script src="js/chartJS.js"></script>
 <script src="js/chartStockage.js"></script>
 <script src="js/statistique/main.js"></script>
-
-
-
 
 </body>
 
