@@ -1,5 +1,5 @@
 nav {
-    background-color: #333;
+    background-color: #004B96;
     overflow: hidden;
 }
 
@@ -14,7 +14,7 @@ nav a {
 
 nav a:hover {
     background-color: #ddd;
-    color: black;
+    color: #fc8c03;
 }
 
 nav a.active {
