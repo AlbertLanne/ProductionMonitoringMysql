@@ -3,6 +3,8 @@ ctx = document.getElementById('myChart').getContext("2d");
 let gradient = ctx.createLinearGradient(0, 0, 0, 600);
 gradient.addColorStop(0, 'orange');
 gradient.addColorStop(1, 'purple');
+var previsionSelect = document.getElementById("previsionOF");
+
 
 var label = [];
 var testArray= [{"production":"200","mois":"2010"},{"production":"210","mois":"2011"},{"production":"230","mois":"2012"},{"production":"250","mois":"2013"},{"production":"300","mois":"2014"},{"production":"210","mois":"2015"},{"production":"240","mois":"2016"},{"production":"242","mois":"2017"},{"production":"234","mois":"2018"}];
@@ -19,6 +21,25 @@ var chartData = {
 
 
 };
+
+
+function previsionUpdate(){
+    var previsionAsked = document.getElementById("selectPrevision").value;
+    if (previsionAsked === "blindax"){
+        document.getElementById("previsionText").innerHTML = 'Ceci est un test';
+    }
+    else if (previsionAsked === "mousse"){
+        document.getElementById("previsionText").innerHTML = 'Ceci est un test3';
+
+    }
+
+    else if (previsionAsked === "papier"){
+        document.getElementById("previsionText").innerHTML = 'Ceci est un tes5';
+
+    }
+
+}
+
 
 function updateData(){
     var year =  document.getElementById('Yearly').checked;
@@ -75,17 +96,10 @@ function graphInit() {
     });
 }
 
-
-
-function handleChartTimeChange(){
-
+async function getRequest(){
+    let response = await fetch(`http://localhost:4000/api/fulldata`);
+    testArray = await response.json();
 }
-
-function handleChartDataChange(){
-
-}
-
-
 
 
 
