@@ -4,7 +4,7 @@ const router = express.Router();
 const nodemailer = require('nodemailer');
 const fs = require("fs");
 const fastcsv = require("fast-csv");
-const Papa = require('papaparse');
+const papa = require('papaparse');
 
 var output = []
 
@@ -113,16 +113,14 @@ router.post('/sendMail',function(req,res){
 
 });
 router.get('/SearchCSV', async(req,res) => {
-    var data = Papa.parse('../Filtre.csv', {
+    var data = papa.parse("../Fichier.csv", {
+
         delimiter: ",",
         complete: function(results){
-            console.log(results);
         }
     });
     res.send(await data);
-
 });
-
 
 
 
