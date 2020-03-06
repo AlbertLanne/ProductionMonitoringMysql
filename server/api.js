@@ -15,7 +15,7 @@ async function GetDataFromDB(requete) { //Cette fonction est désormais généra
 
     var con = mysql.createConnection({
         host     : '10.78.5.122',
-        database : 'mydb    ',
+        database : 'mydb',
         user     : 'alexis',
         password : 'motdepasse',
         port     : '3306'
@@ -29,17 +29,7 @@ async function GetDataFromDB(requete) { //Cette fonction est désormais généra
             output = result;
             con.destroy();
         });
-    }).then((con)=> {
-
-        console.log('Connected.')
-
-
-    }).catch((err)=>{
-        console.log('Error During database connection')
-        console.log(err.message)
     });
-
-    console.log("nique");
     return output;
 
 }
@@ -106,7 +96,7 @@ router.post('/sendMail',function(req,res){
         from: '"Aredi" <dadaslashfaq@gmail.com>', // sender address
         to: "arediyt@gmail.com", // list of receivers
         subject: "Notification intefiltre", // Subject line
-        text: "Le stock part en couille", // plain text body
+        text: "Le stock part.", // plain text body
         html: "<b>Auto destruction dans trois deux un</b>" // html body
     };
 
