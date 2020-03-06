@@ -97,7 +97,7 @@ function graphInit() {
 }
 
 async function getRequest(){
-    let response = await fetch(`http://localhost:4000/api/fulldata`);
+    let response = await fetch(`http://localhost:4000/v2/fulldata`);
     testArray = await response.json();
 }
 

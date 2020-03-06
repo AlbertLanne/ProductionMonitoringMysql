@@ -6,14 +6,20 @@ const fs = require("fs");
 const fastcsv = require("fast-csv");
 const papa = require('papaparse');
 
-var output = []
+var output = [];
 
 
 
 async function GetDataFromDB(requete) { //Cette fonction est désormais générale à toutes les requêtes.
     //Elle prends en paramètre la requête et renvoie son resultat
 
-    var con = mysql.createConnection('mysql://uisomclwcgug5cj5:58Eg8vzqeQ4Rx0zxjhFw@bfgvnm6ajhbocjxbjmly-mysql.services.clever-cloud.com:3306/bfgvnm6ajhbocjxbjmly');
+    var con = mysql.createConnection({
+        host     : '10.78.5.122',
+        database : 'mydb    ',
+        user     : 'alexis',
+        password : 'motdepasse',
+        port     : '3306'
+    });
     connection = con.connect(function (err) {
         if (err) throw err;
         else
@@ -23,8 +29,19 @@ async function GetDataFromDB(requete) { //Cette fonction est désormais généra
             output = result;
             con.destroy();
         });
+    }).then((con)=> {
+
+        console.log('Connected.')
+
+
+    }).catch((err)=>{
+        console.log('Error During database connection')
+        console.log(err.message)
     });
+
+    console.log("nique");
     return output;
+
 }
 
 
@@ -38,7 +55,7 @@ router.get('/v1/fulldata', async (req, res) => {
     //     {"jour":"Vendredi","vente":"3", "date":"2018-06-01"},{"jour":"Samedi","vente":"12", "date":"2018-02-08"},
     //     {"jour":"Dimanche","vente":"2", "date":"2018-03-01"}]
 
-    const fulldata = await GetDataFromDB("SELECT * FROM `producttable`");
+    const fulldata = await GetDataFromDB("select nom_EtapeProduction from EtapeProduction where id_EtapeProduction = 1;");
     console.log(fulldata);
     res.send(await fulldata);
 });
@@ -53,12 +70,8 @@ router.get('/v1/filtres', async (req, res) => {
 });
 
 router.get('/v2/fulldata', async (req, res) => {
-    // var fulldata = [{"jour":"Lundi","vente":"5", "date":"2018-10-10"},{"jour":"Mardi","vente":"1", "date":"2017-10-01"},
-    //     {"jour":"Mercredi","vente":"10", "date":"2018-01-01"},{"jour":"Jeudi","vente":"7", "date":"2018-01-01"},
-    //     {"jour":"Vendredi","vente":"3", "date":"2018-06-01"},{"jour":"Samedi","vente":"12", "date":"2018-02-08"},
-    //     {"jour":"Dimanche","vente":"2", "date":"2018-03-01"}]
 
-    const fulldata = await GetDataFromDB("SELECT * FROM `producttable`");
+    const fulldata = await GetDataFromDB("select nom_EtapeProduction from EtapeProduction where id_EtapeProduction = 1;");
     console.log(fulldata);
     res.send(await fulldata);
 });
