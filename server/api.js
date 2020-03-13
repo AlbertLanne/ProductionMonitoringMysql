@@ -5,6 +5,8 @@ const nodemailer = require('nodemailer');
 const fs = require("fs");
 const fastcsv = require("fast-csv");
 const papa = require('papaparse');
+const config = require('../config')
+
 
 var output = [];
 
@@ -14,11 +16,10 @@ async function GetDataFromDB(requete) { //Cette fonction est désormais généra
     //Elle prends en paramètre la requête et renvoie son resultat
 
     var con = mysql.createConnection({
-        host     : '10.78.5.122',
-        database : 'mydb',
-        user     : 'alexis',
-        password : 'motdepasse',
-        port     : '3306'
+        host: config.db.host,
+        database: config.db.database,
+        user: config.db.user,
+        password: config.db.password
     });
     connection = con.connect(function (err) {
         if (err) throw err;
@@ -42,8 +43,8 @@ async function GetDataFromDB(requete) { //Cette fonction est désormais généra
 router.get('/grillage', async (req, res) => {
 
     const grillage = await GetDataFromDB("select * from EtapeProduction where id_EtapeProduction = 1;");
-    console.log(fulldata);
-    res.send(await fulldata);
+    console.log(grillage);
+    res.send(await grillage);
 });
 router.get('/v1/filtres', async (req, res) => {
     // var filtres = [{"jour":"Lundi","vente":"5", "date":"2018-10-10"},{"jour":"Mardi","vente":"1", "date":"2017-10-01"},

@@ -106,7 +106,7 @@ function graphInit() {
 }
 
 async function getRequest(){
-    let response = await fetch(`http://localhost:4000/api/v2/fulldata`);
+    let response = await fetch(`http://localhost:4000/api/grillage`);
     testArray = await response.json();
     console.log(testArray);
 }
