@@ -23,6 +23,15 @@ var chartData = {
 };
 
 
+async function stockBackgroundCheck() {
+    let response = await fetch(`http://localhost:4000/api/sendMail`);
+    testArray = await response.json();
+    setTimeout(stockBackgroundCheck,6000);
+}
+
+g
+
+
 function previsionUpdate(){
     var previsionAsked = document.getElementById("selectPrevision").value;
     if (previsionAsked === "blindax"){
