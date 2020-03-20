@@ -130,6 +130,7 @@ or
 }
 ```
 
+5. You can find the databse structure at assets/sql/BBD.sql
 
 
 <!-- USAGE EXAMPLES -->
