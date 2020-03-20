@@ -1,81 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
-    <title>File</title>
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <title>Interfiltre Gestion des Grillages</title>
     <link rel="icon" type="image/png" href="icon.png" />
 
+    <!-- CSS link-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link href="css/index.css" rel="stylesheet">
 </head>
 
-<body>
+<link href="css/navbar.css" rel="stylesheet">
 
-<!--=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=
-        Pour mettre à jour simplement la navbarre, la version de la page index.html et un double (l'original) !
-                             Donc ne supprimez pas pas la version ici
-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=-=-=-=-=-=--=--->
-
-<div id="navbar"></div>
-
-
-
-
-
-
-<div class="bg-purple-100 min-h-screen font-hairline">
-    <div class="flex">
-        <p class="px-6 text-4xl text-center mx-auto my-4 text-black">
-            INDEX.HTML </p>
-
-    </div>
-    <div class="m-2 mx-4 font-light justify-center items-stretch ">
-
-        <div class="w-full flex items-stretch justify-center">
-            <div class="w-1/2 items-stretch">
-                <canvas id="myLineChart"></canvas>
-            </div>
-            <div class="w-1/2 items-stretch">
-                <canvas id="myLineGreen"></canvas>
-
-            </div>
-        </div>
-
-        <div class="w-full flex  items-stretch">
-            <div class="w-1/2 items-stretch">
-                <canvas id="myLineBlue"></canvas>
-            </div>
-            <div class="w-1/2 items-stretch rounded-lg">
-                <canvas id="myLinePurple"></canvas>
-            </div>
-        </div>
-
-
-    </div>
-    <div class=" min-h-screen w-full h-full  bg-purple-800 text-white text-xl font-light">
-        <div class="flex text-center text-3xl w-full justify-center py-8 border-b border-white">
-        </div>
-        <div class="py-12  border-b border-white hover:shadow-xl text-center justify-center">
-
-        </div>
-
-    </div>
-</div>
+<div id="navbar">
+    <p id="dateheure" class="droitenavbar"/>
 </div>
 
-<script>
-    function getDateTime() {
-        var date = new Date().toLocaleString(); // dd:mm:y
-        document.getElementById("dateheure").innerHTML = date;
-        setTimeout(getDateTime, 1000); // mise à jour du contenu "getDateTime" toutes les secondes
-    }
+<div class="wrapper">
+    <div class="gauche">
 
-    getDateTime();
 
-</script>
-<script src="js/chartJS.js"></script>
-<script src="js/statistique/protoChart.js"></script>
+    </div>
+
+
+
+    <div class="center"><h1 class="display-4">Bienvenue sur le suivi de production Interfiltre 1.0</h1>
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/rVmFHaxZKw4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div></div>
+    <!-- 16:9 aspect ratio -->
+
+    <div class="droite">
+    </div>
+
+
+
+    <div class="footer">
+        <p class="footergauche">Statut connexion BDD</p>
+        <p class="footergauche">Copyright Ⓒ Interfiltre 2020</p>
+        <button id ="btnpropos" class="droitenavbar">A propos</button>
+    </div>
+
+
+
+
+</div>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <img src="interfiltre.jpg" alt="" />
+        <p>Ce projet a été developpé par les étudiants : Dominguez-Condé Alexis, Lanne Albert, Sanchez Mathieu et Evrard Louis du lycée Paul Cornu Lisieux</p>
+    </div>
+
+</div>
+
 <script src="js/navbar.js"></script>
+<script src="js/chartJS.js"></script>
+<script src="js/chartStockage.js"></script>
+<script src="js/statistique/main.js"></script>
+
 </body>
 
 </html>

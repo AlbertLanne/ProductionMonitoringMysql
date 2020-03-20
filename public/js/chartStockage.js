@@ -29,7 +29,7 @@ async function stockBackgroundCheck() {
     setTimeout(stockBackgroundCheck,6000);
 }
 
-g
+
 
 
 function previsionUpdate(){
