@@ -6,23 +6,23 @@
 
 <!-- PROJECT LOGO -->
 <br />
-<p align="center">
-  <a href="http://www.interfiltre.fr/fr/">
-    <img src="http://interfiltre.serveur-client.fr/img/cms/logo-interfiltre-OK.jpg" alt="Logo" width="160" height="auto">
-  </a>
-
   <h3 align="center">Mysql Production Monitoring</h3>
+<p align="center">
+  <p>
+    <img src="https://i.imgur.com/3gBoHGU.png" alt="Logo" width="100%" height="auto">
+  </p>
+
+
 
   <p align="center">
     The repo of the project of 2nd year of Higher Technical Certificate (BTS SN IR )
     <br />
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Dem</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
+    <a href="https://github.com/AlbertLanne/ProductionMonitoringMysql/issues">Report Bug</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+    <a href="https://github.com/AlbertLanne/ProductionMonitoringMysql/pulls">Request Feature</a>
   </p>
 </p>
 
@@ -43,13 +43,9 @@
 * [useful link](#useful-link)
 
 
-
-#  Attention this documentation is not finish like the projects. This repo as translate in English but some parts can be in French. 
-
 ---
 
 ## About The Project
-
 | High school Paul Cornu | BTS Systèmes Numériques  | Session 2020 | 
 | -------- | -------- | -------- |
 | 9 Rue Paul Cornu, 14100 Lisieux | Option A Informatique et Réseaux | Session 2020 | 
@@ -65,8 +61,194 @@
 
 
 
-There are many great README templates available on GitHub, however, I didn't find one that really suit my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need.
 
+---
+
+
+- The master branch have a classe "members" with all CUDR methods (GET,PUT,POST,DELETE). 
+- The SingleFileCUDR branch have a single file for CUDR
+- The HTML branch use the classe "members" with front end vanilla JS.
+
+> To test the API i preconise to use postman for HTTP request.
+
+---
+
+## Project setup
+
+```
+# Install dependecies
+npm install
+# serve with hot reload at localhost:8080
+npm run start
+```
+
+Find the api map with Swaggers at <localhost:8080/api/v1/api-docs/#/> 
+and even test it from there.
+<a><img src="https://i.imgur.com/vwcT4f5.png" title="c++ app made in qt" alt="docker container SQL"></a>
+
+
+
+---
+
+## Routes of the API
+
+
+<a><img src="https://i.imgur.com/rj7G7eH.png" title="c++ app made in qt" alt="docker container SQL"></a>
+
+---
+
+
+### Structure of SingleFileCUDR
+
+
+- This exemple show only for the specific ID
+
+
+```js
+let MembersRouter = express.Router()
+MembersRouter.route('/:id')
+```
+
+- Get
+```js
+   .get((req,res)=> {
+            let index = getIndex(req.params.id);
+
+            if (typeof(index) == 'string'){
+                res.json(error(index))
+            }else{
+                res.json(success(members[index]))
+            }
+            res.json(success(members[(req.params.id)-1].name))
+        })
+```
+
+
+- Overwrite
+```js
+        .put((req,res)=> {
+            let index = getIndex(req.params.id);
+            if (typeof(index) == 'string'){
+                res.json(error(index))
+            }else{
+                let same = false;
+                for (let i = 0; i < members.length; i++){
+                    if (req.body.name == members[i].name && req.params.id != members[i].id){
+                        same = true
+                        break
+                    }
+                }
+                if (same){
+                    res.json(error('same name'))
+                }else{
+                    members[index].name = req.body.name
+                    res.json(success(true))
+                }
+
+            }
+        })
+```
+
+
+- Delete
+```js
+        .delete((req,res)=> {
+            let index = getIndex(req.params.id);
+            if (typeof(index) == 'string'){
+                res.json(error(index))
+            } else {
+                members.splice(index, 1)
+                res.json(success(members))
+            }
+        })
+```
+
+---
+
+### Members Classe
+
+
+
+
+```js
+   let MembersRouter = express.Router()
+   let Members = require('./assets/classes/members-class')(db, config)
+    MembersRouter.route('/:id')
+
+```
+
+
+```js
+   let MembersRouter = express.Router()
+   let Members = require('./assets/classes/members-class')(db, config)
+
+```
+
+```js
+  MembersRouter.route('/:id')
+
+        // Récupère un membre avec son ID
+
+        .get(async (req, res) => {
+            let member = await Members.getById(req.params.id)
+            res.json(checkAndchange(member))
+        })
+
+        // Modifie un membre avec ID
+        .put(async(req, res) => {
+            let updateMember = await Members.update(req.params.id, req.body.name)
+            res.json(checkAndchange(updateMember))
+        })
+
+        // Supprime un membre avec ID
+        .delete(async (req, res) => {
+            let deleteMember = await Members.delete(req.params.id)
+            res.json(checkAndchange(deleteMember))
+        })
+
+```
+
+
+### 2 - ASYNC DATA
+
+- Understand async data
+
+```js
+console.log('Début')
+setTimeout(() => {
+    console.log('Temps d\'attentes')
+},1500)
+console.log('Fin')
+
+```
+- Callback
+- Promise 
+
+```js
+new Promise((resolve, reject) => {
+setTimeout(()=> {
+resolve('All good')
+}, 1500)
+})
+.then(message => console.log(message))  // Dans le cas si c'est ok
+.catch(err => console.log(err.message)) // Dans le cas d'une erreur
+```
+
+
+- Async/Await
+
+---
+
+
+
+
+
+
+The project consists of experimenting with the implementation of computer tools, smartphone applications / Android tablets for
+operators for :
+
+- Helping the operators of the sheet metal part during cutting with the help of a documented and adapted OF.
+- 
 Here's why:
 * Your time should be focused on creating something amazing. A project that solves a problem and helps others
 * You shouldn't be doing the same tasks over and over like creating a README from scratch
